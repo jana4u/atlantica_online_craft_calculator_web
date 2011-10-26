@@ -1,0 +1,1448 @@
+# Action
+"Action: Auto-Craft [I]":
+  ingredients:
+    "Multi-Hued Crystal Shard": 5
+    "Platinum Ingot": 50
+    "Hammer [I]": 100
+    "Enchant Stone [I]": 10
+  batch_size: 2
+  workload: 50000
+  skill: "Action"
+  skill_lvl: 1
+
+"Action: Fishing [I]":
+  ingredients:
+    "Multi-Hued Crystal Shard": 5
+    "Platinum Ingot": 25
+    "Bamboo Fishing Rod": 5
+    "Maple Fishing Rod": 5
+    "Spoiled Bait": 100
+    "Crude Bait": 100
+  batch_size: 2
+  workload: 70000
+  skill: "Action"
+  skill_lvl: 10
+
+"Action: Fishing [III]":
+  ingredients:
+    "Multi-Hued Jewel Shard": 2
+    "Ruby": 25
+    "Adamantinum Fishing Rod": 10
+    "Best Bait": 200
+    "Auto Fishing Doll MK-2": 3
+  batch_size: 4
+  workload: 670000
+  skill: "Action"
+  skill_lvl: 25
+
+# Armor
+
+# Arrow
+
+# Axe
+
+# Book
+
+"Book of Anguish":
+  fixed_price: 20000
+
+"Book: Healing [I]":
+  market_price: 50000
+
+"Book: Healing [II]":
+  ingredients:
+    "Book: Healing [I]": 20
+    "Quill": 5
+    "Parchment": 20
+    "Deluxe Ink Bottle": 15
+    "Silver Thread": 150
+    "Crystal of Anguish": 10
+    "Book of Anguish": 5
+  batch_size: 10
+  workload: 800000
+  skill: "Book"
+  skill_lvl: 33
+
+# Bow
+
+# Building
+
+# Bullet
+
+# Cannon
+
+# Cannonball
+
+# Charm
+
+# Crystal
+
+"Ashen Crystal":
+  fixed_price: 8000
+
+"Giant Crystal":
+  fixed_price: 80000
+
+"Redemption Crystal":
+  fixed_price: 80000
+
+"Phoenix Crystal":
+  fixed_price: 80000
+
+"Dragon Crystal":
+  fixed_price: 350000
+
+"Multi-Hued Crystal Shard":
+  ingredients:
+    "Phoenix Crystal": 1
+    "Giant Crystal": 1
+    "Redemption Crystal": 1
+    "Dragon Crystal": 1
+    "Ashen Crystal": 1
+  batch_size: 5
+  workload: 46000
+  skill: "Crystal"
+  skill_lvl: 1
+
+"Crystal of Knowledge":
+  ingredients:
+    "Ashen Crystal": 10
+    "Mysterious Vial: Wisdom": 1
+  batch_size: 20
+  workload: 10000
+  skill: "Crystal"
+  skill_lvl: 1
+
+"Crystal of Wisdom":
+  ingredients:
+    "Multi-Hued Crystal Shard": 2
+    "Mysterious Vial: Wisdom": 1
+  batch_size: 10
+  workload: 20000
+  skill: "Crystal"
+  skill_lvl: 5
+
+"Crystal of Anguish":
+  ingredients:
+    "Multi-Hued Crystal Shard": 3
+    "Crystal of Knowledge": 3
+    "Crystal of Wisdom": 3
+    "Mysterious Vial: Wisdom": 1
+  batch_size: 10
+  workload: 50000
+  skill: "Crystal"
+  skill_lvl: 10
+
+"Multi-Hued Crystal":
+  ingredients:
+    "Multi-Hued Crystal Shard": 5
+    "Mandragora": 2
+    "Platinum Ingot": 25
+    "Coral":  100
+    "Opal": 3
+  batch_size: 5
+  workload: 200000
+  skill: "Crystal"
+  skill_lvl: 15
+
+"Ashen Jewel":
+  ingredients:
+    "Ashen Crystal": 60
+    "Energy of Atmosphere": 10
+    "Earth Element Shard": 100
+  batch_size: 5
+  workload: 45000
+  skill: "Crystal"
+  skill_lvl: 18
+
+"Multi-Hued Jewel Shard":
+  ingredients:
+    "Phoenix Jewel": 1
+    "Giant Jewel": 1
+    "Redemption Jewel": 1
+    "Dragon Jewel": 1
+    "Ashen Jewel": 1
+  batch_size: 5
+  workload: 800000
+  skill: "Crystal"
+  skill_lvl: 20
+
+"Dragon Jewel":
+  ingredients:
+    "Dragon Crystal": 4
+    "Energy of Wind": 2
+    "Sea Element Shard": 40
+  batch_size: 2
+  workload: 350000
+  skill: "Crystal"
+  skill_lvl: 22
+
+"Phoenix Jewel":
+  ingredients:
+    "Phoenix Crystal": 20
+    "Energy of Atmosphere": 4
+    "Flame Element Shard": 40
+  batch_size: 2
+  workload: 400000
+  skill: "Crystal"
+  skill_lvl: 24
+
+"Redemption Jewel":
+  ingredients:
+    "Redemption Crystal": 40
+    "Energy of Wind": 5
+    "Storm Element Shard": 10
+  batch_size: 2
+  workload: 650000
+  skill: "Crystal"
+  skill_lvl: 26
+
+"Giant Jewel":
+  ingredients:
+    "Giant Crystal": 40
+    "Energy of Wind": 10
+    "Earth Element": 8
+  batch_size: 2
+  workload: 520000
+  skill: "Crystal"
+  skill_lvl: 28
+
+"Multi-Hued Jewel":
+  ingredients:
+    "Multi-Hued Jewel Shard": 5
+    "Mysterious Vial: Wisdom": 1
+    "Mysterious Vial: Death": 1
+    "Mysterious Vial: Valor": 1
+    "Mandragora": 3
+    "Energy of Hail": 8
+  batch_size: 5
+  workload: 1000000
+  skill: "Crystal"
+  skill_lvl: 30
+
+"Giant Soul Crystal":
+  ingredients:
+    "Giant Jewel": 20
+    "Hero's Blood": 5
+    "Energy of Wind": 20
+    "Earth Element": 20
+    "Mysterious Vial: Valor": 2
+  batch_size: 10
+  workload: 2000000
+  skill: "Crystal"
+  skill_lvl: 32
+
+"Giant Soul Jewel":
+  ingredients:
+    "Giant Soul Crystal": 10
+    "Hero's Blood": 15
+    "Energy of Hail": 15
+    "Earth Element": 50
+    "Mysterious Vial: Valor": 5
+  batch_size: 5
+  workload: 2500000
+  skill: "Crystal"
+  skill_lvl: 34
+
+"Phoenix Soul Crystal":
+  ingredients:
+    "Phoenix Jewel": 20
+    "Hero's Blood": 5
+    "Energy of Wind": 20
+    "Sea Element": 20
+    "Mysterious Vial: Wisdom": 2
+  batch_size: 10
+  workload: 3000000
+  skill: "Crystal"
+  skill_lvl: 36
+
+"Phoenix Soul Jewel":
+  ingredients:
+    "Phoenix Soul Crystal": 10
+    "Hero's Blood": 15
+    "Energy of Hail": 15
+    "Sea Element": 50
+    "Mysterious Vial: Wisdom": 5
+  batch_size: 5
+  workload: 3500000
+  skill: "Crystal"
+  skill_lvl: 38
+
+"Redemption Soul Crystal":
+  ingredients:
+    "Redemption Jewel": 20
+    "Hero's Blood": 5
+    "Energy of Wind": 20
+    "Sea Element": 20
+    "Mysterious Vial: Wisdom": 2
+  batch_size: 10
+  workload: 4000000
+  skill: "Crystal"
+  skill_lvl: 40
+
+"Redemption Soul Jewel":
+  ingredients:
+    "Redemption Soul Crystal": 10
+    "Hero's Blood": 15
+    "Energy of Hail": 15
+    "Sea Element": 50
+    "Mysterious Vial: Wisdom": 5
+  batch_size: 5
+  workload: 4500000
+  skill: "Crystal"
+  skill_lvl: 42
+
+"Dragon Soul Crystal":
+  ingredients:
+    "Dragon Jewel": 20
+    "Hero's Blood": 5
+    "Energy of Wind": 20
+    "Sea Element": 20
+    "Mysterious Vial: Death": 2
+  batch_size: 10
+  workload: 5000000
+  skill: "Crystal"
+  skill_lvl: 44
+
+"Dragon Soul Jewel":
+  ingredients:
+    "Dragon Soul Crystal": 10
+    "Hero's Blood": 15
+    "Energy of Hail": 15
+    "Sea Element": 50
+    "Mysterious Vial: Death": 5
+  batch_size: 5
+  workload: 5500000
+  skill: "Crystal"
+  skill_lvl: 46
+
+"Multi-Hued Soul Crystal":
+  ingredients:
+    "Multi-Hued Jewel": 20
+    "Heavenly Crystal": 4
+    "Phoenix's Feather": 2
+    "Depraved Seed": 2
+    "Mysterious Vial: Death": 6
+  batch_size: 10
+  workload: 15000000
+  skill: "Crystal"
+  skill_lvl: 48
+
+"Multi-Hued Soul Jewel":
+  ingredients:
+    "Multi-Hued Soul Crystal": 10
+    "Heavenly Crystal": 3
+    "Phoenix's Feather": 1
+    "Depraved Seed": 1
+    "Mysterious Vial: Death": 3
+  batch_size: 5
+  workload: 18000000
+  skill: "Crystal"
+  skill_lvl: 50
+
+# Element
+
+"Earth Element Shard":
+  fixed_price: 100
+
+"Sea Element Shard":
+  fixed_price: 1000
+
+"Flame Element Shard":
+  fixed_price: 4500
+
+"Storm Element Shard":
+  fixed_price: 11000
+
+"Earth Element":
+  fixed_price: 33000
+
+"Sea Element":
+  fixed_price: 110000
+
+"Flame Element":
+  fixed_price: 250000
+
+"Storm Element":
+  fixed_price: 750000
+
+# Energy
+
+"Energy of Atmosphere":
+  fixed_price: 10000
+
+"Energy of Wind":
+  fixed_price: 20000
+
+"Energy of Hail":
+  fixed_price: 40000
+
+# Fabric
+
+"Thread":
+  fixed_price: 100
+
+"Thin Rayon":
+  fixed_price: 20000
+
+"Embroidery Thread":
+  fixed_price: 300
+  ingredients:
+    "Thread": 50
+    "Glue": 2
+  batch_size: 20
+  workload: 1000
+  skill: "Sewing"
+  skill_lvl: 1
+
+"Silver Thread":
+  fixed_price: 1000
+  ingredients:
+    "Embroidery Thread": 50
+    "Glue": 2
+  batch_size: 20
+  workload: 4000
+  skill: "Sewing"
+  skill_lvl: 10
+
+"Gold Thread":
+  fixed_price: 3000
+  ingredients:
+    "Silver Thread": 50
+    "Glue": 2
+  batch_size: 20
+  workload: 14000
+  skill: "Sewing"
+  skill_lvl: 15
+
+"Colorful Thread":
+  fixed_price: 10000
+  ingredients:
+    "Gold Thread": 30
+    "Silver Thread": 20
+    "Embroidery Thread": 30
+    "Thread": 100
+    "Pearl": 20
+  batch_size: 20
+  workload: 18000
+  skill: "Sewing"
+  skill_lvl: 20
+
+"Colorful Fabric":
+  fixed_price: 50000
+  ingredients:
+    "Gold Thread": 80
+    "Colorful Thread": 5
+  batch_size: 5
+  workload: 55000
+  skill: "Sewing"
+  skill_lvl: 23
+
+"Gorgeous Colorful Fabric":
+  ingredients:
+    "Thin Rayon": 60
+    "Colorful Fabric": 5
+  batch_size: 5
+  workload: 135000
+  skill: "Sewing"
+  skill_lvl: 25
+
+# Fishing
+
+"Thin Fishing Line":
+  ingredients:
+    "Thread": 600
+    "Glue": 10
+  batch_size: 20
+  workload: 18000
+  skill: "Fishing"
+  skill_lvl: 1
+
+"Thin Fishhook":
+  ingredients:
+    "Silver Ingot": 15
+    "Broken Animal Bones": 100
+  batch_size: 20
+  workload: 9400
+  skill: "Fishing"
+  skill_lvl: 5
+
+"Bamboo Fishing Rod":
+  ingredients:
+    "Pine": 120
+    "Thin Fishing Line": 5
+    "Thin Fishhook": 10
+    "Earth Element Shard": 100
+  batch_size: 10
+  workload: 162000
+  skill: "Fishing"
+  skill_lvl: 10
+
+"Spoiled Bait":
+  ingredients:
+    "Barley": 25
+    "Mushroom": 10
+    "Cucumber": 25
+  batch_size: 100
+  workload: 13100
+  skill: "Fishing"
+  skill_lvl: 10
+
+"Maple Fishing Rod":
+  ingredients:
+    "Maple": 700
+    "Thin Fishing Line": 40
+    "Thin Fishhook": 40
+    "Sea Element Shard": 100
+  batch_size: 10
+  workload: 224000
+  skill: "Fishing"
+  skill_lvl: 15
+
+"Crude Bait":
+  ingredients:
+    "Cucumber": 150
+    "Barley": 100
+    "Potato": 150
+  batch_size: 100
+  workload: 20000
+  skill: "Fishing"
+  skill_lvl: 15
+
+"Sturdy Fishing Line":
+  ingredients:
+    "Silver Thread": 350
+    "Glue": 10
+  batch_size: 20
+  workload: 83000
+  skill: "Fishing"
+  skill_lvl: 28
+
+"Sturdy Fishhook":
+  ingredients:
+    "Platinum Ingot": 3
+    "Thick Animal Bone": 100
+  batch_size: 20
+  workload: 41800
+  skill: "Fishing"
+  skill_lvl: 30
+
+"Adamantinum Fishing Rod":
+  ingredients:
+    "Adamantinum": 2
+    "Gold Ingot": 20
+    "Sturdy Fishing Line": 20
+    "Sturdy Fishhook": 40
+    "Earth Element": 2
+  batch_size: 10
+  workload: 796000
+  skill: "Fishing"
+  skill_lvl: 32
+
+"Best Bait":
+  ingredients:
+    "Carp": 250
+    "Beef": 250
+    "Sesame Oil": 50
+  batch_size: 100
+  workload: 716000
+  skill: "Fishing"
+  skill_lvl: 32
+
+# Food
+
+"Mushroom":
+  fixed_price: 200
+
+"Barley":
+  fixed_price: 100
+
+"Potato":
+  fixed_price: 100
+
+"Cucumber":
+  fixed_price: 100
+
+"Beef":
+  fixed_price: 300
+
+"Sesame Oil":
+  fixed_price: 500
+
+"Carp":
+  fixed_price: 300
+
+"Oriental Mushroom":
+  fixed_price: 80000
+
+"Monster Egg":
+  fixed_price: 10000
+
+# Gauntlet
+
+# Guardian
+
+# Gun
+
+# Helmet
+
+# Instrument
+
+# License
+
+# Machine
+
+"Auto Fishing Doll MK-2":
+  ingredients:
+    "Albert's Fishing Tackle": 1
+    "Mysterious Vial: Wisdom": 6
+    "Flame Element Shard": 100
+    "Small Lever": 20
+    "Fusing Agent": 10
+    "Platinum Ingot": 10
+    "Oil": 50
+    "Small Bolt": 50
+  batch_size: 5
+  workload: 4450000
+  skill: "Machine"
+  skill_lvl: 32
+
+# Mana Stone
+
+"Enchant Stone [I]":
+  fixed_price: 1000
+
+"Enchant Stone [II]":
+  fixed_price: 15000
+
+"Enchant Stone [III]":
+  fixed_price: 50000
+
+"Enchant Stone [IV]":
+  market_price: 600000
+
+"Enchant Stone [V]":
+  market_price: 530000
+
+# Medicine
+
+"Ginseng":
+  fixed_price: 100
+
+"Dogwood Fruit":
+  fixed_price: 100
+
+"Green Mold":
+  fixed_price: 200
+
+"Chrysanthemum":
+  fixed_price: 300
+
+"Jasmine":
+  fixed_price: 300
+
+"Cyclamen":
+  fixed_price: 1000
+
+"Mandragora":
+  market_price: 500000
+
+"Yggdrasil's Leaf":
+  market_price: 2400
+
+"Yggdrasil's Fruit":
+  market_price: 48000
+
+"Revival Plant":
+  fixed_price: 20000
+
+"Healing Potion [III]":
+  ingredients:
+    "Green Mold": 10
+    "Ginseng": 30
+    "Chrysanthemum": 20
+  batch_size: 10
+  workload: 3600
+  skill: "Medicine"
+  skill_lvl: 12
+
+"Healing Potion [IV]":
+  ingredients:
+    "Healing Potion [III]": 100
+    "Mysterious Vial: Valor": 1
+    "Yggdrasil's Leaf": 50
+  batch_size: 100
+  workload: 200500
+  skill: "Medicine"
+  skill_lvl: 35
+
+"Mana Potion [III]":
+  ingredients:
+    "Chrysanthemum": 15
+    "Jasmine": 15
+    "Cyclamen": 10
+  batch_size: 10
+  workload: 5700
+  skill: "Medicine"
+  skill_lvl: 17
+
+"Mana Potion [IV]":
+  ingredients:
+    "Mana Potion [III]": 200
+    "Mysterious Vial: Wisdom": 1
+    "Yggdrasil's Fruit": 50
+  batch_size: 200
+  workload: 380000
+  skill: "Medicine"
+  skill_lvl: 40
+
+"Elixir [III]":
+  ingredients:
+    "Healing Potion [III]": 10
+    "Mana Potion [III]": 10
+    "Fusing Agent": 10
+  batch_size: 10
+  workload: 16500
+  skill: "Medicine"
+  skill_lvl: 19
+
+"Elixir [IV]":
+  ingredients:
+    "Healing Potion [IV]": 10
+    "Mana Potion [IV]": 10
+    "Fusing Agent": 25
+  batch_size: 10
+  workload: 60000
+  skill: "Medicine"
+  skill_lvl: 45
+
+"Antidote [III]":
+  ingredients:
+    "Green Mold": 15
+    "Ginseng": 20
+    "Chrysanthemum": 15
+  batch_size: 5
+  workload: 3200
+  skill: "Medicine"
+  skill_lvl: 15
+
+"Life Potion [III]":
+  fixed_price: 8000
+  ingredients:
+    "Ginseng": 12
+    "Dogwood Fruit": 8
+    "Chrysanthemum": 10
+    "Jasmine": 10
+  batch_size: 10
+  workload: 2300
+  skill: "Medicine"
+  skill_lvl: 16
+
+"Life Potion [IV]":
+  ingredients:
+    "Mysterious Vial: Wisdom": 1
+    "Life Potion [III]": 200
+    "Revival Plant": 20
+    "Hero's Blood": 1
+  batch_size: 200
+  workload: 450000
+  skill: "Medicine"
+  skill_lvl: 50
+
+"Growth Vial [II]":
+  fixed_price: 30000
+
+"Growth Vial [III]":
+  ingredients:
+    "Growth Vial [II]": 50
+    "Healing Potion [III]": 100
+    "Mana Potion [III]": 100
+    "Life Potion [III]": 100
+  batch_size: 10
+  workload: 100000
+  skill: "Medicine"
+  skill_lvl: 20
+
+"Growth Vial [IV]":
+  ingredients:
+    "Growth Vial [III]": 10
+    "Mandragora": 5
+    "Revival Plant": 200
+    "Hero's Blood": 10
+  batch_size: 10
+  workload: 4000000
+  skill: "Medicine"
+  skill_lvl: 53
+
+"Growth Vial [V]":
+  ingredients:
+    "Growth Vial [IV]": 20
+    "Mandragora": 20
+    "Monster Egg": 30
+    "Evil Soul Extract": 3
+  batch_size: 10
+  workload: 16000000
+  skill: "Medicine"
+  skill_lvl: 80
+
+"Mysterious Vial: Valor":
+  fixed_price: 500000
+  ingredients:
+    "Mandragora": 4
+    "Multi-Hued Crystal Shard": 5
+    "Growth Vial [II]": 50
+    "Healing Potion [III]": 100
+    "Ginseng": 200
+    "Green Mold": 400
+    "Cyclamen": 100
+  batch_size: 10
+  workload: 1120000
+  skill: "Medicine"
+  skill_lvl: 20
+
+"Mysterious Vial: Wisdom":
+  fixed_price: 650000
+  ingredients:
+    "Mandragora": 4
+    "Multi-Hued Crystal": 5
+    "Growth Vial [II]": 50
+    "Mana Potion [III]": 100
+    "Jasmine": 400
+    "Green Mold": 600
+  batch_size: 10
+  workload: 1430000
+  skill: "Medicine"
+  skill_lvl: 25
+
+"Mysterious Vial: Death":
+  fixed_price: 800000
+  ingredients:
+    "Mandragora": 4
+    "Multi-Hued Jewel Shard": 5
+    "Growth Vial [II]": 50
+    "Antidote [III]": 100
+    "Cyclamen": 100
+    "Jasmine": 400
+    "Dogwood Fruit": 200
+  batch_size: 10
+  workload: 2050000
+  skill: "Medicine"
+  skill_lvl: 30
+
+"Polish":
+  fixed_price: 4000
+
+"Fusing Agent":
+  fixed_price: 2000
+
+"Glue":
+  fixed_price: 500
+
+"Alchemist's Stone":
+  ingredients:
+    "Mysterious Vial: Death": 10
+    "Mysterious Vial: Wisdom": 10
+    "Mysterious Vial: Valor": 10
+    "Earth Element": 50
+    "Sea Element": 20
+    "Flame Element": 10
+    "Storm Element": 5
+  workload: 10000000
+  skill: "Medicine"
+  skill_lvl: 60
+
+# Mineral
+
+"Enriched Adamantinum Ingot":
+  ingredients:
+    "Adamantinum Ingot": 100
+    "Ruby": 200
+    "Opal": 100
+  workload: 2000000
+  skill: "Tool"
+  skill_lvl: 32
+
+"Gold Ingot":
+  fixed_price: 2000
+
+"Ruby":
+  fixed_price: 30000
+
+"Platinum Ingot":
+  fixed_price: 10000
+
+"Blue Sapphire":
+  market_price: 65000
+
+"Iron Sand":
+  fixed_price: 200
+
+"Coral":
+  fixed_price: 100
+
+"Oil":
+  fixed_price: 3000
+
+"Adamantinum":
+  market_price: 100000
+
+"Adamantinum Ingot":
+  ingredients:
+    "Adamantinum": 4
+    "Gold Ingot": 80
+    "Oil": 100
+  batch_size: 2
+  workload: 105000
+  skill: "Tool"
+  skill_lvl: 28
+
+"Opal":
+  fixed_price: 20000
+
+"Imitation Oriharukon":
+  ingredients:
+    "Platinum Ingot": 210
+    "Pearl": 200
+    "Gold Ingot": 200
+    "Silver Ingot": 200
+    "Opal": 125
+    "Adamantinum Ingot": 20
+    "Large Diamond": 1
+    "Tanzanite": 50
+    "Ruby": 20
+    "Blue Sapphire": 25
+    "Multi-Hued Jewel": 1
+  batch_size: 2
+  workload: 5000000
+  skill: "Tool"
+  skill_lvl: 33
+
+"Silver Ingot":
+  fixed_price: 1000
+
+"Pearl":
+  fixed_price: 500
+
+"Large Diamond":
+  ingredients:
+    "Opal": 100
+    "Iron Sand": 10
+  workload: 137000
+  skill: "Tool"
+  skill_lvl: 20
+
+"Tanzanite":
+  fixed_price: 5000
+
+"Titanium Ore":
+  fixed_price: 45000
+
+"Titanium Ingot":
+  ingredients:
+    "Titanium Ore": 15
+    "Silver Ingot": 50
+  batch_size: 2
+  workload: 136800
+  skill: "Tool"
+  skill_lvl: 37
+
+# Misc.
+
+"Weak Gunpowder":
+  fixed_price: 100
+
+"Broken Animal Bones":
+  fixed_price: 300
+
+"Thick Animal Bone":
+  fixed_price: 5000
+
+"Large Animal Bone":
+  fixed_price: 10000
+
+"Sharpened Claw":
+  fixed_price: 100000
+
+"Albert's Fishing Tackle":
+  market_price: 800000
+
+"Hero's Blood":
+  fixed_price: 400000
+
+"Depraved Seed":
+  market_price: 8400000
+
+"Hydra's Poisonous Gland":
+  market_price: 720000
+
+"Ivory":
+  fixed_price: 500
+
+"Phoenix's Feather":
+  market_price: 3600000
+
+"Evil Soul Extract":
+  fixed_price: 200000
+
+"Dragon God's Wishstone":
+  market_price: 2200000
+
+"Atlantis Silver Coin":
+  market_price: 290000
+
+"Crystal of Temptation":
+  market_price: 4800000
+
+"Dragon God's Ire":
+  fixed_price: 1000000
+
+"Weapon & Armor Mold":
+  fixed_price: 500000
+
+"Heavenly Crystal":
+  market_price: 5500000
+
+"Craftsman's Soul":
+  fixed_price: 300000
+
+"Evil Imprint":
+  market_price: 5000000
+
+"Vindictive Soul Imprint":
+  fixed_price: 350000
+
+"Mystic Gem":
+  market_price: 20000000
+
+# Necklace
+
+# Orb
+
+# Pants
+
+# Power Saw
+
+"Dragon God's Power Saw":
+  ingredients:
+    "Gorgeous Colorful Fabric": 30
+    "Dragon God's Wishstone": 8
+    "Enriched Adamantinum Ingot": 1
+    "Titanium Ingot": 50
+    "Flame Element": 380
+    "Animal Replica": 25
+    "Oriental Mushroom": 90
+    "Dragon God's Ire": 50
+    "Weapon & Armor Mold": 50
+  workload: 80000000
+  skill: "Power Saw"
+  skill_lvl: 101
+
+"Evil Power Saw":
+  ingredients:
+    "Evil Imprint": 15
+    "Vindictive Soul Imprint": 150
+    "Storm Element": 250
+    "Atlantis Silver Coin": 10
+    "Craftsman's Soul": 100
+    "Imitation Oriharukon": 3
+    "Alchemist's Stone": 1
+    "Monster Egg": 600
+    "Evil Soul Extract": 500
+  workload: 160000000
+  skill: "Power Saw"
+  skill_lvl: 110
+
+# Ring
+
+"Fu Xi's Ring": &ring_lvl_130
+  ingredients:
+    "Mystic Gem": 10
+    "Crystal of Temptation": 3
+    "Hydra's Poisonous Gland": 5
+    "Blue Sapphire": 100
+    "Large Diamond": 10
+    "Flame Element": 200
+    "Storm Element": 60
+  workload: 60000000
+  skill: "Accessory"
+  skill_lvl: 94
+
+"Chi You's Ring":
+  <<: *ring_lvl_130
+  skill_lvl: 96
+
+"Nuwa's Ring":
+  <<: *ring_lvl_130
+  skill_lvl: 98
+
+"Pangu's Ring":
+  <<: *ring_lvl_130
+  skill_lvl: 100
+
+# Scroll
+
+# Shield
+
+# Shoes
+
+# Spear
+
+# Staff
+
+# Stationery
+
+"Blue Quill":
+  fixed_price: 3000
+
+"Papyrus":
+  fixed_price: 3600
+  ingredients:
+    "Coral": 100
+    "Maple": 100
+    "Thread": 100
+  batch_size: 10
+  workload: 6000
+  skill: "Stationery"
+  skill_lvl: 1
+
+"Fusain":
+  fixed_price: 14600
+  ingredients:
+    "Pine": 50
+    "Thick Tree Branch": 50
+    "Silver Ingot": 25
+  batch_size: 5
+  workload: 13200
+  skill: "Stationery"
+  skill_lvl: 10
+
+"Small Ink Bottle":
+  fixed_price: 1500
+  ingredients:
+    "Oil": 3
+    "Silver Ingot": 20
+  batch_size: 20
+  workload: 7000
+  skill: "Stationery"
+  skill_lvl: 13
+
+"Chinese Paper":
+  fixed_price: 7200
+  ingredients:
+    "Jasmine": 25
+    "Thread": 150
+    "Papyrus": 10
+  batch_size: 10
+  workload: 13700
+  skill: "Stationery"
+  skill_lvl: 15
+
+"Brush":
+  fixed_price: 43200
+  ingredients:
+    "Pine": 50
+    "Embroidery Thread": 60
+    "Fusain": 10
+  batch_size: 5
+  workload: 41400
+  skill: "Stationery"
+  skill_lvl: 20
+
+"Quality Ink Bottle":
+  fixed_price: 3600
+  ingredients:
+    "Small Ink Bottle": 20
+    "Thick Animal Bone": 5
+    "Dogwood Fruit": 50
+  batch_size: 20
+  workload: 11700
+  skill: "Stationery"
+  skill_lvl: 23
+
+"Parchment":
+  fixed_price: 26000
+  ingredients:
+    "Slab of Lumber": 20
+    "Silver Thread": 110
+    "Chinese Paper": 10
+  batch_size: 10
+  workload: 58400
+  skill: "Stationery"
+  skill_lvl: 25
+
+"Quill":
+  fixed_price: 76000
+  ingredients:
+    "Ivory": 100
+    "Oil": 20
+    "Weak Gunpowder": 100
+    "Brush": 5
+  batch_size: 5
+  workload: 86000
+  skill: "Stationery"
+  skill_lvl: 30
+
+"Deluxe Ink Bottle":
+  fixed_price: 6500
+  ingredients:
+    "Quality Ink Bottle": 20
+    "Thick Animal Bone": 5
+    "Green Mold": 50
+  batch_size: 20
+  workload: 21200
+  skill: "Stationery"
+  skill_lvl: 33
+
+"Whatman Paper":
+  fixed_price: 88000
+  ingredients:
+    "Big Slab of Lumber": 60
+    "Gold Thread": 140
+    "Parchment": 5
+  batch_size: 10
+  workload: 240000
+  skill: "Stationery"
+  skill_lvl: 35
+
+"Yellow Paper":
+  fixed_price: 2200
+  ingredients:
+    "Pearl": 5
+    "Silver Ingot": 5
+    "Thick Animal Bone": 2
+    "Sesame Oil": 5
+    "Gold Thread": 5
+  batch_size: 20
+  workload: 10800
+  skill: "Stationery"
+  skill_lvl: 37
+
+"Fountain Pen":
+  fixed_price: 162500
+  ingredients:
+    "Platinum Ingot": 4
+    "Silver Ingot": 100
+    "Blue Quill": 5
+    "Quill": 5
+  batch_size: 5
+  workload: 220000
+  skill: "Stationery"
+  skill_lvl: 40
+
+"Ornate Ink Bottle":
+  fixed_price: 13000
+  ingredients:
+    "Deluxe Ink Bottle": 20
+    "Polish": 15
+    "Green Mold": 100
+  batch_size: 20
+  workload: 53200
+  skill: "Stationery"
+  skill_lvl: 43
+
+"Drawing Paper":
+  fixed_price: 187000
+  ingredients:
+    "Big Slab of Lumber": 80
+    "Gold Thread": 200
+    "Oil": 100
+    "Whatman Paper": 5
+  batch_size: 10
+  workload: 633000
+  skill: "Stationery"
+  skill_lvl: 46
+
+"Ballpen":
+  fixed_price: 272000
+  ingredients:
+    "Platinum Ingot": 10
+    "Silver Ingot": 80
+    "Ivory": 80
+    "Fountain Pen": 5
+  batch_size: 5
+  workload: 351000
+  skill: "Stationery"
+  skill_lvl: 49
+
+"Shiny Ink Bottle":
+  fixed_price: 29000
+  ingredients:
+    "Ornate Ink Bottle": 20
+    "Polish": 20
+    "Cyclamen": 100
+  batch_size: 20
+  workload: 139000
+  skill: "Stationery"
+  skill_lvl: 52
+
+"Magic Parchment":
+  fixed_price: 703000
+  ingredients:
+    "Parchment": 40
+    "Gold Thread": 300
+    "Multi-Hued Crystal Shard": 20
+    "Drawing Paper": 5
+  batch_size: 10
+  workload: 1880000
+  skill: "Stationery"
+  skill_lvl: 54
+
+"Magic Pen":
+  fixed_price: 566000
+  ingredients:
+    "Opal": 5
+    "Gold Ingot": 20
+    "Multi-Hued Crystal Shard": 5
+    "Ballpen": 5
+  batch_size: 5
+  workload: 754000
+  skill: "Stationery"
+  skill_lvl: 55
+
+"Magical Ink Bottle":
+  fixed_price: 80000
+  ingredients:
+    "Shiny Ink Bottle": 20
+    "Multi-Hued Crystal Shard": 5
+    "Cyclamen": 50
+  batch_size: 20
+  workload: 365000
+  skill: "Stationery"
+  skill_lvl: 56
+
+"Wiseman's Golden Parchment":
+  ingredients:
+    "Magic Parchment": 8
+    "Colorful Fabric": 40
+    "Multi-Hued Crystal": 10
+    "Opal": 15
+  batch_size: 10
+  workload: 3900000
+  skill: "Stationery"
+  skill_lvl: 57
+
+"Wiseman's Golden Pen":
+  ingredients:
+    "Adamantinum Ingot": 10
+    "Gold Ingot": 100
+    "Multi-Hued Crystal": 3
+    "Magic Pen": 5
+  batch_size: 5
+  workload: 1910000
+  skill: "Stationery"
+  skill_lvl: 58
+
+"Wiseman's Golden Ink Bottle":
+  ingredients:
+    "Magical Ink Bottle": 20
+    "Multi-Hued Crystal": 2
+    "Mandragora": 1
+  batch_size: 20
+  workload: 926000
+  skill: "Stationery"
+  skill_lvl: 59
+
+"Multi-Hued Parchment":
+  ingredients:
+    "Wiseman's Golden Parchment": 8
+    "Gorgeous Colorful Fabric": 20
+    "Multi-Hued Jewel Shard": 5
+    "Opal": 15
+  batch_size: 10
+  workload: 9110000
+  skill: "Stationery"
+  skill_lvl: 60
+
+"Multi-Hued Pen":
+  ingredients:
+    "Adamantinum Ingot": 10
+    "Opal": 25
+    "Multi-Hued Jewel Shard": 2
+    "Wiseman's Golden Pen": 5
+  batch_size: 5
+  workload: 4360000
+  skill: "Stationery"
+  skill_lvl: 61
+
+"Multi-Hued Ink Bottle":
+  ingredients:
+    "Wiseman's Golden Ink Bottle": 20
+    "Multi-Hued Jewel Shard": 2
+    "Mandragora": 2
+  batch_size: 20
+  workload: 2220000
+  skill: "Stationery"
+  skill_lvl: 62
+
+# Sword
+
+# Tool
+
+"Hammer [I]":
+  fixed_price: 100
+
+"Hammer [II]":
+  fixed_price: 1500
+
+"Hammer [III]":
+  fixed_price: 3000
+
+"Hammer [IV]":
+  fixed_price: 30000
+
+"Hammer [V]":
+  fixed_price: 100000
+
+"Small Bolt":
+  ingredients:
+    "Platinum Ingot": 1
+    "Silver Ingot": 30
+    "Coral": 100
+  batch_size: 20
+  workload: 3500
+  skill: "Tool"
+  skill_lvl: 1
+
+"Small Lever":
+  ingredients:
+    "Slab of Lumber": 30
+    "Pine": 15
+    "Glue": 50
+    "Thick Tree Branch": 50
+  batch_size: 2
+  workload: 15450
+  skill: "Tool"
+  skill_lvl: 15
+
+"Animal Replica":
+  ingredients:
+    "Sharpened Claw": 30
+    "Large Animal Bone": 100
+    "Storm Element Shard": 20
+  batch_size: 10
+  workload: 170000
+  skill: "Tool"
+  skill_lvl: 29
+
+# Wood
+
+"Thick Tree Branch":
+  fixed_price: 300
+
+"Maple":
+  fixed_price: 100
+
+"Pine":
+  fixed_price: 500
+
+"Slab of Lumber":
+  fixed_price: 1000
+
+"Big Slab of Lumber":
+  fixed_price: 5000
+
+# H Decor
+
+# H Finish
+
+# H Furniture

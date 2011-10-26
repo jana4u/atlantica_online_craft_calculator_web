@@ -1,0 +1,7 @@
+$('#general').html('<%= js_escape_html(partial('general')) %>');
+
+<% if @count %>
+  $('#my').html('<%= js_escape_html(partial('my')) %>');
+<% else %>
+  $('#my').html('');
+<% end %>
