@@ -14,6 +14,8 @@ CraftCalculator.controllers  do
     unless params[:count].blank?
       @count = params[:count].to_i
       @craft_list, @shopping_list, @leftovers = @item.craft(@count)
+      @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
+      @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
     end
     render 'index'
   end
