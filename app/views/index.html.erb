@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <% form_tag(nil, :remote => true) do %>
+    <% form_tag("/", :remote => true) do %>
       <%= select_tag(:item_name, :options => @items.map{ |i| i.name }, :selected => params[:item_name]) %>
       <%= text_field_tag(:count, :value => params[:count]) %>
       <%= submit_tag %>
