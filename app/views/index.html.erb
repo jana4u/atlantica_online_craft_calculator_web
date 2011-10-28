@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Atlantica Online Craft Calculator</title>
-    <%= javascript_include_tag 'jquery', 'jquery-ujs' %>
-  </head>
+<% content_for :assets do %>
+  <%= javascript_include_tag 'jquery', 'jquery-ujs' %>
+<% end %>
 
-  <body>
-    <% form_tag("/", :remote => true) do %>
-      <%= select_tag(:item_name, :options => @items.map{ |i| i.name }, :selected => params[:item_name]) %>
-      <%= text_field_tag(:count, :value => params[:count]) %>
-      <%= submit_tag %>
-    <% end %>
+<% form_tag("/", :remote => true) do %>
+  <%= select_tag(:item_name, :options => @items.map{ |i| i.name }, :selected => params[:item_name]) %>
+  <%= text_field_tag(:count, :value => params[:count]) %>
+  <%= submit_tag %>
+<% end %>
 
-    <div id="general">
-      <%= partial('general') if @item %>
-    </div>
+<div id="general">
+  <%= partial('general') if @item %>
+</div>
 
-    <div id="my">
-      <%= partial('my') if @count %>
-    </div>
-  </body>
-</html>
+<div id="my">
+  <%= partial('my') if @count %>
+</div>
