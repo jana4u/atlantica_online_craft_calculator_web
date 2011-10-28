@@ -3,9 +3,11 @@
 <% end %>
 
 <% form_tag("/", :remote => true) do %>
-  <%= select_tag(:item_name, :options => @items.map{ |i| i.name }, :selected => params[:item_name]) %>
-  <%= text_field_tag(:count, :value => params[:count]) %>
-  <%= submit_tag %>
+  <%= label_tag(:item_name, :caption => "Item:") %>
+  <%= select_tag(:item_name, :options => @items.map{ |i| i.name }, :selected => params[:item_name], :id => :item_name) %>
+  <%= label_tag(:count, :caption => "Count:") %>
+  <%= text_field_tag(:count, :value => params[:count], :size => 5, :id => :count) %>
+  <%= submit_tag "Calculate" %>
 <% end %>
 
 <div id="general">
