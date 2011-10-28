@@ -2,12 +2,12 @@
 
 <table>
   <tr>
-    <td>Craft price</td>
+    <td class="label">Craft price</td>
     <td><%= number_with_delimiter(@item.craft_price) %></td>
   </tr>
   <% if @item.fixed_price %>
     <tr>
-      <td>Fixed price</td>
+      <td class="label">Fixed price</td>
       <td><%= number_with_delimiter(@item.fixed_price) %></td>
     </tr>
   <% end %>
@@ -17,31 +17,31 @@
 
 <table>
   <tr>
-    <td>Craft price</td>
+    <td class="label">Craft price</td>
     <td><%= number_with_delimiter(@item.batch_craft_price) %></td>
   </tr>
   <tr>
-    <td>Workload</td>
+    <td class="label">Workload</td>
     <td><%= number_with_delimiter(@item.workload) %></td>
   </tr>
   <tr>
-    <td>Size</td>
+    <td class="label">Size</td>
     <td><%= @item.batch_size %></td>
   </tr>
   <tr>
-    <td>Required Skill</td>
+    <td class="label">Required Skill</td>
     <td><%= @item.skill %> <%= @item.skill_lvl %></td>
   </tr>
   <tr>
-    <td>Time needed (auto-craft lvl 1)</td>
+    <td class="label">Time needed (auto-craft lvl 1)</td>
     <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@item.workload)) %></td>
   </tr>
   <tr>
-    <td>Time needed (auto-craft lvl 120)</td>
+    <td class="label">Time needed (auto-craft lvl 120)</td>
     <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@item.workload)) %></td>
   </tr>
   <tr>
-    <td>Craft XP</td>
+    <td class="label">Craft XP</td>
     <td><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
   </tr>
 </table>
@@ -51,7 +51,7 @@
 <table>
   <% @item.ingredients.each do |ingredient_name, ingredient_count| %>
     <tr>
-      <td><%= ingredient_name %></td>
+      <td class="label"><%= ingredient_name %></td>
       <td><%= ingredient_count %></td>
     </tr>
   <% end %>

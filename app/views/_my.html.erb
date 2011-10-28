@@ -2,30 +2,27 @@
 
 <table>
   <tr>
-    <td>Requested count</td>
+    <td class="label">Requested count</td>
     <td><%= @count %></td>
   </tr>
   <tr>
-    <td>Crafted count</td>
+    <td class="label">Crafted count</td>
     <td><%= @item.crafted_count(@count) %></td>
   </tr>
-</table>
-
-<table>
   <tr>
-    <td>Total price</td>
+    <td class="label">Total price</td>
     <td><%= number_with_delimiter(@shopping_list.total_price) %></td>
   </tr>
   <tr>
-    <td>Total Workload</td>
+    <td class="label">Total Workload</td>
     <td><%= number_with_delimiter(@craft_list.total_workload) %></td>
   </tr>
   <tr>
-    <td>Time needed (auto-craft lvl 1)</td>
+    <td class="label">Time needed (auto-craft lvl 1)</td>
     <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@craft_list.total_workload)) %></td>
   </tr>
   <tr>
-    <td>Time needed (auto-craft lvl 120)</td>
+    <td class="label">Time needed (auto-craft lvl 120)</td>
     <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@craft_list.total_workload)) %></td>
   </tr>
 </table>
@@ -35,7 +32,7 @@
 <table>
   <% @craft_list.total_craft_xp_gained_per_skill.each do |skill, xp| %>
     <tr>
-      <td><%= skill %></td>
+      <td class="label"><%= skill %></td>
       <td><%= number_with_delimiter(xp) %></td>
     </tr>
   <% end %>
@@ -46,7 +43,7 @@
 <table>
   <% @shopping_list.each do |shopping_list_item| %>
     <tr>
-      <td><%= shopping_list_item.name %></td>
+      <td class="label"><%= shopping_list_item.name %></td>
       <td><%= shopping_list_item.count %></td>
       <td><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
       <td><%= number_with_delimiter(shopping_list_item.total_price) %></td>
@@ -59,7 +56,7 @@
 <table>
   <% @craft_list.each do |craft_list_item| %>
     <tr>
-      <td><%= craft_list_item.name %></td>
+      <td class="label"><%= craft_list_item.name %></td>
       <td><%= craft_list_item.count %></td>
     </tr>
   <% end %>
@@ -71,7 +68,7 @@
   <table>
     <% @leftovers.each do |leftover| %>
       <tr>
-        <td><%= leftover.name %></td>
+        <td class="label"><%= leftover.name %></td>
         <td><%= leftover.count %></td>
       </tr>
     <% end %>
@@ -90,7 +87,7 @@
   <table>
     <% @craft_tree_leftovers.each do |leftover| %>
       <tr>
-        <td><%= leftover.name %></td>
+        <td class="label"><%= leftover.name %></td>
         <td><%= leftover.count %></td>
       </tr>
     <% end %>
