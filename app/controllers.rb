@@ -20,6 +20,12 @@ CraftCalculator.controllers  do
     render 'index'
   end
 
+  [:'get-involved', :about].each do |page|
+    get page do
+      render page.to_s.gsub('-', '_')
+    end
+  end
+
   # get :index, :map => "/foo/bar" do
   #   session[:foo] = "bar"
   #   render 'index'

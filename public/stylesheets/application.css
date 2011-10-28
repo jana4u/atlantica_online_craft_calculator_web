@@ -5,3 +5,12 @@
   padding-top: 10px;
   margin-top: 10px;
 }
+
+ul#menu {
+  padding-left: 0;
+}
+
+ul#menu li {
+  padding-right: 10px;
+  display: inline;
+}
