@@ -3,10 +3,17 @@
   <head>
     <title>Atlantica Online Craft Calculator</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%= stylesheet_link_tag :application %>
     <%= yield_content :assets %>
   </head>
 
   <body>
     <%= yield %>
+
+    <div id="footer">
+      &copy; Jana Dvořáková (Jana4U)<br />
+      &copy; <%= Date.today.year %> NEXON Korea Corp. and NEXON America Inc. &amp; NDOORS Corp. All Rights Reserved.<br />
+      All game information presented here is from the MMORPG <%= link_to("Atlantica Online", "http://atlantica.nexon.net/") %>.
+    </div>
   </body>
 </html>
