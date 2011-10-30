@@ -1,4 +1,5 @@
 # Action
+
 "Action: Auto-Craft [I]":
   ingredients:
     "Multi-Hued Crystal Shard": 5
@@ -23,11 +24,49 @@
   skill: "Action"
   skill_lvl: 10
 
+"Action: Auto-Craft [II]":
+  ingredients:
+    "Multi-Hued Crystal": 1
+    "Platinum Ingot": 100
+    "Hammer [II]": 50
+    "Enchant Stone [II]": 10
+    "Auto-Craft Doll MK-1": 2
+  batch_size: 4
+  workload: 210000
+  skill: "Action"
+  skill_lvl: 15
+
+"Action: Fishing [II]":
+  ingredients:
+    "Multi-Hued Crystal": 1
+    "Platinum Ingot": 50
+    "Iron Fishing Rod": 5
+    "Mithril Fishing Rod": 5
+    "Mediocre Bait": 100
+    "Common Bait": 100
+    "Auto Fishing Doll MK-1": 2
+  batch_size: 4
+  workload: 270000
+  skill: "Action"
+  skill_lvl: 17
+
+"Action: Auto-Craft [III]":
+  ingredients:
+    "Multi-Hued Jewel Shard": 1
+    "Ruby": 50
+    "Hammer [III]": 50
+    "Enchant Stone [III]": 10
+    "Auto-Craft Doll MK-2": 3
+  batch_size: 4
+  workload: 530000
+  skill: "Action"
+  skill_lvl: 20
+
 "Action: Fishing [III]":
   ingredients:
     "Multi-Hued Jewel Shard": 2
     "Ruby": 25
-    "Adamantinum Fishing Rod": 10
+    "Adamantium Fishing Rod": 10
     "Best Bait": 200
     "Auto Fishing Doll MK-2": 3
   batch_size: 4
@@ -35,13 +74,307 @@
   skill: "Action"
   skill_lvl: 25
 
+"Action: Auto-Craft [IV]":
+  ingredients:
+    "Multi-Hued Jewel": 5
+    "Ruby": 100
+    "Hammer [III]": 50
+    "Enchant Stone [IV]": 5
+    "Auto-Craft Doll MK-3": 3
+    "Sea Element": 70
+  batch_size: 4
+  workload: 4500000
+  skill: "Action"
+  skill_lvl: 30
+
+"Action: Fishing [IV]":
+  ingredients:
+    "Multi-Hued Jewel": 5
+    "Ruby": 100
+    "Titanium Fishing Rod": 5
+    "Albert's Special Bait": 200
+    "Auto Fishing Doll MK-3": 3
+  batch_size: 4
+  workload: 5000000
+  skill: "Action"
+  skill_lvl: 35
+
 # Armor
+
+"Spirit Armor":
+  fixed_price: 700
+  ingredients:
+    "Iron Sand": 3
+    "Maple": 1
+    "Thread": 3
+  workload: 350
+  skill: "Armor"
+  skill_lvl: 1
+
+"Ocean Heavy Armor": &armor_lvl_15
+  fixed_price: 2300
+  ingredients:
+    "Coral": 3
+    "Pearl": 1
+    "Iron Sand": 2
+    "Embroidery Thread": 2
+    "Earth Element Shard": 5
+  workload: 2200
+  skill: "Armor"
+  skill_lvl: 6
+
+"Deep-Sea Light Armor":
+  <<: *armor_lvl_15
+  skill_lvl: 5
+
+"Red Soul Robe":
+  <<: *armor_lvl_15
+  skill_lvl: 4
+
+"Rakshasa's Heavy Armor": &armor_lvl_25
+  fixed_price: 6500
+  ingredients:
+    "Iron Sand": 5
+    "Pine": 8
+    "Coral": 8
+    "Thread": 7
+    "Earth Element Shard": 10
+  workload: 7300
+  skill: "Armor"
+  skill_lvl: 11
+
+"Ogre Light Armor":
+  <<: *armor_lvl_25
+  skill_lvl: 10
+
+"Krishna's Robe":
+  <<: *armor_lvl_25
+  skill_lvl: 9
+
+"Destroyer's Heavy Armor": &armor_lvl_35
+  fixed_price: 19350
+  ingredients:
+    "Silver Ingot": 11
+    "Copper Ore": 4
+    "Embroidery Thread": 8
+    "Earth Element Shard": 25
+    "Sea Element Shard": 2
+  workload: 20100
+  skill: "Armor"
+  skill_lvl: 20
+
+"Assassin's Light Armor":
+  <<: *armor_lvl_35
+  skill_lvl: 18
+
+"Savior's Robe":
+  <<: *armor_lvl_35
+  skill_lvl: 16
+
+"Walachia Heavy Armor": &armor_lvl_50
+  ingredients:
+    "Embroidery Thread": 20
+    "Silver Ingot": 35
+    "Pearl": 5
+    "Sea Element Shard": 10
+  workload: 55300
+  skill: "Armor"
+  skill_lvl: 30
+
+"Walachia Light Armor":
+  <<: *armor_lvl_50
+  skill_lvl: 28
+
+"Walachia Robe":
+  <<: *armor_lvl_50
+  skill_lvl: 26
+
+"Blood Knight Heavy Armor": &armor_lvl_50_special
+  ingredients:
+    "Embroidery Thread": 70
+    "Silver Ingot": 14
+    "Pearl": 100
+    "Sea Element Shard": 30
+    "Fusing Agent": 1
+    "Warrior's Sign": 1
+  workload: 99500
+  skill: "Armor"
+  skill_lvl: 36
+
+"Blood Knight Light Armor":
+  <<: *armor_lvl_50_special
+  skill_lvl: 33
+
+"Blood Knight Robe":
+  <<: *armor_lvl_50_special
+  skill_lvl: 31
+
+"Anu Warrior Heavy Armor": &armor_lvl_60
+  ingredients:
+    "Gold Ingot": 13
+    "Silver Ingot": 10
+    "Pearl": 10
+    "Silver Thread": 20
+    "Thick Animal Bone": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 6
+  workload: 152100
+  skill: "Armor"
+  skill_lvl: 42
+
+"Anu Warrior Light Armor":
+  <<: *armor_lvl_60
+  skill_lvl: 39
+
+"Anu Priest Robe":
+  <<: *armor_lvl_60
+  skill_lvl: 36
+
+"Gilgamesh Heavy Armor": &armor_lvl_60_special
+  ingredients:
+    "Gold Ingot": 13
+    "Silver Ingot": 10
+    "Pearl": 100
+    "Silver Thread": 20
+    "Thick Animal Bone": 10
+    "Sea Element Shard": 15
+    "Flame Element Shard": 6
+    "Gilgamesh's Sword Shard": 1
+    "Warrior's Sign": 1
+  workload: 228150
+  skill: "Armor"
+  skill_lvl: 44
+
+"Gilgamesh Light Armor":
+  <<: *armor_lvl_60_special
+  skill_lvl: 43
+
+"Gilgamesh Robe":
+  <<: *armor_lvl_60_special
+  skill_lvl: 42
+
+"Amon's Heavy Armor": &armor_lvl_70
+  ingredients:
+    "Silver Ingot": 65
+    "Oil": 30
+    "Gold Ingot": 25
+    "Thick Animal Bone": 10
+    "Slab of Lumber": 20
+    "Colorful Fabric": 1
+    "Flame Element Shard": 20
+  workload: 418300
+  skill: "Armor"
+  skill_lvl: 48
+
+"Amon's Light Armor":
+  <<: *armor_lvl_70
+  skill_lvl: 46
+
+"Thoth's Robe":
+  <<: *armor_lvl_70
+  skill_lvl: 44
+
+"Ghost Warrior Heavy Armor": &armor_lvl_80
+  ingredients:
+    "Colorful Fabric": 2
+    "Big Slab of Lumber": 20
+    "Ghost Mask": 2
+    "Silver Ingot": 20
+    "Gold Ingot": 10
+    "Large Animal Bone": 5
+    "Earth Element": 2
+    "Storm Element Shard": 15
+    "Thick Animal Bone": 20
+    "Platinum Ingot": 10
+  workload: 1150325
+  skill: "Armor"
+  skill_lvl: 54
+
+"Ghost Gunner Light Armor":
+  <<: *armor_lvl_80
+  skill_lvl: 52
+
+"Ghost Conjuror Robe":
+  <<: *armor_lvl_80
+  skill_lvl: 50
+
+"Dragon Heart Heavy Armor": &armor_lvl_90
+  ingredients:
+    "Colorful Fabric": 6
+    "Big Slab of Lumber": 15
+    "Large Animal Bone": 15
+    "Ruby": 8
+    "Platinum Ingot": 60
+    "Opal": 12
+    "Storm Element Shard": 25
+    "Earth Element": 10
+    "Thick Animal Bone": 20
+  workload: 3163400
+  skill: "Armor"
+  skill_lvl: 60
+
+"Dragon Slayer Light Armor":
+  <<: *armor_lvl_90
+  skill_lvl: 58
+
+"Dragon Breath Robe":
+  <<: *armor_lvl_90
+  skill_lvl: 56
+
+"Gold Dragon Heavy Armor": &armor_lvl_95
+  ingredients:
+    "Platinum Ingot": 29
+    "Opal": 15
+    "Adamantium": 8
+    "Gold Ingot": 10
+    "Earth Element": 48
+    "Thick Animal Bone": 20
+    "Gold Dragon Scale": 15
+    "Warrior's Sign": 1
+  workload: 6326800
+  skill: "Armor"
+  skill_lvl: 66
+
+"Gold Dragon Light Armor":
+  <<: *armor_lvl_95
+  skill_lvl: 64
+
+"Gold Dragon Robe":
+  <<: *armor_lvl_95
+  skill_lvl: 62
+
+"Conqueror's Heavy Armor": &armor_lvl_97
+  ingredients:
+    "Colorful Fabric": 15
+    "Large Animal Bone": 20
+    "Opal": 23
+    "Adamantium": 8
+    "Large Diamond": 1
+    "Earth Element": 30
+    "Sea Element": 40
+    "Ruby": 8
+    "Tanzanite": 10
+    "Crazy Lord's Seal": 2
+  workload: 9000000
+  skill: "Armor"
+  skill_lvl: 72
+
+"Conqueror's Light Armor":
+  <<: *armor_lvl_97
+  skill_lvl: 70
+
+"Conqueror's Robe":
+  <<: *armor_lvl_97
+  skill_lvl: 68
 
 # Arrow
 
 # Axe
 
 # Book
+
+"Artisan Crafting Secrets":
+  market_price: 10000
 
 "Book of Anguish":
   fixed_price: 20000
@@ -62,6 +395,12 @@
   workload: 800000
   skill: "Book"
   skill_lvl: 33
+
+"Book of Craftsmanship":
+  market_price: 118000
+
+"Normal Crafting Secrets":
+  market_price: 200
 
 # Bow
 
@@ -509,6 +848,68 @@
   skill: "Fishing"
   skill_lvl: 15
 
+"Thick Fishing Line":
+  ingredients:
+    "Embroidery Thread": 700
+    "Glue": 20
+  batch_size: 20
+  workload: 38500
+  skill: "Fishing"
+  skill_lvl: 20
+
+"Thick Fishhook":
+  ingredients:
+    "Tanzanite": 10
+    "Common Gunpowder": 80
+  batch_size: 20
+  workload: 19400
+  skill: "Fishing"
+  skill_lvl: 22
+
+"Iron Fishing Rod":
+  ingredients:
+    "Tanzanite": 50
+    "Silver Ingot": 50
+    "Thick Fishing Line": 20
+    "Thick Fishhook": 30
+    "Flame Element Shard": 30
+  batch_size: 10
+  workload: 335000
+  skill: "Fishing"
+  skill_lvl: 24
+
+"Mediocre Bait":
+  ingredients:
+    "Barley": 250
+    "Cucumber": 300
+    "Honey": 230
+  batch_size: 100
+  workload: 32600
+  skill: "Fishing"
+  skill_lvl: 24
+
+"Mithril Fishing Rod":
+  ingredients:
+    "Oil": 40
+    "Iron Sand": 100
+    "Thick Fishing Line": 20
+    "Thick Fishhook": 40
+    "Storm Element Shard": 5
+  batch_size: 10
+  workload: 480000
+  skill: "Fishing"
+  skill_lvl: 26
+
+"Common Bait":
+  ingredients:
+    "Pork": 400
+    "Potato": 350
+    "Sesame Oil": 100
+  batch_size: 100
+  workload: 47100
+  skill: "Fishing"
+  skill_lvl: 26
+
 "Sturdy Fishing Line":
   ingredients:
     "Silver Thread": 350
@@ -527,9 +928,9 @@
   skill: "Fishing"
   skill_lvl: 30
 
-"Adamantinum Fishing Rod":
+"Adamantium Fishing Rod":
   ingredients:
-    "Adamantinum": 2
+    "Adamantium": 2
     "Gold Ingot": 20
     "Sturdy Fishing Line": 20
     "Sturdy Fishhook": 40
@@ -545,9 +946,50 @@
     "Beef": 250
     "Sesame Oil": 50
   batch_size: 100
-  workload: 716000
+  workload: 71600
   skill: "Fishing"
   skill_lvl: 32
+
+"Strong Fishing Line":
+  ingredients:
+    "Colorful Thread": 200
+    "Glue": 20
+    "Colorful Fabric": 50
+  batch_size: 20
+  workload: 83000
+  skill: "Fishing"
+  skill_lvl: 40
+
+"Strong Fishhook":
+  ingredients:
+    "Adamantium": 20
+    "Large Animal Bone": 100
+  batch_size: 20
+  workload: 41800
+  skill: "Fishing"
+  skill_lvl: 42
+
+"Titanium Fishing Rod":
+  ingredients:
+    "Titanium Ingot": 1
+    "Gold Ingot": 20
+    "Strong Fishing Line": 10
+    "Strong Fishhook": 20
+    "Sea Element": 2
+  batch_size: 10
+  workload: 796000
+  skill: "Fishing"
+  skill_lvl: 46
+
+"Albert's Special Bait":
+  ingredients:
+    "Dumpling": 350
+    "Grilled Pork": 350
+    "Sesame Oil": 50
+  batch_size: 100
+  workload: 71600
+  skill: "Fishing"
+  skill_lvl: 46
 
 # Food
 
@@ -563,14 +1005,44 @@
 "Cucumber":
   fixed_price: 100
 
+"Wheat":
+  fixed_price: 100
+
+"Pork":
+  fixed_price: 100
+
 "Beef":
   fixed_price: 300
+
+"Honey":
+  fixed_price: 100
 
 "Sesame Oil":
   fixed_price: 500
 
+"Salt":
+  fixed_price: 100
+
 "Carp":
   fixed_price: 300
+
+"Dumpling":
+  ingredients:
+    "Pork": 4
+    "Wheat": 6
+  batch_size: 10
+  workload: 500
+  skill: "Food"
+  skill_lvl: 1
+
+"Grilled Pork":
+  ingredients:
+    "Pork": 8
+    "Salt": 4
+  batch_size: 10
+  workload: 600
+  skill: "Food"
+  skill_lvl: 2
 
 "Oriental Mushroom":
   fixed_price: 80000
@@ -592,6 +1064,51 @@
 
 # Machine
 
+"Auto-Craft Doll MK-1":
+  ingredients:
+    "Small Marionette": 1
+    "Mysterious Vial: Wisdom": 1
+    "Earth Element Shard": 300
+    "Normal Crafting Secrets": 100
+    "Polish": 10
+    "Pearl": 150
+    "Oil": 15
+    "Small Bolt": 15
+  batch_size: 5
+  workload: 1830000
+  skill: "Machine"
+  skill_lvl: 20
+
+"Auto Fishing Doll MK-1":
+  ingredients:
+    "Albert's Fishing Tackle": 1
+    "Mysterious Vial: Valor": 3
+    "Sea Element Shard": 100
+    "Small Lever": 10
+    "Polish": 100
+    "Pearl": 150
+    "Oil": 20
+    "Small Bolt": 20
+  batch_size: 5
+  workload: 2220000
+  skill: "Machine"
+  skill_lvl: 25
+
+"Auto-Craft Doll MK-2":
+  ingredients:
+    "Small Marionette": 1
+    "Mysterious Vial: Wisdom": 2
+    "Sea Element Shard": 200
+    "Artisan Crafting Secrets": 50
+    "Polish": 10
+    "Platinum Ingot": 5
+    "Oil": 30
+    "Small Bolt": 30
+  batch_size: 5
+  workload: 3500000
+  skill: "Machine"
+  skill_lvl: 30
+
 "Auto Fishing Doll MK-2":
   ingredients:
     "Albert's Fishing Tackle": 1
@@ -606,6 +1123,36 @@
   workload: 4450000
   skill: "Machine"
   skill_lvl: 32
+
+"Auto-Craft Doll MK-3":
+  ingredients:
+    "Small Marionette": 1
+    "Mysterious Vial: Wisdom": 2
+    "Sea Element": 50
+    "Book of Craftsmanship": 20
+    "Polish": 10
+    "Platinum Ingot": 10
+    "Oil": 30
+    "Small Bolt": 30
+  batch_size: 5
+  workload: 9800000
+  skill: "Machine"
+  skill_lvl: 38
+
+"Auto Fishing Doll MK-3":
+  ingredients:
+    "Albert's Fishing Tackle": 3
+    "Mysterious Vial: Valor": 2
+    "Flame Element": 30
+    "Small Lever": 20
+    "Fusing Agent": 10
+    "Platinum Ingot": 10
+    "Oil": 50
+    "Small Bolt": 50
+  batch_size: 5
+  workload: 13500000
+  skill: "Machine"
+  skill_lvl: 41
 
 # Mana Stone
 
@@ -853,9 +1400,9 @@
 
 # Mineral
 
-"Enriched Adamantinum Ingot":
+"Enriched Adamantium Ingot":
   ingredients:
-    "Adamantinum Ingot": 100
+    "Adamantium Ingot": 100
     "Ruby": 200
     "Opal": 100
   workload: 2000000
@@ -864,6 +1411,9 @@
 
 "Gold Ingot":
   fixed_price: 2000
+
+"Copper Ore":
+  fixed_price: 300
 
 "Ruby":
   fixed_price: 30000
@@ -883,12 +1433,12 @@
 "Oil":
   fixed_price: 3000
 
-"Adamantinum":
+"Adamantium":
   market_price: 100000
 
-"Adamantinum Ingot":
+"Adamantium Ingot":
   ingredients:
-    "Adamantinum": 4
+    "Adamantium": 4
     "Gold Ingot": 80
     "Oil": 100
   batch_size: 2
@@ -906,7 +1456,7 @@
     "Gold Ingot": 200
     "Silver Ingot": 200
     "Opal": 125
-    "Adamantinum Ingot": 20
+    "Adamantium Ingot": 20
     "Large Diamond": 1
     "Tanzanite": 50
     "Ruby": 20
@@ -951,6 +1501,9 @@
 "Weak Gunpowder":
   fixed_price: 100
 
+"Common Gunpowder":
+  fixed_price: 2000
+
 "Broken Animal Bones":
   fixed_price: 300
 
@@ -963,6 +1516,21 @@
 "Sharpened Claw":
   fixed_price: 100000
 
+"Gilgamesh's Sword Shard":
+  fixed_price: 280000
+
+"Gold Dragon Scale":
+  fixed_price: 150000
+
+"Warrior's Sign":
+  fixed_price: 200000
+
+"Crazy Lord's Seal":
+  market_price: 5700000
+
+"Small Marionette":
+  market_price: 12000000
+
 "Albert's Fishing Tackle":
   market_price: 800000
 
@@ -974,6 +1542,9 @@
 
 "Hydra's Poisonous Gland":
   market_price: 720000
+
+"Ghost Mask":
+  fixed_price: 100000
 
 "Ivory":
   fixed_price: 500
@@ -993,11 +1564,17 @@
 "Crystal of Temptation":
   market_price: 4800000
 
+"Necklace Mold":
+  fixed_price: 200000
+
 "Dragon God's Ire":
   fixed_price: 1000000
 
 "Weapon & Armor Mold":
   fixed_price: 500000
+
+"Van Gogh's Soul Stone":
+  market_price: 120000000
 
 "Heavenly Crystal":
   market_price: 5500000
@@ -1016,6 +1593,41 @@
 
 # Necklace
 
+"Shimmering Opal Necklace": &necklace_lvl_105
+  ingredients:
+    "Necklace Mold": 150
+    "Sea Element": 330
+    "Opal": 800
+  workload: 8000000
+  skill: "Accessory"
+  skill_lvl: 54
+
+"Sharp Opal Necklace":
+  <<: *necklace_lvl_105
+  skill_lvl: 58
+
+"Tough Opal Necklace":
+  <<: *necklace_lvl_105
+  skill_lvl: 62
+
+"Shimmering Ruby Necklace": &necklace_lvl_120
+  ingredients:
+    "Necklace Mold": 400
+    "Flame Element": 330
+    "Van Gogh's Soul Stone": 2
+    "Ruby": 400
+  workload: 16000000
+  skill: "Accessory"
+  skill_lvl: 82
+
+"Sharp Ruby Necklace":
+  <<: *necklace_lvl_120
+  skill_lvl: 86
+
+"Tough Ruby Necklace":
+  <<: *necklace_lvl_120
+  skill_lvl: 90
+
 # Orb
 
 # Pants
@@ -1026,7 +1638,7 @@
   ingredients:
     "Gorgeous Colorful Fabric": 30
     "Dragon God's Wishstone": 8
-    "Enriched Adamantinum Ingot": 1
+    "Enriched Adamantium Ingot": 1
     "Titanium Ingot": 50
     "Flame Element": 380
     "Animal Replica": 25
@@ -1053,6 +1665,154 @@
   skill_lvl: 110
 
 # Ring
+
+"Ring of Dull Swords": &ring_lvl_1
+  ingredients:
+    "Ashen Crystal": 10
+    "Ivory": 20
+    "Pearl": 20
+    "Coral": 20
+  workload: 6500
+  skill: "Accessory"
+  skill_lvl: 5
+
+"Ring of Blunt Spears":
+  <<: *ring_lvl_1
+
+"Ring of Dull Axes":
+  <<: *ring_lvl_1
+
+"Ring of Broken Arrows":
+  <<: *ring_lvl_1
+
+"Ring of Wet Gunpowder":
+  <<: *ring_lvl_1
+
+"Ring of Empty Cannons":
+  <<: *ring_lvl_1
+
+"Ring of Null Magic":
+  <<: *ring_lvl_1
+
+"Ring of Strength": &ring_lvl_20
+  ingredients:
+    "Ashen Crystal": 2
+    "Pearl": 22
+    "Iron Sand": 20
+    "Coral": 20
+  workload: 3500
+  skill: "Accessory"
+  skill_lvl: 1
+
+"Ring of Dexterity":
+  <<: *ring_lvl_20
+
+"Ring of Vitality":
+  <<: *ring_lvl_20
+
+"Ring of Intelligence":
+  <<: *ring_lvl_20
+
+"Ring of the Hero": &ring_lvl_40
+  ingredients:
+    "Ashen Crystal": 30
+    "Ivory": 50
+    "Silver Ingot": 40
+    "Pearl": 100
+    "Gold Ingot": 4
+  workload: 40000
+  skill: "Accessory"
+  skill_lvl: 10
+
+"Ring of Wind":
+  <<: *ring_lvl_40
+
+"Ring of the Phoenix":
+  <<: *ring_lvl_40
+
+"Ring of the Wiseman":
+  <<: *ring_lvl_40
+
+"Ring of the Strong Man": &ring_lvl_60
+  ingredients:
+    "Ashen Jewel": 10
+    "Gold Ingot": 180
+    "Pearl": 30
+    "Fusing Agent": 10
+  workload: 350000
+  skill: "Accessory"
+  skill_lvl: 25
+
+"Ring of the Gale":
+  <<: *ring_lvl_60
+
+"Ring of Eternity":
+  <<: *ring_lvl_60
+
+"Ring of the Hermit":
+  <<: *ring_lvl_60
+
+"Ring of Destruction": &ring_lvl_80
+  ingredients:
+    "Multi-Hued Crystal": 5
+    "Tanzanite": 40
+    "Silver Ingot": 200
+    "Gold Ingot": 100
+  workload: 1120000
+  skill: "Accessory"
+  skill_lvl: 30
+
+"Ring of Assassination":
+  <<: *ring_lvl_80
+
+"Ring of Protection":
+  <<: *ring_lvl_80
+
+"Ring of Salvation":
+  <<: *ring_lvl_80
+
+"Ring of Rage": &ring_lvl_100
+  ingredients:
+    "Multi-Hued Jewel": 2
+    "Opal": 30
+    "Ruby": 30
+    "Gold Ingot": 500
+    "Platinum Ingot": 150
+  workload: 2800000
+  skill: "Accessory"
+  skill_lvl: 50
+
+"Ring of Malice":
+  <<: *ring_lvl_100
+
+"Ring of Endurance":
+  <<: *ring_lvl_100
+
+"Ring of Devotion":
+  <<: *ring_lvl_100
+
+"Ring of Volition": &ring_lvl_120
+  ingredients:
+    "Multi-Hued Jewel": 3
+    "Blue Sapphire": 70
+    "Ruby": 100
+    "Flame Element": 80
+    "Sea Element": 200
+  workload: 14000000
+  skill: "Accessory"
+  skill_lvl: 70
+
+"Ring of Celerity":
+  <<: *ring_lvl_120
+  skill_lvl: 75
+
+"Ring of Sacrifice":
+  <<: *ring_lvl_120
+  skill_lvl: 80
+
+"Ring of Nobility":
+  <<: *ring_lvl_120
+  skill_lvl: 65
 
 "Fu Xi's Ring": &ring_lvl_130
   ingredients:
@@ -1323,7 +2083,7 @@
 
 "Wiseman's Golden Pen":
   ingredients:
-    "Adamantinum Ingot": 10
+    "Adamantium Ingot": 10
     "Gold Ingot": 100
     "Multi-Hued Crystal": 3
     "Magic Pen": 5
@@ -1355,7 +2115,7 @@
 
 "Multi-Hued Pen":
   ingredients:
-    "Adamantinum Ingot": 10
+    "Adamantium Ingot": 10
     "Opal": 25
     "Multi-Hued Jewel Shard": 2
     "Wiseman's Golden Pen": 5
