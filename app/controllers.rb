@@ -1,13 +1,15 @@
 CraftCalculator.controllers  do
   get :index do
-    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
-    @items = AtlanticaOnline::CraftCalculator::Item.items.select{ |i| i.craftable? }.sort_by { |i| i.name }
+    @custom_prices = session[:custom_prices] || {}
+    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
+    @items = AtlanticaOnline::CraftCalculator::Item.ordered_craftable_items
     render 'index'
   end
 
   post :index, :provides => [:html, :js] do
-    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
-    @items = AtlanticaOnline::CraftCalculator::Item.items.select{ |i| i.craftable? }.sort_by { |i| i.name }
+    @custom_prices = session[:custom_prices] || {}
+    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
+    @items = AtlanticaOnline::CraftCalculator::Item.ordered_craftable_items
     @item = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name])
     @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
     @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
@@ -18,6 +20,31 @@ CraftCalculator.controllers  do
       @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
     end
     render 'index'
+  end
+
+  get :'custom-prices' do
+    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
+    @items = AtlanticaOnline::CraftCalculator::Item.ordered_items
+    @custom_prices = session[:custom_prices] || {}
+    render 'custom_prices'
+  end
+
+  post :'custom-prices' do
+    session[:custom_prices] = {}
+
+    params[:custom_prices].each do |item_name, price|
+      unless price.blank?
+        session[:custom_prices][CGI::unescape(item_name)] = price.gsub(/[^0-9]/, "").to_i
+      end
+    end
+
+    redirect '/custom-prices'
+  end
+
+  delete :'custom-prices' do
+    session[:custom_prices] = {}
+
+    redirect '/custom-prices'
   end
 
   [:'get-involved', :about].each do |page|

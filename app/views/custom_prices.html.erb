@@ -1,0 +1,56 @@
+<h1>Your own prices</h1>
+
+<p>You can set your own prices here but be careful! It will affect all calculations.</p>
+
+<p>
+  If your price is lower than craft price, item will no longer be crafted and will be added to shopping list.
+  You can set your price even to 0.
+</p>
+
+<% unless @custom_prices.empty? %>
+  <h2>Your current prices</h2>
+
+  <table>
+    <tr>
+      <th class="label">Item</th>
+      <th>Your Price</th>
+    </tr>
+    <% @custom_prices.each do |item_name, price| %>
+      <tr>
+        <td class="label"><%= item_name %></td>
+        <td><%= number_with_delimiter(price) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <% form_tag("/custom-prices", :method => :delete) do %>
+    <%= submit_tag "Remove All" %>
+  <% end %>
+<% end %>
+
+<h2>Set or change your prices</h2>
+
+<% unless @custom_prices.empty? %>
+  <p>Leave field blank if you want to remove any of your current prices.</p>
+<% end %>
+
+<% form_tag("/custom-prices") do %>
+  <table>
+    <tr>
+      <th class="label">Item</th>
+      <th>Fixed Price</th>
+      <th>Market Price</th>
+      <th>Your Price</th>
+    </tr>
+    <% @items.each do |item| %>
+      <tr>
+        <td class="label"><%= item.name %></td>
+        <td><%= number_with_delimiter(item.fixed_price) %></td>
+        <td><%= number_with_delimiter(item.market_price) %></td>
+        <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => @custom_prices[item.name]) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= submit_tag "Save" %>
+<% end %>

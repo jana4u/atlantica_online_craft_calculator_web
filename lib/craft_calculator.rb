@@ -3,10 +3,16 @@ module AtlanticaOnline
     CRAFT_XP_TO_WORKLOAD_RATIO = 50
 
     class Item
-      def self.load_data_from_yaml(data_file = File.join(File.dirname(__FILE__), 'data.yml'))
+      def self.load_data_from_yaml(custom_prices = {}, data_file = File.join(File.dirname(__FILE__), 'data.yml'))
         require 'yaml'
 
         yaml_data = YAML::load(File.open(data_file))
+
+        custom_prices.each do |item_name, price|
+          if yaml_data[item_name]
+            yaml_data[item_name]["market_price"] = price
+          end
+        end
 
         self.all = yaml_data
       end
@@ -33,6 +39,14 @@ module AtlanticaOnline
 
       def self.items
         all.values
+      end
+
+      def self.ordered_items
+        items.sort_by { |i| i.name_for_sort }
+      end
+
+      def self.ordered_craftable_items
+        ordered_items.select{ |i| i.craftable? }
       end
 
       def self.remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
@@ -82,6 +96,10 @@ module AtlanticaOnline
         define_method method_name do
           @data[method_name.to_s]
         end
+      end
+
+      def name_for_sort
+        name.gsub("[I]", "1").gsub("[II]", "2").gsub("[III]", "3").gsub("[IV]", "4").gsub("[V]", "5")
       end
 
       def batch_size

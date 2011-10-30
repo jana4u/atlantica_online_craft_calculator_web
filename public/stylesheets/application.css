@@ -2,12 +2,12 @@ body {
   font-family: sans-serif;
 }
 
-td {
+td, th {
   text-align: right;
   padding-right: 1em;
 }
 
-td.label {
+td.label, th.label {
   text-align: left;
 }
 

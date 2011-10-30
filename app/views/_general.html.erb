@@ -1,3 +1,10 @@
+<% unless @custom_prices.empty? %>
+  <p>
+    Warning: You have set some prices yourself. All results here are affected by that.
+    <%= link_to("Review or change your prices", "/custom-prices") %>.
+  </p>
+<% end %>
+
 <h1><%= @item.name %></h1>
 
 <table>
