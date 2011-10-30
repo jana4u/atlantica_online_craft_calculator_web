@@ -40,6 +40,7 @@
       <th class="label">Item</th>
       <th>Fixed Price</th>
       <th>Market Price</th>
+      <th>Craft Price</th>
       <th>Your Price</th>
     </tr>
     <% @items.each do |item| %>
@@ -47,6 +48,7 @@
         <td class="label"><%= item.name %></td>
         <td><%= number_with_delimiter(item.fixed_price) %></td>
         <td><%= number_with_delimiter(item.market_price) %></td>
+        <td><%= number_with_delimiter(item.craft_price) %></td>
         <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => @custom_prices[item.name]) %></td>
       </tr>
     <% end %>

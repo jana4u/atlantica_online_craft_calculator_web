@@ -168,7 +168,11 @@ module AtlanticaOnline
       end
 
       def craft_price
-        batch_craft_price / batch_size
+        if batch_craft_price
+          batch_craft_price / batch_size
+        else
+          nil
+        end
       end
 
       def price_type
