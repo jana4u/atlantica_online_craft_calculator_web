@@ -260,7 +260,7 @@ module AtlanticaOnline
     module ShoppingList
       class Item
         include ListItem
-        delegated_methods :unit_price
+        delegated_methods :unit_price, :price_type
 
         def total_price
           count * unit_price
@@ -356,7 +356,7 @@ module AtlanticaOnline
     module CraftTree
       class Item
         include ListItem
-        delegated_methods :unit_price
+        delegated_methods :unit_price, :price_type
         attr_reader :crafted_count, :ingredients_craft_tree
 
         def initialize(item, count, crafted_count, ingredients_craft_tree)

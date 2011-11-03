@@ -13,6 +13,14 @@ CraftCalculator.helpers do
     "#{hours}h#{mins}m#{secs}s"
   end
 
+  def price_type_to_human(item)
+    if session[:custom_prices][item.name]
+      "Your price"
+    else
+      item.price_type.to_s.humanize
+    end
+  end
+
   # def simple_helper_method
   #  ...
   # end

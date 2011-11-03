@@ -47,6 +47,7 @@
       <td><%= shopping_list_item.count %></td>
       <td><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
       <td><%= number_with_delimiter(shopping_list_item.total_price) %></td>
+      <td><%= price_type_to_human(shopping_list_item) %></td>
     </tr>
   <% end %>
 </table>
