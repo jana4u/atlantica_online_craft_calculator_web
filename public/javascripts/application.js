@@ -1,16 +1,17 @@
 // Put your application scripts here
 
 jQuery(function($) {
-  $("form[data-remote=true]").ajaxStart(function() {
+  $("form[data-remote=true]")
+  .bind("ajax:before", function() {
     $('#error').html("");
     $("#ajax-loader").show();
-  });
+  })
 
-  $("form[data-remote=true]").ajaxError(function(e, xhr, settings, exception) {
+  .bind("ajax:failure", function(event, xhr, status, error) {
     $('#error').html("Server Error - " + xhr.status);
-  });
+  })
 
-  $("form[data-remote=true]").ajaxStop(function() {
+  .bind("ajax:complete", function() {
     $("#ajax-loader").hide();
   });
 });
