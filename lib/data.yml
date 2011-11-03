@@ -367,9 +367,520 @@
   <<: *armor_lvl_97
   skill_lvl: 68
 
+"Freezing Heavy Armor": &armor_lvl_100
+  ingredients:
+    "Colorful Fabric": 35
+    "Adamantium Ingot": 10
+    "Large Animal Bone": 50
+    "Sea Element": 50
+    "Energy of Wind": 10
+    "Energy of Hail": 10
+    "Opal": 20
+    "Ruby": 8
+    "Tanzanite": 10
+    "Crazy Lord's Seal": 2
+    "Frozen Soul": 30
+    "Platinum Ingot": 45
+  workload: 13500000
+  skill: "Armor"
+  skill_lvl: 78
+
+"Freezing Light Armor":
+  <<: *armor_lvl_100
+  skill_lvl: 76
+
+"Freezing Robe":
+  <<: *armor_lvl_100
+  skill_lvl: 74
+
+"Divine Heavy Armor": &armor_lvl_105
+  ingredients:
+    "Gorgeous Colorful Fabric": 13
+    "Imitation Oriharukon": 1
+    "Adamantium Ingot": 5
+    "Opal": 45
+    "Animal Replica": 2
+    "Sea Element": 160
+    "Energy of Sky": 10
+    "Ruby": 100
+  workload: 20000000
+  skill: "Armor"
+  skill_lvl: 84
+
+"Divine Light Armor":
+  <<: *armor_lvl_105
+  skill_lvl: 82
+
+"Divine Robe":
+  <<: *armor_lvl_105
+  skill_lvl: 80
+
+"Depraved Heavy Armor": &armor_lvl_110
+  ingredients:
+    "Gorgeous Colorful Fabric": 7
+    "Imitation Oriharukon": 1
+    "Animal Replica": 3
+    "Sea Element": 280
+    "Revival Plant": 30
+    "Hero's Blood": 3
+    "Depraved Seed": 2
+    "Platinum Ingot": 20
+    "Opal": 200
+  workload: 30000000
+  skill: "Armor"
+  skill_lvl: 90
+
+"Depraved Light Armor":
+  <<: *armor_lvl_110
+  skill_lvl: 88
+
+"Depraved Robe":
+  <<: *armor_lvl_110
+  skill_lvl: 86
+
+"Phoenix's Heavy Armor": &armor_lvl_113
+  ingredients:
+    "Gorgeous Colorful Fabric": 15
+    "Imitation Oriharukon": 1
+    "Refined Mithril Ingot": 1
+    "Alchemist's Stone": 1
+    "Enriched Adamantium Ingot": 1
+    "Flame Element": 200
+    "Animal Replica": 5
+    "Oriental Mushroom": 100
+    "Phoenix's Feather": 8
+  workload: 45000000
+  skill: "Armor"
+  skill_lvl: 96
+
+"Phoenix's Light Armor":
+  <<: *armor_lvl_113
+  skill_lvl: 94
+
+"Phoenix's Robe":
+  <<: *armor_lvl_113
+  skill_lvl: 92
+
+"Dragon God's Heavy Armor": &armor_lvl_121
+  ingredients:
+    "Gorgeous Colorful Fabric": 30
+    "Dragon God's Wishstone": 8
+    "Enriched Adamantium Ingot": 1
+    "Titanium Ingot": 50
+    "Flame Element": 380
+    "Animal Replica": 25
+    "Oriental Mushroom": 90
+    "Dragon God's Ire": 50
+    "Weapon & Armor Mold": 50
+  workload: 67500000
+  skill: "Armor"
+  skill_lvl: 110
+
+"Dragon God's Light Armor":
+  <<: *armor_lvl_121
+  skill_lvl: 108
+
+"Dragon God's Robe":
+  <<: *armor_lvl_121
+  skill_lvl: 106
+
+"Evil Heavy Armor": &armor_lvl_130
+  ingredients:
+    "Evil Imprint": 15
+    "Vindictive Soul Imprint": 150
+    "Storm Element": 250
+    "Atlantis Silver Coin": 10
+    "Craftsman's Soul": 100
+    "Imitation Oriharukon": 3
+    "Alchemist's Stone": 1
+    "Monster Egg": 600
+    "Evil Soul Extract": 500
+  workload: 135000000
+  skill: "Armor"
+  skill_lvl: 120
+
+"Evil Light Armor":
+  <<: *armor_lvl_130
+  skill_lvl: 118
+
+"Evil Robe":
+  <<: *armor_lvl_130
+  skill_lvl: 116
+
 # Arrow
 
+"Wooden Arrow":
+  ingredients:
+    "Maple": 4
+    "Weak Gunpowder": 4
+    "Thread": 4
+    "Earth Element Shard": 4
+  batch_size: 30
+  workload: 150
+  skill: "Arrow"
+  skill_lvl: 1
+
+"Bronze Arrow":
+  ingredients:
+    "Coral": 20
+    "Iron Sand": 20
+    "Weak Gunpowder": 10
+    "Embroidery Thread": 10
+    "Earth Element Shard": 10
+  batch_size: 100
+  workload: 1000
+  skill: "Arrow"
+  skill_lvl: 5
+
+"Silver Arrow":
+  ingredients:
+    "Silver Ingot": 10
+    "Weak Gunpowder": 20
+    "Silver Thread": 5
+    "Sea Element Shard": 5
+  batch_size: 100
+  workload: 2700
+  skill: "Arrow"
+  skill_lvl: 10
+
+"Mithril Arrow":
+  ingredients:
+    "Opal": 2
+    "Silver Ingot": 5
+    "Gold Ingot": 3
+    "Weak Gunpowder": 100
+    "Silver Thread": 5
+    "Flame Element Shard": 5
+  batch_size: 200
+  workload: 12500
+  skill: "Arrow"
+  skill_lvl: 15
+
+"Adamantium Arrow":
+  ingredients:
+    "Ruby": 2
+    "Platinum Ingot": 20
+    "Weak Gunpowder": 200
+    "Gold Thread": 5
+    "Mysterious Vial: Valor": 1
+    "Flame Element Shard": 10
+  batch_size: 300
+  workload: 45000
+  skill: "Arrow"
+  skill_lvl: 25
+
+"Enriched Adamantium Arrow":
+  ingredients:
+    "Adamantium": 5
+    "Platinum Ingot": 50
+    "Common Gunpowder": 100
+    "Colorful Thread": 5
+    "Mysterious Vial: Death": 1
+    "Storm Element Shard": 10
+    "Revival Plant": 10
+  batch_size: 400
+  workload: 169000
+  skill: "Arrow"
+  skill_lvl: 30
+
+"Poisonous Arrow":
+  ingredients:
+    "Enriched Adamantium Arrow": 500
+    "Hydra's Poisonous Gland": 1
+  batch_size: 500
+  workload: 2000000
+  skill: "Arrow"
+  skill_lvl: 35
+
+"Screaming Arrow":
+  ingredients:
+    "Enriched Adamantium Arrow": 300
+    "Crystal of Temptation": 1
+  batch_size: 300
+  workload: 2500000
+  skill: "Arrow"
+  skill_lvl: 40
+
+"Titanium Arrow":
+  ingredients:
+    "Titanium Ore": 20
+    "Platinum Ingot": 100
+    "Common Gunpowder": 200
+    "Colorful Thread": 10
+    "Mysterious Vial: Death": 2
+    "Sea Element": 50
+    "Revival Plant": 10
+  batch_size: 400
+  workload: 1100000
+  skill: "Arrow"
+  skill_lvl: 45
+
 # Axe
+
+"Spirit Axe": &weapon_lvl_1
+  fixed_price: 900
+  ingredients:
+    "Coral": 5
+    "Maple": 4
+  workload: 450
+  skill: "Axe"
+  skill_lvl: 1
+
+"Ocean Axe": &weapon_lvl_15
+  fixed_price: 4800
+  ingredients:
+    "Coral": 2
+    "Pearl": 7
+    "Iron Sand": 2
+    "Earth Element Shard": 8
+  workload: 2800
+  skill: "Axe"
+  skill_lvl: 4
+
+"Rakshasa's Axe": &weapon_lvl_25
+  fixed_price: 13700
+  ingredients:
+    "Pine": 3
+    "Iron Sand": 5
+    "Silver Ingot": 5
+    "Coral": 12
+    "Copper Ore": 6
+    "Pearl": 4
+    "Earth Element Shard": 20
+  workload: 9200
+  skill: "Axe"
+  skill_lvl: 9
+
+"Destroyer's Axe": &weapon_lvl_35
+  fixed_price: 41100
+  ingredients:
+    "Silver Ingot": 9
+    "Copper Ore": 25
+    "Embroidery Thread": 22
+    "Pearl": 10
+    "Thick Tree Branch": 10
+    "Earth Element Shard": 60
+    "Sea Element Shard": 5
+  workload: 25300
+  skill: "Axe"
+  skill_lvl: 15
+
+"Walachia Axe": &weapon_lvl_50
+  ingredients:
+    "Embroidery Thread": 40
+    "Silver Ingot": 20
+    "Copper Ore": 20
+    "Pearl": 15
+    "Sea Element Shard": 15
+  workload: 69600
+  skill: "Axe"
+  skill_lvl: 23
+
+"Blood Knight Axe": &weapon_lvl_50_special
+  ingredients:
+    "Embroidery Thread": 100
+    "Silver Ingot": 8
+    "Copper Ore": 50
+    "Pearl": 50
+    "Earth Element Shard": 30
+    "Sea Element Shard": 15
+    "Fusing Agent": 1
+    "Warrior's Sign": 1
+  workload: 125200
+  skill: "Axe"
+  skill_lvl: 28
+
+"Anu Warrior Axe": &weapon_lvl_60
+  ingredients:
+    "Tanzanite": 4
+    "Thick Animal Bone": 10
+    "Pearl": 30
+    "Silver Ingot": 10
+    "Gold Ingot": 3
+    "Pine": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 5
+  workload: 191400
+  skill: "Axe"
+  skill_lvl: 32
+
+"Gilgamesh Axe": &weapon_lvl_60_special
+  ingredients:
+    "Tanzanite": 5
+    "Pearl": 100
+    "Silver Ingot": 10
+    "Pine": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 5
+    "Gilgamesh's Sword Shard": 1
+    "Warrior's Sign": 1
+  workload: 287100
+  skill: "Axe"
+  skill_lvl: 35
+
+"Amon's Axe": &weapon_lvl_70
+  ingredients:
+    "Silver Ingot": 40
+    "Thick Animal Bone": 10
+    "Platinum Ingot": 1
+    "Slab of Lumber": 10
+    "Pearl": 20
+    "Gold Ingot": 35
+    "Sea Element Shard": 20
+    "Flame Element Shard": 25
+  workload: 526400
+  skill: "Axe"
+  skill_lvl: 44
+
+"Ghost Warrior Axe": &weapon_lvl_80
+  ingredients:
+    "Opal": 7
+    "Big Slab of Lumber": 20
+    "Ghost Mask": 2
+    "Silver Ingot": 20
+    "Gold Ingot": 10
+    "Large Animal Bone": 5
+    "Earth Element": 2
+    "Storm Element Shard": 15
+    "Thick Animal Bone": 20
+    "Platinum Ingot": 10
+  workload: 1447600
+  skill: "Axe"
+  skill_lvl: 50
+
+"Dragon Heart Axe": &weapon_lvl_90
+  ingredients:
+    "Platinum Ingot": 75
+    "Big Slab of Lumber": 15
+    "Large Animal Bone": 15
+    "Ruby": 8
+    "Opal": 12
+    "Storm Element Shard": 25
+    "Earth Element": 10
+    "Thick Animal Bone": 20
+  workload: 3980900
+  skill: "Axe"
+  skill_lvl: 56
+
+"Gold Dragon Axe": &weapon_lvl_95
+  ingredients:
+    "Platinum Ingot": 29
+    "Opal": 15
+    "Adamantium": 8
+    "Gold Ingot": 10
+    "Earth Element": 48
+    "Thick Animal Bone": 20
+    "Gold Dragon Scale": 15
+    "Warrior's Sign": 1
+  workload: 7961800
+  skill: "Axe"
+  skill_lvl: 60
+
+"Conqueror's Axe": &weapon_lvl_97
+  ingredients:
+    "Colorful Fabric": 15
+    "Large Animal Bone": 20
+    "Opal": 23
+    "Adamantium": 8
+    "Large Diamond": 1
+    "Earth Element": 30
+    "Sea Element": 40
+    "Ruby": 8
+    "Tanzanite": 5
+    "Crazy Lord's Seal": 2
+  workload: 12000000
+  skill: "Axe"
+  skill_lvl: 65
+
+"Freezing Axe": &weapon_lvl_100
+  ingredients:
+    "Large Diamond": 1
+    "Adamantium Ingot": 10
+    "Large Animal Bone": 50
+    "Sea Element": 60
+    "Energy of Wind": 10
+    "Energy of Hail": 10
+    "Opal": 15
+    "Ruby": 8
+    "Frozen Soul": 30
+    "Platinum Ingot": 45
+  workload: 18000000
+  skill: "Axe"
+  skill_lvl: 70
+
+"Divine Axe": &weapon_lvl_105
+  ingredients:
+    "Large Diamond": 2
+    "Imitation Oriharukon": 1
+    "Adamantium Ingot": 5
+    "Opal": 45
+    "Animal Replica": 2
+    "Sea Element": 160
+    "Energy of Sky": 10
+    "Ruby": 70
+  workload: 27000000
+  skill: "Axe"
+  skill_lvl: 75
+
+"Depraved Axe": &weapon_lvl_110
+  ingredients:
+    "Large Diamond": 1
+    "Imitation Oriharukon": 1
+    "Animal Replica": 3
+    "Sea Element": 280
+    "Revival Plant": 30
+    "Hero's Blood": 4
+    "Depraved Seed": 2
+    "Platinum Ingot": 20
+    "Opal": 200
+  workload: 40000000
+  skill: "Axe"
+  skill_lvl: 80
+
+"Phoenix's Axe": &weapon_lvl_113
+  ingredients:
+    "Large Diamond": 4
+    "Imitation Oriharukon": 1
+    "Refined Mithril Ingot": 1
+    "Alchemist's Stone": 1
+    "Enriched Adamantium Ingot": 1
+    "Flame Element": 200
+    "Animal Replica": 5
+    "Oriental Mushroom": 60
+    "Phoenix's Feather": 8
+  workload: 60000000
+  skill: "Axe"
+  skill_lvl: 85
+
+"Dragon God's Axe": &weapon_lvl_121
+  ingredients:
+    "Gorgeous Colorful Fabric": 30
+    "Dragon God's Wishstone": 8
+    "Enriched Adamantium Ingot": 1
+    "Titanium Ingot": 50
+    "Flame Element": 380
+    "Animal Replica": 25
+    "Oriental Mushroom": 90
+    "Dragon God's Ire": 50
+    "Weapon & Armor Mold": 50
+  workload: 80000000
+  skill: "Axe"
+  skill_lvl: 101
+
+"Evil Axe": &weapon_lvl_130
+  ingredients:
+    "Evil Imprint": 15
+    "Vindictive Soul Imprint": 150
+    "Storm Element": 250
+    "Atlantis Silver Coin": 10
+    "Craftsman's Soul": 100
+    "Imitation Oriharukon": 3
+    "Alchemist's Stone": 1
+    "Monster Egg": 600
+    "Evil Soul Extract": 500
+  workload: 160000000
+  skill: "Axe"
+  skill_lvl: 110
 
 # Book
 
@@ -404,13 +915,368 @@
 
 # Bow
 
+"Spirit Bow":
+  <<: *weapon_lvl_1
+  skill: "Bow"
+
+"Deep-Sea Bow":
+  <<: *weapon_lvl_15
+  skill: "Bow"
+
+"Ogre Bow":
+  <<: *weapon_lvl_25
+  skill: "Bow"
+
+"Assassin's Bow":
+  <<: *weapon_lvl_35
+  skill: "Bow"
+
+"Walachia Bow":
+  <<: *weapon_lvl_50
+  skill: "Bow"
+
+"Blood Knight Bow":
+  <<: *weapon_lvl_50_special
+  skill: "Bow"
+
+"Anu Warrior Bow":
+  <<: *weapon_lvl_60
+  skill: "Bow"
+
+"Gilgamesh Bow":
+  <<: *weapon_lvl_60_special
+  skill: "Bow"
+
+"Amon's Bow":
+  <<: *weapon_lvl_70
+  skill: "Bow"
+
+"Ghost Gunner Bow":
+  <<: *weapon_lvl_80
+  skill: "Bow"
+
+"Dragon Slayer Bow":
+  <<: *weapon_lvl_90
+  skill: "Bow"
+
+"Gold Dragon Bow":
+  <<: *weapon_lvl_95
+  skill: "Bow"
+
+"Conqueror's Bow":
+  <<: *weapon_lvl_97
+  skill: "Bow"
+
+"Freezing Bow":
+  <<: *weapon_lvl_100
+  skill: "Bow"
+
+"Divine Bow":
+  <<: *weapon_lvl_105
+  skill: "Bow"
+
+"Depraved Bow":
+  <<: *weapon_lvl_110
+  skill: "Bow"
+
+"Phoenix's Bow":
+  <<: *weapon_lvl_113
+  skill: "Bow"
+
+"Dragon God's Bow":
+  <<: *weapon_lvl_121
+  skill: "Bow"
+
+"Evil Bow":
+  <<: *weapon_lvl_130
+  skill: "Bow"
+
 # Building
 
 # Bullet
 
+"Lead Bullet":
+  ingredients:
+    "Iron Sand": 4
+    "Weak Gunpowder": 4
+    "Earth Element Shard": 5
+  batch_size: 30
+  workload: 150
+  skill: "Bullet"
+  skill_lvl: 1
+
+"Copper Bullet":
+  ingredients:
+    "Iron Sand": 20
+    "Coral": 30
+    "Weak Gunpowder": 30
+    "Earth Element Shard": 10
+  batch_size: 100
+  workload: 1000
+  skill: "Bullet"
+  skill_lvl: 5
+
+"Iron-clad Bullet":
+  ingredients:
+    "Silver Ingot": 5
+    "Copper Ore": 20
+    "Weak Gunpowder": 40
+    "Sea Element Shard": 5
+  batch_size: 100
+  workload: 2700
+  skill: "Bullet"
+  skill_lvl: 10
+
+"Enriched Bullet":
+  ingredients:
+    "Tanzanite": 4
+    "Opal": 2
+    "Pearl": 3
+    "Weak Gunpowder": 20
+    "Flame Element Shard": 3
+  batch_size: 200
+  workload: 12500
+  skill: "Bullet"
+  skill_lvl: 15
+
+"Adamantium Bullet":
+  ingredients:
+    "Ruby": 2
+    "Platinum Ingot": 20
+    "Weak Gunpowder": 200
+    "Mysterious Vial: Valor": 1
+    "Flame Element Shard": 10
+  batch_size: 300
+  workload: 45000
+  skill: "Bullet"
+  skill_lvl: 25
+
+"Enriched Adamantium Bullet":
+  ingredients:
+    "Adamantium": 5
+    "Platinum Ingot": 80
+    "Common Gunpowder": 50
+    "Mysterious Vial: Death": 1
+    "Storm Element Shard": 10
+    "Revival Plant": 10
+  batch_size: 400
+  workload: 169000
+  skill: "Bullet"
+  skill_lvl: 30
+
+"Poisonous Bullet":
+  ingredients:
+    "Enriched Adamantium Bullet": 500
+    "Hydra's Poisonous Gland": 1
+  batch_size: 500
+  workload: 2000000
+  skill: "Bullet"
+  skill_lvl: 35
+
+"Screaming Bullet":
+  ingredients:
+    "Enriched Adamantium Bullet": 300
+    "Crystal of Temptation": 1
+  batch_size: 300
+  workload: 2500000
+  skill: "Bullet"
+  skill_lvl: 40
+
+"Titanium Bullet":
+  ingredients:
+    "Titanium Ore": 20
+    "Platinum Ingot": 20
+    "Common Gunpowder": 100
+    "Mysterious Vial: Death": 2
+    "Sea Element": 50
+    "Revival Plant": 20
+  batch_size: 400
+  workload: 1150000
+  skill: "Bullet"
+  skill_lvl: 45
+
 # Cannon
 
+"Spirit Cannon":
+  <<: *weapon_lvl_1
+  skill: "Cannon"
+
+"Deep-Sea Cannon":
+  <<: *weapon_lvl_15
+  skill: "Cannon"
+
+"Ogre Cannon":
+  <<: *weapon_lvl_25
+  skill: "Cannon"
+
+"Assassin's Cannon":
+  <<: *weapon_lvl_35
+  skill: "Cannon"
+
+"Walachia Cannon":
+  <<: *weapon_lvl_50
+  skill: "Cannon"
+
+"Blood Knight Cannon":
+  <<: *weapon_lvl_50_special
+  skill: "Cannon"
+
+"Anu Warrior Cannon":
+  <<: *weapon_lvl_60
+  skill: "Cannon"
+
+"Gilgamesh Cannon":
+  <<: *weapon_lvl_60_special
+  skill: "Cannon"
+
+"Amon's Cannon":
+  <<: *weapon_lvl_70
+  skill: "Cannon"
+
+"Ghost Gunner Cannon":
+  <<: *weapon_lvl_80
+  skill: "Cannon"
+
+"Dragon Slayer Cannon":
+  <<: *weapon_lvl_90
+  skill: "Cannon"
+
+"Gold Dragon Cannon":
+  <<: *weapon_lvl_95
+  skill: "Cannon"
+
+"Conqueror's Cannon":
+  <<: *weapon_lvl_97
+  skill: "Cannon"
+
+"Freezing Cannon":
+  <<: *weapon_lvl_100
+  skill: "Cannon"
+
+"Divine Cannon":
+  <<: *weapon_lvl_105
+  skill: "Cannon"
+
+"Depraved Cannon":
+  <<: *weapon_lvl_110
+  skill: "Cannon"
+
+"Phoenix's Cannon":
+  <<: *weapon_lvl_113
+  skill: "Cannon"
+
+"Dragon God's Cannon":
+  <<: *weapon_lvl_121
+  skill: "Cannon"
+
+"Evil Cannon":
+  <<: *weapon_lvl_130
+  skill: "Cannon"
+
 # Cannonball
+
+"Steel Cannonball":
+  ingredients:
+    "Iron Sand": 7
+    "Weak Gunpowder": 3
+    "Earth Element Shard": 3
+  batch_size: 30
+  workload: 150
+  skill: "Cannonball"
+  skill_lvl: 1
+
+"Iron-clad Cannonball":
+  ingredients:
+    "Silver Ingot": 7
+    "Weak Gunpowder": 10
+    "Iron Sand": 10
+    "Earth Element Shard": 10
+  batch_size: 100
+  workload: 1000
+  skill: "Cannonball"
+  skill_lvl: 5
+
+"Flame Cannonball":
+  ingredients:
+    "Pearl": 20
+    "Gold Ingot": 3
+    "Weak Gunpowder": 10
+    "Sea Element Shard": 5
+  batch_size: 100
+  workload: 2700
+  skill: "Cannonball"
+  skill_lvl: 10
+
+"Explosive Cannonball":
+  ingredients:
+    "Platinum Ingot": 10
+    "Opal": 2
+    "Weak Gunpowder": 50
+    "Silver Ingot": 5
+    "Flame Element Shard": 3
+  batch_size: 200
+  workload: 12500
+  skill: "Cannonball"
+  skill_lvl: 15
+
+"Adamantium Cannonball":
+  ingredients:
+    "Ruby": 2
+    "Platinum Ingot": 20
+    "Weak Gunpowder": 200
+    "Silver Ingot": 100
+    "Mysterious Vial: Valor": 1
+    "Flame Element Shard": 10
+  batch_size: 300
+  workload: 45000
+  skill: "Cannonball"
+  skill_lvl: 25
+
+"Enriched Adamantium Cannonball":
+  ingredients:
+    "Adamantium": 5
+    "Platinum Ingot": 50
+    "Common Gunpowder": 50
+    "Silver Ingot": 200
+    "Mysterious Vial: Death": 1
+    "Storm Element Shard": 10
+    "Revival Plant": 10
+  batch_size: 400
+  workload: 169000
+  skill: "Cannonball"
+  skill_lvl: 30
+
+"Poisonous Cannonball":
+  ingredients:
+    "Enriched Adamantium Cannonball": 500
+    "Hydra's Poisonous Gland": 1
+  batch_size: 500
+  workload: 2000000
+  skill: "Cannonball"
+  skill_lvl: 35
+
+"Screaming Cannonball":
+  ingredients:
+    "Enriched Adamantium Cannonball": 300
+    "Crystal of Temptation": 1
+  batch_size: 300
+  workload: 2500000
+  skill: "Cannonball"
+  skill_lvl: 40
+
+"Titanium Cannonball":
+  ingredients:
+    "Titanium Ore": 20
+    "Platinum Ingot": 100
+    "Common Gunpowder": 100
+    "Silver Ingot": 200
+    "Mysterious Vial: Death": 2
+    "Sea Element": 55
+    "Revival Plant": 10
+  batch_size: 400
+  workload: 1200000
+  skill: "Cannonball"
+  skill_lvl: 45
 
 # Charm
 
@@ -715,6 +1581,9 @@
 
 "Energy of Hail":
   fixed_price: 40000
+
+"Energy of Sky":
+  fixed_price: 80000
 
 # Fabric
 
@@ -1056,9 +1925,161 @@
 
 # Gun
 
+"Spirit Rifle":
+  <<: *weapon_lvl_1
+  skill: "Gun"
+
+"Deep-Sea Rifle":
+  <<: *weapon_lvl_15
+  skill: "Gun"
+
+"Ogre Rifle":
+  <<: *weapon_lvl_25
+  skill: "Gun"
+
+"Assassin's Rifle":
+  <<: *weapon_lvl_35
+  skill: "Gun"
+
+"Walachia Rifle":
+  <<: *weapon_lvl_50
+  skill: "Gun"
+
+"Blood Knight Rifle":
+  <<: *weapon_lvl_50_special
+  skill: "Gun"
+
+"Anu Warrior Rifle":
+  <<: *weapon_lvl_60
+  skill: "Gun"
+
+"Gilgamesh Rifle":
+  <<: *weapon_lvl_60_special
+  skill: "Gun"
+
+"Amon's Rifle":
+  <<: *weapon_lvl_70
+  skill: "Gun"
+
+"Ghost Gunner Rifle":
+  <<: *weapon_lvl_80
+  skill: "Gun"
+
+"Dragon Slayer Rifle":
+  <<: *weapon_lvl_90
+  skill: "Gun"
+
+"Gold Dragon Rifle":
+  <<: *weapon_lvl_95
+  skill: "Gun"
+
+"Conqueror's Rifle":
+  <<: *weapon_lvl_97
+  skill: "Gun"
+
+"Freezing Gun":
+  <<: *weapon_lvl_100
+  skill: "Gun"
+
+"Divine Gun":
+  <<: *weapon_lvl_105
+  skill: "Gun"
+
+"Depraved Rifle":
+  <<: *weapon_lvl_110
+  skill: "Gun"
+
+"Phoenix's Gun":
+  <<: *weapon_lvl_113
+  skill: "Gun"
+
+"Dragon God's Gun":
+  <<: *weapon_lvl_121
+  skill: "Gun"
+
+"Evil Rifle":
+  <<: *weapon_lvl_130
+  skill: "Gun"
+
 # Helmet
 
 # Instrument
+
+"Spirit Instrument":
+  <<: *weapon_lvl_1
+  skill: "Instrument"
+
+"Deep-Sea Instrument":
+  <<: *weapon_lvl_15
+  skill: "Instrument"
+
+"Ogre Instrument":
+  <<: *weapon_lvl_25
+  skill: "Instrument"
+
+"Assassin's Instrument":
+  <<: *weapon_lvl_35
+  skill: "Instrument"
+
+"Walachia Instrument":
+  <<: *weapon_lvl_50
+  skill: "Instrument"
+
+"Blood Knight Instrument":
+  <<: *weapon_lvl_50_special
+  skill: "Instrument"
+
+"Anu Warrior Instrument":
+  <<: *weapon_lvl_60
+  skill: "Instrument"
+
+"Gilgamesh Instrument":
+  <<: *weapon_lvl_60_special
+  skill: "Instrument"
+
+"Amon's Instrument":
+  <<: *weapon_lvl_70
+  skill: "Instrument"
+
+"Ghost Gunner Instrument":
+  <<: *weapon_lvl_80
+  skill: "Instrument"
+
+"Dragon Slayer Instrument":
+  <<: *weapon_lvl_90
+  skill: "Instrument"
+
+"Gold Dragon Instrument":
+  <<: *weapon_lvl_95
+  skill: "Instrument"
+
+"Conqueror's Instrument":
+  <<: *weapon_lvl_97
+  skill: "Instrument"
+
+"Freezing Instrument":
+  <<: *weapon_lvl_100
+  skill: "Instrument"
+
+"Divine Instrument":
+  <<: *weapon_lvl_105
+  skill: "Instrument"
+
+"Depraved Instrument":
+  <<: *weapon_lvl_110
+  skill: "Instrument"
+
+"Phoenix's Instrument":
+  <<: *weapon_lvl_113
+  skill: "Instrument"
+
+"Dragon God's Instrument":
+  <<: *weapon_lvl_121
+  skill: "Instrument"
+
+"Evil Instrument":
+  <<: *weapon_lvl_130
+  skill: "Instrument"
 
 # License
 
@@ -1400,6 +2421,14 @@
 
 # Mineral
 
+"Refined Mithril Ingot":
+  ingredients:
+    "Opal": 100
+    "Gold Ingot": 500
+  workload: 300000
+  skill: "Tool"
+  skill_lvl: 17
+
 "Enriched Adamantium Ingot":
   ingredients:
     "Adamantium Ingot": 100
@@ -1434,7 +2463,14 @@
   fixed_price: 3000
 
 "Adamantium":
-  market_price: 100000
+  ingredients:
+    "Ruby": 4
+    "Gold Ingot": 40
+    "Oil": 50
+  batch_size: 2
+  workload: 48000
+  skill: "Tool"
+  skill_lvl: 26
 
 "Adamantium Ingot":
   ingredients:
@@ -1534,6 +2570,9 @@
 "Albert's Fishing Tackle":
   market_price: 800000
 
+"Frozen Soul":
+  fixed_price: 50000
+
 "Hero's Blood":
   fixed_price: 400000
 
@@ -1630,28 +2669,257 @@
 
 # Orb
 
-# Pants
+"Spirit Orb":
+  fixed_price: 900
+  ingredients:
+    "Coral": 5
+    "Maple": 4
+  workload: 600
+  skill: "Orb"
+  skill_lvl: 1
 
-# Power Saw
+"Red Soul Orb":
+  fixed_price: 4600
+  ingredients:
+    "Coral": 2
+    "Pearl": 7
+    "Iron Sand": 2
+    "Earth Element Shard": 5
+  workload: 1800
+  skill: "Orb"
+  skill_lvl: 4
 
-"Dragon God's Power Saw":
+"Krishna's Orb":
+  fixed_price: 12900
+  ingredients:
+    "Pine": 3
+    "Iron Sand": 5
+    "Silver Ingot": 5
+    "Coral": 12
+    "Copper Ore": 6
+    "Pearl": 4
+    "Earth Element Shard": 10
+  workload: 3000
+  skill: "Orb"
+  skill_lvl: 8
+
+"Savior's Orb":
+  fixed_price: 34100
+  ingredients:
+    "Silver Ingot": 9
+    "Copper Ore": 15
+    "Embroidery Thread": 22
+    "Pearl": 10
+    "Thick Tree Branch": 10
+    "Earth Element Shard": 50
+    "Sea Element Shard": 2
+  workload: 4800
+  skill: "Orb"
+  skill_lvl: 13
+
+"Walachia Orb":
+  ingredients:
+    "Silver Ingot": 20
+    "Copper Ore": 20
+    "Embroidery Thread": 10
+    "Pearl": 15
+    "Sea Element Shard": 14
+  workload: 10200
+  skill: "Orb"
+  skill_lvl: 18
+
+"Blood Knight Orb":
+  ingredients:
+    "Silver Ingot": 12
+    "Copper Ore": 50
+    "Embroidery Thread": 100
+    "Pearl": 50
+    "Sea Element Shard": 15
+    "Fusing Agent": 1
+    "Warrior's Sign": 1
+  workload: 12240
+  skill: "Orb"
+  skill_lvl: 21
+
+"Anu Priest Orb":
+  ingredients:
+    "Tanzanite": 2
+    "Thick Animal Bone": 10
+    "Pearl": 30
+    "Silver Ingot": 10
+    "Pine": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 5
+    "Gold Ingot": 3
+  workload: 15000
+  skill: "Orb"
+  skill_lvl: 23
+
+"Gilgamesh Orb":
+  ingredients:
+    "Tanzanite": 10
+    "Pearl": 100
+    "Silver Ingot": 10
+    "Pine": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 5
+    "Gilgamesh's Sword Shard": 1
+    "Warrior's Sign": 1
+  workload: 22500
+  skill: "Orb"
+  skill_lvl: 25
+
+"Thoth's Orb":
+  ingredients:
+    "Silver Ingot": 40
+    "Thick Animal Bone": 10
+    "Platinum Ingot": 1
+    "Slab of Lumber": 10
+    "Pearl": 20
+    "Gold Ingot": 30
+    "Sea Element Shard": 20
+    "Flame Element Shard": 15
+  workload: 42000
+  skill: "Orb"
+  skill_lvl: 29
+
+"Ghost Conjuror Orb":
+  ingredients:
+    "Opal": 7
+    "Big Slab of Lumber": 20
+    "Ghost Mask": 1
+    "Silver Ingot": 20
+    "Gold Ingot": 10
+    "Large Animal Bone": 5
+    "Earth Element": 2
+    "Storm Element Shard": 15
+    "Thick Animal Bone": 20
+    "Platinum Ingot": 10
+  workload: 115500
+  skill: "Orb"
+  skill_lvl: 36
+
+"Dragon Breath Orb":
+  ingredients:
+    "Platinum Ingot": 70
+    "Big Slab of Lumber": 15
+    "Large Animal Bone": 15
+    "Ruby": 8
+    "Opal": 12
+    "Storm Element Shard": 25
+    "Earth Element": 10
+    "Thick Animal Bone": 20
+  workload: 317640
+  skill: "Orb"
+  skill_lvl: 43
+
+"Gold Dragon Orb":
+  ingredients:
+    "Platinum Ingot": 29
+    "Opal": 15
+    "Adamantium": 8
+    "Gold Ingot": 10
+    "Earth Element": 48
+    "Thick Animal Bone": 20
+    "Gold Dragon Scale": 10
+    "Warrior's Sign": 1
+  workload: 635280
+  skill: "Orb"
+  skill_lvl: 50
+
+"Conqueror's Orb":
+  ingredients:
+    "Colorful Fabric": 10
+    "Large Animal Bone": 30
+    "Opal": 28
+    "Adamantium": 8
+    "Large Diamond": 1
+    "Earth Element": 30
+    "Sea Element": 20
+    "Ruby": 8
+    "Crazy Lord's Seal": 1
+  workload: 960000
+  skill: "Orb"
+  skill_lvl: 55
+
+"Freezing Orb":
+  ingredients:
+    "Large Diamond": 1
+    "Adamantium Ingot": 10
+    "Large Animal Bone": 50
+    "Sea Element": 50
+    "Energy of Wind": 10
+    "Energy of Hail": 10
+    "Opal": 18
+    "Ruby": 8
+    "Frozen Soul": 20
+    "Platinum Ingot": 20
+  workload: 1440000
+  skill: "Orb"
+  skill_lvl: 60
+
+"Divine Orb":
+  ingredients:
+    "Large Diamond": 1
+    "Imitation Oriharukon": 1
+    "Adamantium Ingot": 5
+    "Opal": 45
+    "Animal Replica": 2
+    "Sea Element": 120
+    "Energy of Sky": 10
+    "Ruby": 100
+  workload: 2160000
+  skill: "Orb"
+  skill_lvl: 65
+
+"Depraved Orb":
+  ingredients:
+    "Large Diamond": 1
+    "Imitation Oriharukon": 1
+    "Animal Replica": 2
+    "Sea Element": 280
+    "Revival Plant": 30
+    "Hero's Blood": 5
+    "Depraved Seed": 1
+    "Platinum Ingot": 20
+    "Opal": 200
+  workload: 3240000
+  skill: "Orb"
+  skill_lvl: 70
+
+"Phoenix's Orb":
+  ingredients:
+    "Large Diamond": 4
+    "Imitation Oriharukon": 1
+    "Refined Mithril Ingot": 1
+    "Alchemist's Stone": 1
+    "Enriched Adamantium Ingot": 1
+    "Flame Element": 180
+    "Animal Replica": 4
+    "Oriental Mushroom": 100
+    "Phoenix's Feather": 4
+  workload: 4800000
+  skill: "Orb"
+  skill_lvl: 75
+
+"Dragon God's Orb":
   ingredients:
     "Gorgeous Colorful Fabric": 30
-    "Dragon God's Wishstone": 8
+    "Dragon God's Wishstone": 5
     "Enriched Adamantium Ingot": 1
     "Titanium Ingot": 50
     "Flame Element": 380
     "Animal Replica": 25
     "Oriental Mushroom": 90
-    "Dragon God's Ire": 50
+    "Dragon God's Ire": 30
     "Weapon & Armor Mold": 50
-  workload: 80000000
-  skill: "Power Saw"
-  skill_lvl: 101
+  workload: 7200000
+  skill: "Orb"
+  skill_lvl: 90
 
-"Evil Power Saw":
+"Evil Orb":
   ingredients:
-    "Evil Imprint": 15
+    "Evil Imprint": 10
     "Vindictive Soul Imprint": 150
     "Storm Element": 250
     "Atlantis Silver Coin": 10
@@ -1660,9 +2928,89 @@
     "Alchemist's Stone": 1
     "Monster Egg": 600
     "Evil Soul Extract": 500
-  workload: 160000000
+  workload: 30000000
+  skill: "Orb"
+  skill_lvl: 103
+
+# Pants
+
+# Power Saw
+
+"Spirit Power Saw":
+  <<: *weapon_lvl_1
   skill: "Power Saw"
-  skill_lvl: 110
+
+"Ocean Power Saw":
+  <<: *weapon_lvl_15
+  skill: "Power Saw"
+
+"Rakshasa's Power Saw":
+  <<: *weapon_lvl_25
+  skill: "Power Saw"
+
+"Destroyer's Power Saw":
+  <<: *weapon_lvl_35
+  skill: "Power Saw"
+
+"Walachia Power Saw":
+  <<: *weapon_lvl_50
+  skill: "Power Saw"
+
+"Blood Knight Power Saw":
+  <<: *weapon_lvl_50_special
+  skill: "Power Saw"
+
+"Anu Warrior Power Saw":
+  <<: *weapon_lvl_60
+  skill: "Power Saw"
+
+"Gilgamesh Power Saw":
+  <<: *weapon_lvl_60_special
+  skill: "Power Saw"
+
+"Amon's Power Saw":
+  <<: *weapon_lvl_70
+  skill: "Power Saw"
+
+"Ghost Warrior Power Saw":
+  <<: *weapon_lvl_80
+  skill: "Power Saw"
+
+"Dragon Heart Power Saw":
+  <<: *weapon_lvl_90
+  skill: "Power Saw"
+
+"Gold Dragon Power Saw":
+  <<: *weapon_lvl_95
+  skill: "Power Saw"
+
+"Conqueror's Power Saw":
+  <<: *weapon_lvl_97
+  skill: "Power Saw"
+
+"Freezing Power Saw":
+  <<: *weapon_lvl_100
+  skill: "Power Saw"
+
+"Divine Power Saw":
+  <<: *weapon_lvl_105
+  skill: "Power Saw"
+
+"Depraved Power Saw":
+  <<: *weapon_lvl_110
+  skill: "Power Saw"
+
+"Phoenix's Power Saw":
+  <<: *weapon_lvl_113
+  skill: "Power Saw"
+
+"Dragon God's Power Saw":
+  <<: *weapon_lvl_121
+  skill: "Power Saw"
+
+"Evil Power Saw":
+  <<: *weapon_lvl_130
+  skill: "Power Saw"
 
 # Ring
 
@@ -1843,11 +3191,426 @@
 
 # Shield
 
+"Spirit Shield":
+  fixed_price: 900
+  ingredients:
+    "Coral": 5
+    "Maple": 4
+  workload: 900
+  skill: "Shield"
+  skill_lvl: 1
+
+"Ocean Shield":
+  fixed_price: 4600
+  ingredients:
+    "Coral": 2
+    "Pearl": 7
+    "Iron Sand": 2
+    "Earth Element Shard": 5
+  workload: 3000
+  skill: "Shield"
+  skill_lvl: 4
+
+"Rakshasa's Shield":
+  fixed_price: 12900
+  ingredients:
+    "Pine": 3
+    "Iron Sand": 5
+    "Silver Ingot": 5
+    "Coral": 12
+    "Copper Ore": 6
+    "Pearl": 4
+    "Earth Element Shard": 10
+  workload: 4800
+  skill: "Shield"
+  skill_lvl: 8
+
+"Destroyer's Shield":
+  fixed_price: 35600
+  ingredients:
+    "Silver Ingot": 9
+    "Copper Ore": 15
+    "Embroidery Thread": 22
+    "Pearl": 10
+    "Thick Tree Branch": 10
+    "Earth Element Shard": 50
+    "Sea Element Shard": 2
+  workload: 7200
+  skill: "Shield"
+  skill_lvl: 13
+
+"Walachia Shield":
+  ingredients:
+    "Silver Ingot": 20
+    "Copper Ore": 20
+    "Embroidery Thread": 10
+    "Pearl": 15
+    "Sea Element Shard": 14
+  workload: 15000
+  skill: "Shield"
+  skill_lvl: 18
+
+"Blood Knight Shield":
+  ingredients:
+    "Silver Ingot": 12
+    "Copper Ore": 50
+    "Embroidery Thread": 100
+    "Pearl": 50
+    "Sea Element Shard": 15
+    "Fusing Agent": 1
+    "Warrior's Sign": 1
+  workload: 18000
+  skill: "Shield"
+  skill_lvl: 21
+
+"Anu Warrior Shield":
+  ingredients:
+    "Tanzanite": 2
+    "Thick Animal Bone": 10
+    "Pearl": 30
+    "Silver Ingot": 10
+    "Pine": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 5
+    "Gold Ingot": 3
+  workload: 21000
+  skill: "Shield"
+  skill_lvl: 23
+
+"Gilgamesh Shield":
+  ingredients:
+    "Tanzanite": 10
+    "Pearl": 100
+    "Silver Ingot": 10
+    "Pine": 20
+    "Sea Element Shard": 15
+    "Flame Element Shard": 5
+    "Gilgamesh's Sword Shard": 1
+    "Warrior's Sign": 1
+  workload: 31500
+  skill: "Shield"
+  skill_lvl: 25
+
+"Amon's Shield":
+  ingredients:
+    "Silver Ingot": 40
+    "Thick Animal Bone": 10
+    "Platinum Ingot": 1
+    "Slab of Lumber": 10
+    "Pearl": 20
+    "Gold Ingot": 30
+    "Sea Element Shard": 20
+    "Flame Element Shard": 15
+  workload: 60000
+  skill: "Shield"
+  skill_lvl: 29
+
+"Ghost Warrior Shield":
+  ingredients:
+    "Opal": 7
+    "Big Slab of Lumber": 20
+    "Ghost Mask": 1
+    "Silver Ingot": 20
+    "Gold Ingot": 10
+    "Large Animal Bone": 5
+    "Earth Element": 2
+    "Storm Element Shard": 15
+    "Thick Animal Bone": 20
+    "Platinum Ingot": 10
+  workload: 165000
+  skill: "Shield"
+  skill_lvl: 36
+
+"Dragon Hearth Shield":
+  ingredients:
+    "Platinum Ingot": 75
+    "Big Slab of Lumber": 15
+    "Large Animal Bone": 15
+    "Ruby": 8
+    "Opal": 12
+    "Storm Element Shard": 25
+    "Earth Element": 10
+    "Thick Animal Bone": 20
+  workload: 453720
+  skill: "Shield"
+  skill_lvl: 43
+
+"Gold Dragon Shield":
+  ingredients:
+    "Platinum Ingot": 29
+    "Opal": 15
+    "Adamantium": 8
+    "Gold Ingot": 10
+    "Earth Element": 48
+    "Thick Animal Bone": 20
+    "Gold Dragon Scale": 10
+    "Warrior's Sign": 1
+  workload: 907440
+  skill: "Shield"
+  skill_lvl: 50
+
+"Conqueror's Shield":
+  ingredients:
+    "Colorful Fabric": 10
+    "Large Animal Bone": 30
+    "Opal": 28
+    "Adamantium": 8
+    "Large Diamond": 1
+    "Earth Element": 30
+    "Sea Element": 20
+    "Ruby": 8
+    "Crazy Lord's Seal": 1
+  workload: 1440000
+  skill: "Shield"
+  skill_lvl: 55
+
+"Freezing Shield":
+  ingredients:
+    "Large Diamond": 1
+    "Adamantium Ingot": 10
+    "Large Animal Bone": 50
+    "Sea Element": 50
+    "Energy of Wind": 10
+    "Energy of Hail": 10
+    "Opal": 18
+    "Ruby": 8
+    "Frozen Soul": 20
+    "Platinum Ingot": 20
+  workload: 2160000
+  skill: "Shield"
+  skill_lvl: 60
+
+"Divine Shield":
+  ingredients:
+    "Large Diamond": 1
+    "Imitation Oriharukon": 1
+    "Adamantium Ingot": 5
+    "Opal": 45
+    "Animal Replica": 2
+    "Sea Element": 120
+    "Energy of Sky": 10
+    "Ruby": 100
+  workload: 3240000
+  skill: "Shield"
+  skill_lvl: 65
+
+"Depraved Shield":
+  ingredients:
+    "Large Diamond": 1
+    "Imitation Oriharukon": 1
+    "Animal Replica": 2
+    "Sea Element": 280
+    "Revival Plant": 30
+    "Hero's Blood": 5
+    "Depraved Seed": 1
+    "Platinum Ingot": 20
+    "Opal": 200
+  workload: 4800000
+  skill: "Shield"
+  skill_lvl: 70
+
+"Phoenix's Shield":
+  ingredients:
+    "Large Diamond": 4
+    "Imitation Oriharukon": 1
+    "Refined Mithril Ingot": 1
+    "Alchemist's Stone": 1
+    "Enriched Adamantium Ingot": 1
+    "Flame Element": 180
+    "Animal Replica": 4
+    "Oriental Mushroom": 100
+    "Phoenix's Feather": 4
+  workload: 7200000
+  skill: "Shield"
+  skill_lvl: 75
+
+"Dragon God's Shield":
+  ingredients:
+    "Gorgeous Colorful Fabric": 30
+    "Dragon God's Wishstone": 5
+    "Enriched Adamantium Ingot": 1
+    "Titanium Ingot": 50
+    "Flame Element": 380
+    "Animal Replica": 25
+    "Oriental Mushroom": 90
+    "Dragon God's Ire": 30
+    "Weapon & Armor Mold": 50
+  workload: 9600000
+  skill: "Shield"
+  skill_lvl: 90
+
+"Evil Shield":
+  ingredients:
+    "Evil Imprint": 10
+    "Vindictive Soul Imprint": 150
+    "Storm Element": 250
+    "Atlantis Silver Coin": 10
+    "Craftsman's Soul": 100
+    "Imitation Oriharukon": 3
+    "Alchemist's Stone": 1
+    "Monster Egg": 600
+    "Evil Soul Extract": 500
+  workload: 40000000
+  skill: "Shield"
+  skill_lvl: 103
+
 # Shoes
 
 # Spear
 
+"Spirit Spear":
+  <<: *weapon_lvl_1
+  skill: "Spear"
+
+"Ocean Spear":
+  <<: *weapon_lvl_15
+  skill: "Spear"
+
+"Rakshasa's Spear":
+  <<: *weapon_lvl_25
+  skill: "Spear"
+
+"Destroyer's Spear":
+  <<: *weapon_lvl_35
+  skill: "Spear"
+
+"Walachia Spear":
+  <<: *weapon_lvl_50
+  skill: "Spear"
+
+"Blood Knight Spear":
+  <<: *weapon_lvl_50_special
+  skill: "Spear"
+
+"Anu Warrior Spear":
+  <<: *weapon_lvl_60
+  skill: "Spear"
+
+"Gilgamesh Spear":
+  <<: *weapon_lvl_60_special
+  skill: "Spear"
+
+"Amon's Spear":
+  <<: *weapon_lvl_70
+  skill: "Spear"
+
+"Ghost Warrior Lance":
+  <<: *weapon_lvl_80
+  skill: "Spear"
+
+"Dragon Heart Lance":
+  <<: *weapon_lvl_90
+  skill: "Spear"
+
+"Gold Dragon Lance":
+  <<: *weapon_lvl_95
+  skill: "Spear"
+
+"Conqueror's Lance":
+  <<: *weapon_lvl_97
+  skill: "Spear"
+
+"Freezing Lance":
+  <<: *weapon_lvl_100
+  skill: "Spear"
+
+"Divine Spear":
+  <<: *weapon_lvl_105
+  skill: "Spear"
+
+"Depraved Lance":
+  <<: *weapon_lvl_110
+  skill: "Spear"
+
+"Phoenix's Lance":
+  <<: *weapon_lvl_113
+  skill: "Spear"
+
+"Dragon God's Lance":
+  <<: *weapon_lvl_121
+  skill: "Spear"
+
+"Evil Lance":
+  <<: *weapon_lvl_130
+  skill: "Spear"
+
 # Staff
+
+"Spirit Staff":
+  <<: *weapon_lvl_1
+  skill: "Staff"
+
+"Red Soul Staff":
+  <<: *weapon_lvl_15
+  skill: "Staff"
+
+"Krishna's Staff":
+  <<: *weapon_lvl_25
+  skill: "Staff"
+
+"Savior's Staff":
+  <<: *weapon_lvl_35
+  skill: "Staff"
+
+"Walachia Staff":
+  <<: *weapon_lvl_50
+  skill: "Staff"
+
+"Blood Knight Staff":
+  <<: *weapon_lvl_50_special
+  skill: "Staff"
+
+"Anu Priest Staff":
+  <<: *weapon_lvl_60
+  skill: "Staff"
+
+"Gilgamesh Staff":
+  <<: *weapon_lvl_60_special
+  skill: "Staff"
+
+"Thoth's Staff":
+  <<: *weapon_lvl_70
+  skill: "Staff"
+
+"Ghost Conjuror Staff":
+  <<: *weapon_lvl_80
+  skill: "Staff"
+
+"Dragon Breath Staff":
+  <<: *weapon_lvl_90
+  skill: "Staff"
+
+"Gold Dragon Staff":
+  <<: *weapon_lvl_95
+  skill: "Staff"
+
+"Conqueror's Staff":
+  <<: *weapon_lvl_97
+  skill: "Staff"
+
+"Freezing Staff":
+  <<: *weapon_lvl_100
+  skill: "Staff"
+
+"Divine Staff":
+  <<: *weapon_lvl_105
+  skill: "Staff"
+
+"Depraved Staff":
+  <<: *weapon_lvl_110
+  skill: "Staff"
+
+"Phoenix's Staff":
+  <<: *weapon_lvl_113
+  skill: "Staff"
+
+"Dragon God's Staff":
+  <<: *weapon_lvl_121
+  skill: "Staff"
+
+"Evil Staff":
+  <<: *weapon_lvl_130
+  skill: "Staff"
 
 # Stationery
 
@@ -2136,6 +3899,82 @@
 
 # Sword
 
+"Spirit Sword":
+  <<: *weapon_lvl_1
+  skill: "Sword"
+
+"Ocean Sword":
+  <<: *weapon_lvl_15
+  skill: "Sword"
+
+"Rakshasa's Sword":
+  <<: *weapon_lvl_25
+  skill: "Sword"
+
+"Destroyer's Sword":
+  <<: *weapon_lvl_35
+  skill: "Sword"
+
+"Walachia Sword":
+  <<: *weapon_lvl_50
+  skill: "Sword"
+
+"Blood Knight Sword":
+  <<: *weapon_lvl_50_special
+  skill: "Sword"
+
+"Anu Warrior Sword":
+  <<: *weapon_lvl_60
+  skill: "Sword"
+
+"Gilgamesh Sword":
+  <<: *weapon_lvl_60_special
+  skill: "Sword"
+
+"Amon's Sword":
+  <<: *weapon_lvl_70
+  skill: "Sword"
+
+"Ghost Warrior Sword":
+  <<: *weapon_lvl_80
+  skill: "Sword"
+
+"Dragon Heart Sword":
+  <<: *weapon_lvl_90
+  skill: "Sword"
+
+"Gold Dragon Sword":
+  <<: *weapon_lvl_95
+  skill: "Sword"
+
+"Conqueror's Sword":
+  <<: *weapon_lvl_97
+  skill: "Sword"
+
+"Freezing Sword":
+  <<: *weapon_lvl_100
+  skill: "Sword"
+
+"Divine Sword":
+  <<: *weapon_lvl_105
+  skill: "Sword"
+
+"Depraved Sword":
+  <<: *weapon_lvl_110
+  skill: "Sword"
+
+"Phoenix's Sword":
+  <<: *weapon_lvl_113
+  skill: "Sword"
+
+"Dragon God's Sword":
+  <<: *weapon_lvl_121
+  skill: "Sword"
+
+"Evil Sword":
+  <<: *weapon_lvl_130
+  skill: "Sword"
+
 # Tool
 
 "Hammer [I]":
@@ -2163,6 +4002,29 @@
   skill: "Tool"
   skill_lvl: 1
 
+"Weak Dynamite":
+  ingredients:
+    "Pearl": 300
+    "Pine": 200
+    "Coral": 300
+    "Weak Gunpowder": 100
+  batch_size: 10
+  workload: 12100
+  skill: "Tool"
+  skill_lvl: 10
+
+"Normal Dynamite":
+  ingredients:
+    "Pearl": 300
+    "Ruby": 50
+    "Pine": 200
+    "Coral": 500
+    "Common Gunpowder": 50
+  batch_size: 10
+  workload: 140000
+  skill: "Tool"
+  skill_lvl: 25
+
 "Small Lever":
   ingredients:
     "Slab of Lumber": 30
@@ -2173,6 +4035,9 @@
   workload: 15450
   skill: "Tool"
   skill_lvl: 15
+
+"Vulcan's Hammer":
+  market_price: 30000
 
 "Animal Replica":
   ingredients:
