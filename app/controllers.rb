@@ -1,4 +1,6 @@
 CraftCalculator.controllers  do
+  include IntegerExtractor
+
   get :index do
     @custom_prices = session[:custom_prices] || {}
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
@@ -14,7 +16,7 @@ CraftCalculator.controllers  do
     @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
     @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
     unless params[:count].blank?
-      @count = params[:count].to_i
+      @count = non_negative_integer_from_string(params[:count])
       @craft_list, @shopping_list, @leftovers = @item.craft(@count)
       @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
       @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
@@ -34,7 +36,7 @@ CraftCalculator.controllers  do
 
     params[:custom_prices].each do |item_name, price|
       unless price.blank?
-        session[:custom_prices][CGI::unescape(item_name)] = price.gsub(/[^0-9]/, "").to_i
+        session[:custom_prices][CGI::unescape(item_name)] = non_negative_integer_from_string(price)
       end
     end
 
