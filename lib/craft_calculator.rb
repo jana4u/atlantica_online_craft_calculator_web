@@ -49,6 +49,26 @@ module AtlanticaOnline
         ordered_items.select{ |i| i.craftable? }
       end
 
+      def self.ordered_ingredient_items
+        ingredient_names = []
+
+        items.each do |item|
+          if item.craftable?
+            ingredient_names += item.ingredients.keys
+          end
+        end
+
+        ingredient_names = ingredient_names.uniq
+
+        ingredients = []
+
+        ingredient_names.each do |ingredient_name|
+          ingredients << find(ingredient_name)
+        end
+
+        ingredients.sort_by { |i| i.name_for_sort }
+      end
+
       def self.remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
         leftovers.each do |leftover|
           if leftover.more_than_batch? && (cl_item = craft_list.detect { |i| i.name == leftover.name })

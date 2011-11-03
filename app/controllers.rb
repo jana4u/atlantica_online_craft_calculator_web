@@ -24,7 +24,7 @@ CraftCalculator.controllers  do
 
   get :'custom-prices' do
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
-    @items = AtlanticaOnline::CraftCalculator::Item.ordered_items
+    @items = AtlanticaOnline::CraftCalculator::Item.ordered_ingredient_items
     @custom_prices = session[:custom_prices] || {}
     render 'custom_prices'
   end
