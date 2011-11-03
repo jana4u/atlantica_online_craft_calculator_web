@@ -27,3 +27,7 @@ ul#menu li {
   padding-right: 1em;
   display: inline;
 }
+
+#ajax-loader {
+  display: none;
+}

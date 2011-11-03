@@ -1,5 +1,5 @@
 <% content_for :assets do %>
-  <%= javascript_include_tag 'jquery', 'jquery-ujs' %>
+  <%= javascript_include_tag 'jquery', 'jquery-ujs', 'application' %>
 <% end %>
 
 <% form_tag("/", :remote => true) do %>
@@ -8,6 +8,8 @@
   <%= label_tag(:count, :caption => "Count:") %>
   <%= text_field_tag(:count, :value => params[:count], :size => 5, :id => :count) %>
   <%= submit_tag "Calculate" %>
+  <%= image_tag "ajax-loader.gif", :id => "ajax-loader" %>
+  <span id="error"></span>
 <% end %>
 
 <div id="general">
