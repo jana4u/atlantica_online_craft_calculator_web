@@ -14,4 +14,8 @@ jQuery(function($) {
   .bind("ajax:complete", function() {
     $("#ajax-loader").hide();
   });
+
+  $("select").change(function() {
+    $(this).closest("form").submit();
+  });
 });

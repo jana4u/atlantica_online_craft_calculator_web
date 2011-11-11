@@ -21,6 +21,30 @@ CraftCalculator.helpers do
     end
   end
 
+  def skill_names
+    AtlanticaOnline::CraftCalculator::Item.ordered_item_skills
+  end
+
+  def item_names
+    AtlanticaOnline::CraftCalculator::Item.ordered_craftable_items.map{ |i| i.name }
+  end
+
+  def item_names_for_skill(skill)
+    AtlanticaOnline::CraftCalculator::Item.craftable_items_for_skill_ordered_by_skill_lvl(skill).map{ |i| [ "#{i.name} – #{i.skill_lvl}", i.name ] }
+  end
+
+  def item_names_for_skill_or_all(skill)
+    if skill.blank?
+      item_names
+    else
+      item_names_for_skill(skill)
+    end
+  end
+
+  def items_select_tag
+    select_tag(:item_name, :options => item_names_for_skill_or_all(params[:skill]), :selected => params[:item_name], :include_blank => "", :id => :item_name)
+  end
+
   # def simple_helper_method
   #  ...
   # end

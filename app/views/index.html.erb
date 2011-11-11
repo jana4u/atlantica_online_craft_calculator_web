@@ -2,12 +2,26 @@
   <%= javascript_include_tag 'jquery', 'jquery-ujs', 'application' %>
 <% end %>
 
+<% form_tag("/", :method => :get, :remote => true) do %>
+  <%= label_tag(:skill, :caption => "Skill:") %>
+  <%= select_tag(:skill, :options => skill_names, :selected => params[:skill], :include_blank => "", :id => :skill) %>
+
+  <noscript>
+  <%= submit_tag "Filter" %>
+  </noscript>
+<% end %>
+
 <% form_tag("/", :remote => true) do %>
+  <%= hidden_field_tag(:skill, :value => params[:skill]) %>
+
   <%= label_tag(:item_name, :caption => "Item:") %>
-  <%= select_tag(:item_name, :options => @items.map{ |i| i.name }, :selected => params[:item_name], :id => :item_name) %>
+  <%= items_select_tag %>
+
   <%= label_tag(:count, :caption => "Count:") %>
   <%= text_field_tag(:count, :value => params[:count], :size => 5, :id => :count) %>
+
   <%= submit_tag "Calculate" %>
+
   <%= image_tag "ajax-loader.gif", :id => "ajax-loader" %>
   <span id="error"></span>
 <% end %>

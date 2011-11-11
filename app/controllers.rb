@@ -1,28 +1,28 @@
 CraftCalculator.controllers  do
   include IntegerExtractor
 
-  get :index do
+  get :index, :provides => [:html, :js] do
     @custom_prices = session[:custom_prices] || {}
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
-    @items = AtlanticaOnline::CraftCalculator::Item.ordered_craftable_items
     render 'index'
   end
 
   post :index, :provides => [:html, :js] do
     @custom_prices = session[:custom_prices] || {}
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
-    @items = AtlanticaOnline::CraftCalculator::Item.ordered_craftable_items
-    @item = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name])
-    @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
-    @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
-    if params[:count].blank?
-      @count = @item.batch_size
-    else
-      @count = non_negative_integer_from_string(params[:count])
+    unless params[:item_name].blank?
+      @item = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name])
+      @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
+      @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
+      if params[:count].blank?
+        @count = @item.batch_size
+      else
+        @count = non_negative_integer_from_string(params[:count])
+      end
+      @craft_list, @shopping_list, @leftovers = @item.craft(@count)
+      @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
+      @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
     end
-    @craft_list, @shopping_list, @leftovers = @item.craft(@count)
-    @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
-    @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
     render 'index'
   end
 

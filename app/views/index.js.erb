@@ -1,7 +1,16 @@
-$('#general').html('<%= js_escape_html(partial('general')) %>');
+<% if @item %>
+  $('#general').html('<%= js_escape_html(partial('general')) %>');
 
-<% if @count %>
-  $('#my').html('<%= js_escape_html(partial('my')) %>');
+  <% if @count %>
+    $('#my').html('<%= js_escape_html(partial('my')) %>');
+  <% else %>
+    $('#my').html('');
+  <% end %>
 <% else %>
-  $('#my').html('');
+  $('#item_name').replaceWith('<%= js_escape_html(items_select_tag) %>');
+  $("#item_name").change(function() {
+  if ($(this).attr("selectedIndex") > 0) {
+  $(this).closest("form").submit();
+  }
+  });
 <% end %>

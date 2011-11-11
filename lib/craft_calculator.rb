@@ -49,6 +49,10 @@ module AtlanticaOnline
         ordered_items.select{ |i| i.craftable? }
       end
 
+      def self.craftable_items_for_skill_ordered_by_skill_lvl(skill)
+        ordered_craftable_items.select{ |i| i.skill == skill }.sort_by { |i| i.skill_lvl_and_name_for_sort }
+      end
+
       def self.ordered_ingredient_items
         ingredient_names = []
 
@@ -67,6 +71,14 @@ module AtlanticaOnline
         end
 
         ingredients.sort_by { |i| i.name_for_sort }
+      end
+
+      def self.item_skills
+        all.values.map { |i| i.skill }.compact.uniq
+      end
+
+      def self.ordered_item_skills
+        item_skills.sort
       end
 
       def self.remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
@@ -120,6 +132,10 @@ module AtlanticaOnline
 
       def name_for_sort
         name.gsub("[I]", "1").gsub("[II]", "2").gsub("[III]", "3").gsub("[IV]", "4").gsub("[V]", "5")
+      end
+
+      def skill_lvl_and_name_for_sort
+        "#{skill_lvl.to_s.rjust(3, "0")} #{name_for_sort}"
       end
 
       def batch_size
