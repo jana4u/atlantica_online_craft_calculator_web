@@ -11,6 +11,10 @@ td.label, th.label {
   text-align: left;
 }
 
+tr.zero, span.zero {
+  background-color: yellow;
+}
+
 #footer {
   font-size: 90%;
   text-align: center;

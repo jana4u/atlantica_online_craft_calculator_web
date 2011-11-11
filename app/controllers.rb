@@ -15,12 +15,14 @@ CraftCalculator.controllers  do
     @item = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name])
     @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
     @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
-    unless params[:count].blank?
+    if params[:count].blank?
+      @count = @item.batch_size
+    else
       @count = non_negative_integer_from_string(params[:count])
-      @craft_list, @shopping_list, @leftovers = @item.craft(@count)
-      @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
-      @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
     end
+    @craft_list, @shopping_list, @leftovers = @item.craft(@count)
+    @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
+    @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
     render 'index'
   end
 
@@ -49,7 +51,7 @@ CraftCalculator.controllers  do
     redirect '/custom-prices'
   end
 
-  [:'get-involved', :about].each do |page|
+  [:about].each do |page|
     get page do
       render page.to_s.gsub('-', '_')
     end

@@ -42,7 +42,7 @@
 
 <table>
   <% @shopping_list.each do |shopping_list_item| %>
-    <tr>
+    <tr<% if shopping_list_item.unit_price.zero? %> class="zero"<% end %>>
       <td class="label"><%= shopping_list_item.name %></td>
       <td><%= shopping_list_item.count %></td>
       <td><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
