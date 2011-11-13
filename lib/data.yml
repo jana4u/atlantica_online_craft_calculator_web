@@ -8625,7 +8625,7 @@
     "Colorful Fabric": 1
   batch_size: 500
   workload: 110000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 33
 
 "Guardian Stone [II]":
@@ -8635,7 +8635,7 @@
     "Gorgeous Colorful Fabric": 1
   batch_size: 500
   workload: 320000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 41
 
 "Guardian Stone [III]":
@@ -8645,7 +8645,7 @@
     "Gorgeous Colorful Fabric": 2
   batch_size: 500
   workload: 780000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 43
 
 "Guardian Stone [IV]":
@@ -8655,7 +8655,7 @@
     "Platinum Ingot": 50
   batch_size: 500
   workload: 5000000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 63
 
 "Guardian Stone of Recovery":
@@ -8664,7 +8664,7 @@
     "Crystal of Temptation": 1
   batch_size: 300
   workload: 1000000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 45
 
 "Guardian Stone of Bravery":
@@ -8673,7 +8673,7 @@
     "Crystal of Temptation": 1
   batch_size: 300
   workload: 1000000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 45
 
 "Guardian Stone of Celerity":
@@ -8682,7 +8682,7 @@
     "Crystal of Temptation": 1
   batch_size: 300
   workload: 1000000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 45
 
 "Guardian Stone of Awakening":
@@ -8692,7 +8692,7 @@
     "Crystal of Darkness": 1
   batch_size: 300
   workload: 1000000
-  skill: "Guardian"
+  skill: "Mana Stone"
   skill_lvl: 45
 
 "Spirit Rifle":
@@ -11691,7 +11691,7 @@
     "Atlas Ore": 1
   batch_size: 4
   workload: 1000
-  skill: "Misc."
+  skill: "Quest"
   skill_lvl: 0
 
 "Evil-Slaying Arrow":
