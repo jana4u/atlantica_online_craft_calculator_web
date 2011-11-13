@@ -1369,6 +1369,102 @@
   skill: "Book"
   skill_lvl: 62
 
+"Book: Dusk Elegy [I]":
+  market_price: 0
+
+"Book: Dusk Elegy [II]":
+  ingredients:
+    "Book: Dusk Elegy [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Dusk Elegy [III]":
+  ingredients:
+    "Book: Dusk Elegy [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5500000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Dusk Elegy [IV]":
+  ingredients:
+    "Book: Dusk Elegy [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 14000000
+  skill: "Book"
+  skill_lvl: 67
+
+"Book: Dawn Harmony [I]":
+  market_price: 0
+
+"Book: Dawn Harmony [II]":
+  ingredients:
+    "Book: Dawn Harmony [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Dawn Harmony [III]":
+  ingredients:
+    "Book: Dawn Harmony [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5500000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Dawn Harmony [IV]":
+  ingredients:
+    "Book: Dawn Harmony [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 14000000
+  skill: "Book"
+  skill_lvl: 67
+
 "Book: Marauder's Edge [I]":
   market_price: 0
 
@@ -1551,6 +1647,54 @@
   workload: 11350000
   skill: "Book"
   skill_lvl: 65
+
+"Book: Revolver Rush [I]":
+  market_price: 0
+
+"Book: Revolver Rush [II]":
+  ingredients:
+    "Book: Revolver Rush [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Revolver Rush [III]":
+  ingredients:
+    "Book: Revolver Rush [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Revolver Rush [IV]":
+  ingredients:
+    "Book: Revolver Rush [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
 
 "Book: Summon Machine [I]":
   market_price: 0
@@ -2309,6 +2453,54 @@
   workload: 30000000
   skill: "Book"
   skill_lvl: 68
+
+"Book: Vampiric Thirst [I]":
+  market_price: 0
+
+"Book: Vampiric Thirst [II]":
+  ingredients:
+    "Book: Vampiric Thirst [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Vampiric Thirst [III]":
+  ingredients:
+    "Book: Vampiric Thirst [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5500000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Vampiric Thirst [IV]":
+  ingredients:
+    "Book: Vampiric Thirst [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 14000000
+  skill: "Book"
+  skill_lvl: 67
 
 "Book: Mana Seal [I]":
   market_price: 0
@@ -3157,6 +3349,54 @@
   workload: 30000000
   skill: "Book"
   skill_lvl: 68
+
+"Book: Steady Stance [I]":
+  market_price: 0
+
+"Book: Steady Stance [II]":
+  ingredients:
+    "Book: Steady Stance [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Steady Stance [III]":
+  ingredients:
+    "Book: Steady Stance [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Steady Stance [IV]":
+  ingredients:
+    "Book: Steady Stance [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
 
 "Book: Dark Seed [I]":
   market_price: 0
@@ -4642,6 +4882,54 @@
   workload: 2060000
   skill: "Book"
   skill_lvl: 62
+
+"Book: Arrest [I]":
+  market_price: 0
+
+"Book: Arrest [II]":
+  ingredients:
+    "Book: Arrest [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Arrest [III]":
+  ingredients:
+    "Book: Arrest [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Arrest [IV]":
+  ingredients:
+    "Book: Arrest [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
 
 "Book: Blazing Earth [I]":
   market_price: 0
@@ -9985,17 +10273,6 @@
   skill: "Instrument"
   skill_lvl: 110
 
-"Power Up License (30hrs)":
-  ingredients:
-    "Papyrus": 150
-    "Fusain": 30
-    "Ashen Crystal": 200
-    "Colorful Fabric": 10
-  batch_size: 10
-  workload: 150000
-  skill: "License"
-  skill_lvl: 5
-
 "Secrets of Time: Monk":
   ingredients:
     "Book: Holy Guard [I]": 1
@@ -11685,14 +11962,6 @@
 
 "Heavenly Crystal":
   market_price: 0
-
-"Golden Bait":
-  ingredients:
-    "Atlas Ore": 1
-  batch_size: 4
-  workload: 1000
-  skill: "Quest"
-  skill_lvl: 0
 
 "Evil-Slaying Arrow":
   market_price: 0
