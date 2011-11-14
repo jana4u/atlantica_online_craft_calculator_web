@@ -7,49 +7,71 @@
   You can set your price even to 0.
 </p>
 
+<p>Leave field blank if you want to remove any of your current prices.</p>
+
 <% unless @custom_prices.empty? %>
   <h2>Your current prices</h2>
 
-  <table>
-    <tr>
-      <th class="label">Item</th>
-      <th>Your Price</th>
-    </tr>
-    <% @custom_prices.each do |item_name, price| %>
-      <tr>
-        <td class="label"><%= item_name %></td>
-        <td><%= number_with_delimiter(price) %></td>
-      </tr>
-    <% end %>
-  </table>
-
-  <% form_tag("/custom-prices", :method => :delete) do %>
+  <% form_tag(item_custom_prices_url, :method => :delete) do %>
     <%= submit_tag "Remove All" %>
+  <% end %>
+
+  <% form_tag(item_custom_prices_url) do %>
+    <table>
+      <tr>
+        <th class="label">Item</th>
+        <th>Your Price</th>
+      </tr>
+      <% @custom_prices.each do |item_name, price| %>
+        <tr<% if price.zero? %> class="zero"<% end %>>
+          <td class="label"><%= item_name %></td>
+          <td><%= text_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => number_with_delimiter(price)) %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <%= submit_tag "Update" %>
   <% end %>
 <% end %>
 
 <h2>Set or change your prices</h2>
 
-<% unless @custom_prices.empty? %>
-  <p>Leave field blank if you want to remove any of your current prices.</p>
-<% end %>
+<p>
+  <% form_tag(item_custom_prices_url, :method => :get) do %>
+    <%= label_tag(:item_name, :caption => "Crafted item:") %>
+    <%= items_select_tag %>
 
-<% form_tag("/custom-prices") do %>
+    <noscript>
+    <%= submit_tag "Filter" %>
+    </noscript>
+  <% end %>
+
+  <% unless params[:item_name].blank? %>
+    <% form_tag(url(:index, :item_name => params[:item_name])) do %>
+      <%= submit_tag "Use in calculator" %>
+    <% end %>
+  <% end %>
+</p>
+
+<% form_tag(item_custom_prices_url) do %>
+
+  <% @custom_prices.each do |item_name, price| %>
+    <%= hidden_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => price) %>
+  <% end %>
+
   <table>
     <tr>
       <th class="label">Item</th>
       <th>Fixed Price</th>
       <th>Market Price</th>
-      <th>Craft Price</th>
       <th>Your Price</th>
     </tr>
     <% @items.each do |item| %>
-      <tr>
+      <tr<% if zero_price?(item, @custom_prices[item.name]) %> class="zero"<% end %>>
         <td class="label"><%= item.name %></td>
         <td><%= number_with_delimiter(item.fixed_price) %></td>
         <td><%= number_with_delimiter(item.market_price) %></td>
-        <td><%= number_with_delimiter(item.craft_price) %></td>
-        <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => @custom_prices[item.name]) %></td>
+        <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => number_with_delimiter(@custom_prices[item.name])) %></td>
       </tr>
     <% end %>
   </table>

@@ -1,14 +1,12 @@
-<% if @shopping_list.detect { |item| item.unit_price.zero? } %>
-  <p>
+<p>
+  <% if @shopping_list.detect { |item| item.unit_price.zero? } %>
     Warning: <span class="zero">Highlighted prices are set to zero.</span> All results here are affected by that.
-    <%= link_to("Review or change your prices", "/custom-prices") %>.
-  </p>
-<% elsif !@custom_prices.empty? && @shopping_list.detect { |item| item.price_type == :market_price } %>
-  <p>
+  <% elsif !@custom_prices.empty? && @shopping_list.detect { |item| item.price_type == :market_price } %>
     Warning: You have set some prices yourself. All results here are affected by that.
-    <%= link_to("Review or change your prices", "/custom-prices") %>.
-  </p>
-<% end %>
+  <% end %>
+
+  <%= link_to("Review or change your prices for this craft", item_custom_prices_url) %>.
+</p>
 
 <h1><%= @item.name %></h1>
 

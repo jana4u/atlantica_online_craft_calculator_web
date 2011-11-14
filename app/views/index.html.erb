@@ -1,7 +1,3 @@
-<% content_for :assets do %>
-  <%= javascript_include_tag 'jquery', 'jquery-ujs', 'application' %>
-<% end %>
-
 <% form_tag("/", :method => :get, :remote => true) do %>
   <%= label_tag(:skill, :caption => "Skill:") %>
   <%= select_tag(:skill, :options => skill_names, :selected => params[:skill], :include_blank => "", :id => :skill) %>

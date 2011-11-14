@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%= favicon_tag("/favicon.ico") %>
     <%= stylesheet_link_tag :application %>
-    <%= yield_content :assets %>
+    <%= javascript_include_tag 'jquery', 'jquery-ujs', 'application' %>
   </head>
 
   <body>

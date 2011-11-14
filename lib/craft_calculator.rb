@@ -162,11 +162,28 @@ module AtlanticaOnline
       def ingredient_list
         list = IngredientList::ItemArray.new
 
-        ingredients.each do |ingredient_name, ingredient_count|
-          list << IngredientList::Item.new(self.class.find(ingredient_name), ingredient_count)
+        if craftable?
+          ingredients.each do |ingredient_name, ingredient_count|
+            list << IngredientList::Item.new(self.class.find(ingredient_name), ingredient_count)
+          end
         end
 
         return list
+      end
+
+      def ordered_ingredient_items
+        ingredient_items.sort_by { |i| i.name_for_sort }
+      end
+
+      def ingredient_items
+        list = []
+
+        ingredient_list.each do |ingredient_item|
+          list << ingredient_item.item
+          list += ingredient_item.ingredient_items
+        end
+
+        return list.uniq
       end
 
       def item_with_raw_craft_tree(count)
@@ -176,7 +193,7 @@ module AtlanticaOnline
 
         if crafting_is_cheaper?
           ingredient_list.each do |ingredient|
-            list << ingredient.item.item_with_raw_craft_tree(ingredient.count * batches_count)
+            list << ingredient.item_with_raw_craft_tree(ingredient.count * batches_count)
           end
           item_count = crafted_count(count)
         else
@@ -318,6 +335,11 @@ module AtlanticaOnline
 
     module IngredientList
       class Item < ShoppingList::Item
+        delegated_methods :ingredient_items
+
+        def item_with_raw_craft_tree(count)
+          item.item_with_raw_craft_tree(count)
+        end
       end
 
       class ItemArray < ShoppingList::ItemArray

@@ -28,7 +28,11 @@ CraftCalculator.controllers  do
 
   get :'custom-prices' do
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
-    @items = AtlanticaOnline::CraftCalculator::Item.ordered_ingredient_items
+    begin
+      @items = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name]).ordered_ingredient_items
+    rescue AtlanticaOnline::CraftCalculator::InvalidItem
+      @items = AtlanticaOnline::CraftCalculator::Item.ordered_ingredient_items
+    end
     @custom_prices = session[:custom_prices] || {}
     render 'custom_prices'
   end
@@ -42,13 +46,13 @@ CraftCalculator.controllers  do
       end
     end
 
-    redirect '/custom-prices'
+    redirect item_custom_prices_url
   end
 
   delete :'custom-prices' do
     session[:custom_prices] = {}
 
-    redirect '/custom-prices'
+    redirect item_custom_prices_url
   end
 
   [:about].each do |page|

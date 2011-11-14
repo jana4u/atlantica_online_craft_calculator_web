@@ -47,6 +47,20 @@ CraftCalculator.helpers do
     select_tag(:item_name, :options => item_names_for_skill_or_all(params[:skill]), :selected => params[:item_name], :include_blank => "", :id => :item_name)
   end
 
+  def item_custom_prices_url
+    url(:"custom-prices", :item_name => params[:item_name])
+  end
+
+  def zero_price?(item, custom_price)
+    if custom_price
+      return true if custom_price.zero?
+    else
+      return true if item.unit_price.zero?
+    end
+
+    return false
+  end
+
   # def simple_helper_method
   #  ...
   # end
