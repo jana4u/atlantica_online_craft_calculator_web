@@ -349,10 +349,22 @@ module AtlanticaOnline
     module CraftList
       class Item
         include ListItem
-        delegated_methods :ingredients, :batch_size, :workload, :skill
+        delegated_methods :unit_price, :ingredients, :batch_size, :workload, :skill, :skill_lvl
 
         def batches_count
           count / batch_size
+        end
+
+        def total_price
+          unit_price * count
+        end
+
+        def total_workload
+          batches_count * workload
+        end
+
+        def total_craft_xp_gained
+          total_workload / CRAFT_XP_TO_WORKLOAD_RATIO
         end
       end
 
@@ -361,7 +373,7 @@ module AtlanticaOnline
           result = Hash.new(0)
 
           self.each do |i|
-            result[i.skill] += i.batches_count * i.workload
+            result[i.skill] += i.total_workload
           end
 
           return result
@@ -381,7 +393,7 @@ module AtlanticaOnline
           result = 0
 
           self.each do |i|
-            result += i.batches_count * i.workload
+            result += i.total_workload
           end
 
           return result

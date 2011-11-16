@@ -13,7 +13,7 @@
   <%= label_tag(:item_name, :caption => "Item:") %>
   <%= items_select_tag %>
 
-  <%= label_tag(:count, :caption => "Count:") %>
+  <%= label_tag(:count, :caption => "Quantity:") %>
   <%= text_field_tag(:count, :value => params[:count], :size => 5, :id => :count) %>
 
   <%= submit_tag "Calculate" %>

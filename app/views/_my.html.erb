@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <td class="label">Requested count</td>
+    <td class="label">Requested quantity</td>
     <td><%= @count %></td>
   </tr>
   <tr>
-    <td class="label">Crafted count</td>
+    <td class="label">Crafted quantity</td>
     <td><%= @item.crafted_count(@count) %></td>
   </tr>
   <tr>
@@ -14,7 +14,7 @@
     <td><%= number_with_delimiter(@shopping_list.total_price) %></td>
   </tr>
   <tr>
-    <td class="label">Total Workload</td>
+    <td class="label">Total workload</td>
     <td><%= number_with_delimiter(@craft_list.total_workload) %></td>
   </tr>
   <tr>
@@ -30,6 +30,10 @@
 <h3>Craft XP</h3>
 
 <table>
+  <tr>
+    <th class="label">Skill</th>
+    <th>Craft XP</th>
+  </tr>
   <% @craft_list.total_craft_xp_gained_per_skill.each do |skill, xp| %>
     <tr>
       <td class="label"><%= skill %></td>
@@ -41,6 +45,13 @@
 <h3>Shopping list</h3>
 
 <table>
+  <tr>
+    <th class="label">Item</th>
+    <th>Quantity</th>
+    <th>Unit price</th>
+    <th>Total price</th>
+    <th>Price type</th>
+  </tr>
   <% @shopping_list.each do |shopping_list_item| %>
     <tr<% if shopping_list_item.unit_price.zero? %> class="zero"<% end %>>
       <td class="label"><%= shopping_list_item.name %></td>
@@ -55,10 +66,24 @@
 <h3>Craft schedule</h3>
 
 <table>
+  <tr>
+    <th class="label">Item</th>
+    <th>Quantity</th>
+    <th>Unit price</th>
+    <th>Total price</th>
+    <th>Workload</th>
+    <th>Craft XP</th>
+    <th class="label">Required skill</th>
+  </tr>
   <% @craft_list.each do |craft_list_item| %>
     <tr>
       <td class="label"><%= craft_list_item.name %></td>
       <td><%= craft_list_item.count %></td>
+      <td><%= number_with_delimiter(craft_list_item.unit_price) %></td>
+      <td><%= number_with_delimiter(craft_list_item.total_price) %></td>
+      <td><%= number_with_delimiter(craft_list_item.total_workload) %></td>
+      <td><%= number_with_delimiter(craft_list_item.total_craft_xp_gained) %></td>
+      <td class="label"><%= craft_list_item.skill %> <%= craft_list_item.skill_lvl %></td>
     </tr>
   <% end %>
 </table>
@@ -67,6 +92,10 @@
   <h3>Leftovers</h3>
 
   <table>
+    <tr>
+      <th class="label">Item</th>
+      <th>Quantity</th>
+    </tr>
     <% @leftovers.each do |leftover| %>
       <tr>
         <td class="label"><%= leftover.name %></td>
@@ -79,6 +108,15 @@
 <h3>Craft tree</h3>
 
 <table>
+  <tr>
+    <th class="label">Item</th>
+    <th>Requested q.</th>
+    <th>Crafted q.</th>
+    <th>Leftovers</th>
+    <th>Unit price</th>
+    <th>Total price</th>
+    <th>Price type</th>
+  </tr>
   <%= partial('craft_tree_item', :locals => { :item => @item_with_raw_craft_tree, :level => 0 }) %>
 </table>
 
@@ -86,10 +124,16 @@
   <h3>Craft tree leftovers</h3>
 
   <table>
+    <tr>
+      <th class="label">Item</th>
+      <th>Quantity</th>
+      <th>Batches</th>
+    </tr>
     <% @craft_tree_leftovers.each do |leftover| %>
       <tr>
         <td class="label"><%= leftover.name %></td>
         <td><%= leftover.count %></td>
+        <td><% unless leftover.complete_batches_count.zero? %><%= leftover.complete_batches_count %><% end %></td>
       </tr>
     <% end %>
   </table>
