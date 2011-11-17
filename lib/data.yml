@@ -857,6 +857,51 @@
   skill: "Armor"
   skill_lvl: 116
 
+"Pegasus Heavy Armor":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 200000000
+  skill: "Armor"
+  skill_lvl: 125
+
+"Pegasus Light Armor":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 200000000
+  skill: "Armor"
+  skill_lvl: 124
+
+"Pegasus Robe":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 200000000
+  skill: "Armor"
+  skill_lvl: 123
+
 "Wooden Arrow":
   ingredients:
     "Maple": 4
@@ -962,6 +1007,20 @@
   workload: 1100000
   skill: "Arrow"
   skill_lvl: 45
+
+"Enhanced Titanium Arrow":
+  ingredients:
+    "Titanium Ingot": 10
+    "Refined Mithril Ingot": 1
+    "Mystic Gem": 1
+    "Gorgeous Colorful Fabric": 5
+    "Sorcerer's Mask": 2
+    "Flame Element": 30
+    "Root of Life": 10
+  batch_size: 400
+  workload: 3000000
+  skill: "Arrow"
+  skill_lvl: 50
 
 "Spirit Axe":
   fixed_price: 900
@@ -1227,6 +1286,21 @@
   workload: 160000000
   skill: "Axe"
   skill_lvl: 110
+
+"Pegasus Axe":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Axe"
+  skill_lvl: 121
 
 "Artisan Crafting Secrets":
   market_price: 0
@@ -1924,6 +1998,54 @@
   skill: "Book"
   skill_lvl: 64
 
+"Book: Thunderbolt Slash [I]":
+  market_price: 0
+
+"Book: Thunderbolt Slash [II]":
+  ingredients:
+    "Book: Thunderbolt Slash [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Thunderbolt Slash [III]":
+  ingredients:
+    "Book: Thunderbolt Slash [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Thunderbolt Slash [IV]":
+  ingredients:
+    "Book: Thunderbolt Slash [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
+
 "Book: Multi Arrow [I]":
   fixed_price: 200000
 
@@ -2120,6 +2242,20 @@
   workload: 150000
   skill: "Book"
   skill_lvl: 17
+
+"Book: Mana Shield [III]":
+  ingredients:
+    "Book: Mana Shield [II]": 20
+    "Fountain Pen": 4
+    "Whatman Paper": 5
+    "Ornate Ink Bottle": 15
+    "Gold Thread": 100
+    "Crystal of Knowledge": 5
+    "Book of Knowledge": 50
+  batch_size: 10
+  workload: 1400000
+  skill: "Book"
+  skill_lvl: 40
 
 "Book: Mana Recharge [I]":
   fixed_price: 10000
@@ -4364,6 +4500,102 @@
   skill: "Book"
   skill_lvl: 63
 
+"Book: Rally [I]":
+  market_price: 0
+
+"Book: Rally [II]":
+  ingredients:
+    "Book: Rally [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Rally [III]":
+  ingredients:
+    "Book: Rally [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Rally [IV]":
+  ingredients:
+    "Book: Rally [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
+
+"Book: Demoralize [I]":
+  market_price: 0
+
+"Book: Demoralize [II]":
+  ingredients:
+    "Book: Demoralize [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Demoralize [III]":
+  ingredients:
+    "Book: Demoralize [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Demoralize [IV]":
+  ingredients:
+    "Book: Demoralize [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
+
 "Book: Requiem [I]":
   market_price: 0
 
@@ -5687,6 +5919,276 @@
 "Book of Wisdom":
   fixed_price: 10000
 
+"Book: Sparta [I]":
+  market_price: 0
+
+"Book: Sparta [II]":
+  ingredients:
+    "Book: Sparta [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 4000000
+  skill: "Book"
+  skill_lvl: 53
+
+"Book: Sparta [III]":
+  ingredients:
+    "Book: Sparta [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 4200000
+  skill: "Book"
+  skill_lvl: 54
+
+"Book: Sparta [IV]":
+  ingredients:
+    "Book: Sparta [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 27340000
+  skill: "Book"
+  skill_lvl: 66
+
+"Book: Unstoppable [I]":
+  market_price: 0
+
+"Book: Unstoppable [II]":
+  ingredients:
+    "Book: Unstoppable [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Unstoppable  [III]":
+  ingredients:
+    "Book: Unstoppable [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Unstoppable [IV]":
+  ingredients:
+    "Book: Unstoppable  [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
+
+"Book: Tarkan's Will [I]":
+  market_price: 0
+
+"Book: Tarkan's Will [II]":
+  ingredients:
+    "Book: Tarkan's Will [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Tarkan's Will [III]":
+  ingredients:
+    "Book: Tarkan's Will [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Tarkan's Will [IV]":
+  ingredients:
+    "Book: Tarkan's Will [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
+
+"Book: Cleaving Blows [I]":
+  market_price: 0
+
+"Book: Cleaving Blows [II]":
+  ingredients:
+    "Book: Cleaving Blows [I]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5000000
+  skill: "Book"
+  skill_lvl: 57
+
+"Book: Cleaving Blows [III]":
+  ingredients:
+    "Book: Cleaving Blows [II]": 20
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+    "Colorful Thread": 150
+    "Colorful Fabric": 30
+    "Crystal of Anguish": 5
+    "Book of Anguish": 50
+  batch_size: 10
+  workload: 5200000
+  skill: "Book"
+  skill_lvl: 58
+
+"Book: Cleaving Blows [IV]":
+  ingredients:
+    "Book: Cleaving Blows [III]": 20
+    "Multi-Hued Pen": 4
+    "Multi-Hued Parchment": 4
+    "Multi-Hued Ink Bottle": 15
+    "Colorful Thread": 150
+    "Gorgeous Colorful Fabric": 50
+    "Crystal of Anguish": 50
+    "Book of Anguish": 100
+  batch_size: 10
+  workload: 13500000
+  skill: "Book"
+  skill_lvl: 67
+
+"Book: Primal Monsoon [I]":
+  market_price: 0
+
+"Book: Primal Monsoon [II]":
+  ingredients:
+    "Book: Primal Monsoon [I]": 20
+    "Heavenly Crystal": 3
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+  batch_size: 10
+  workload: 10000000
+  skill: "Book"
+  skill_lvl: 71
+
+"Book: Primal Monsoon [III]":
+  ingredients:
+    "Book: Primal Monsoon [II]": 20
+    "Heavenly Crystal": 4
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+  batch_size: 10
+  workload: 20000000
+  skill: "Book"
+  skill_lvl: 72
+
+"Book: Primal Monsoon [IV]":
+  ingredients:
+    "Book: Primal Monsoon [III]": 20
+    "Heavenly Crystal": 5
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+  batch_size: 10
+  workload: 30000000
+  skill: "Book"
+  skill_lvl: 73
+
+"Book: Beating Sun [I]":
+  market_price: 0
+
+"Book: Beating Sun [II]":
+  ingredients:
+    "Book: Beating Sun [I]": 20
+    "Heavenly Crystal": 3
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+  batch_size: 10
+  workload: 10000000
+  skill: "Book"
+  skill_lvl: 71
+
+"Book: Beating Sun [III]":
+  ingredients:
+    "Book: Beating Sun [II]": 20
+    "Heavenly Crystal": 4
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+  batch_size: 10
+  workload: 20000000
+  skill: "Book"
+  skill_lvl: 72
+
+"Book: Beating Sun [IV]":
+  ingredients:
+    "Book: Beating Sun [III]": 20
+    "Heavenly Crystal": 5
+    "Wiseman's Golden Pen": 4
+    "Wiseman's Golden Parchment": 4
+    "Wiseman's Golden Ink Bottle": 15
+  batch_size: 10
+  workload: 30000000
+  skill: "Book"
+  skill_lvl: 73
+
 "Spirit Bow":
   fixed_price: 900
   ingredients:
@@ -5951,6 +6453,21 @@
   workload: 160000000
   skill: "Bow"
   skill_lvl: 110
+
+"Pegasus Bow":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Bow"
+  skill_lvl: 121
 
 "Ancient Book Box of Monks":
   market_price: 0
@@ -6814,6 +7331,20 @@
   skill: "Bullet"
   skill_lvl: 45
 
+"Enhanced Titanium Bullet":
+  ingredients:
+    "Titanium Ingot": 10
+    "Refined Mithril Ingot": 1
+    "Mystic Gem": 1
+    "Gorgeous Colorful Fabric": 5
+    "Sorcerer's Mask": 2
+    "Flame Element": 30
+    "Root of Life": 10
+  batch_size: 400
+  workload: 3000000
+  skill: "Bullet"
+  skill_lvl: 50
+
 "Spirit Cannon":
   fixed_price: 900
   ingredients:
@@ -7079,6 +7610,21 @@
   skill: "Cannon"
   skill_lvl: 110
 
+"Pegasus Cannon":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Cannon"
+  skill_lvl: 121
+
 "Steel Cannonball":
   ingredients:
     "Iron Sand": 7
@@ -7181,6 +7727,20 @@
   workload: 1200000
   skill: "Cannonball"
   skill_lvl: 45
+
+"Enhanced Titanium Cannonball":
+  ingredients:
+    "Titanium Ingot": 10
+    "Refined Mithril Ingot": 1
+    "Mystic Gem": 1
+    "Gorgeous Colorful Fabric": 5
+    "Sorcerer's Mask": 2
+    "Flame Element": 30
+    "Root of Life": 10
+  batch_size: 400
+  workload: 3000000
+  skill: "Cannonball"
+  skill_lvl: 50
 
 "Savior's Charm [I]":
   ingredients:
@@ -8148,6 +8708,41 @@
   skill: "Food"
   skill_lvl: 30
 
+"[Common] Nouvelle Cuisine Feast":
+  ingredients:
+    "Storm Element": 40
+    "Rare Magnetite": 20
+    "Rare Ginkgo Wood": 20
+    "Rare Brown Rice": 20
+    "Rare Mint": 20
+  workload: 18000000
+  skill: "Food"
+  skill_lvl: 40
+
+"Plain BBQ":
+  ingredients:
+    "Root of Life": 1
+    "Pork": 15
+    "Mutton": 15
+    "Thin Rayon": 2
+    "Oriental Mushroom": 2
+  batch_size: 10
+  workload: 120000
+  skill: "Food"
+  skill_lvl: 68
+
+"Rooibos Tea":
+  ingredients:
+    "Root of Life": 1
+    "Barley": 15
+    "Chrysanthemum": 15
+    "Thin Rayon": 2
+    "Oriental Mushroom": 2
+  batch_size: 10
+  workload: 135000
+  skill: "Food"
+  skill_lvl: 75
+
 "Spirit Gloves":
   fixed_price: 300
   ingredients:
@@ -8904,6 +9499,51 @@
   skill: "Gauntlet"
   skill_lvl: 112
 
+"Pegasus Gauntlets":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 90000000
+  skill: "Gauntlet"
+  skill_lvl: 120
+
+"Pegasus Chain Gauntlets":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 90000000
+  skill: "Gauntlet"
+  skill_lvl: 119
+
+"Pegasus Gloves":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 90000000
+  skill: "Gauntlet"
+  skill_lvl: 118
+
 "Guardian Stone [I]":
   fixed_price: 1500
   ingredients:
@@ -9247,6 +9887,21 @@
   workload: 160000000
   skill: "Gun"
   skill_lvl: 110
+
+"Pegasus Rifle":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Gun"
+  skill_lvl: 121
 
 "Spirit Helmet":
   fixed_price: 600
@@ -10008,6 +10663,51 @@
   skill: "Helmet"
   skill_lvl: 112
 
+"Pegasus Helmet":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 135000000
+  skill: "Helmet"
+  skill_lvl: 120
+
+"Pegasus Chain Helm":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 135000000
+  skill: "Helmet"
+  skill_lvl: 119
+
+"Pegasus Hat":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 135000000
+  skill: "Helmet"
+  skill_lvl: 118
+
 "Spirit Instrument":
   fixed_price: 900
   ingredients:
@@ -10272,6 +10972,21 @@
   workload: 160000000
   skill: "Instrument"
   skill_lvl: 110
+
+"Pegasus Instrument":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Instrument"
+  skill_lvl: 121
 
 "Secrets of Time: Monk":
   ingredients:
@@ -10986,6 +11701,17 @@
   skill: "License"
   skill_lvl: 54
 
+"Secrets of Time: Sorceress":
+  ingredients:
+    "Storm Element": 15
+    "Flame Element": 20
+    "Mysterious Vial: Death": 1
+    "Sorcerer's Mask": 5
+    "Root of Life": 30
+  workload: 8000000
+  skill: "License"
+  skill_lvl: 55
+
 "Machine: Search Robot VC1":
   ingredients:
     "Coral": 20
@@ -11241,6 +11967,9 @@
 "Enchant Stone [V]":
   market_price: 0
 
+"Enchant Stone [VI]":
+  market_price: 0
+
 "Enhance Stone [I]":
   ingredients:
     "Enchant Stone [I]": 5
@@ -11300,6 +12029,17 @@
   workload: 1900000
   skill: "Mana Stone"
   skill_lvl: 53
+
+"Enhance Stone [VI]":
+  ingredients:
+    "Enchant Stone [VI]": 5
+    "Vulcan's Hammer": 200
+    "Storm Element": 10
+    "Mystic Gem": 5
+  batch_size: 10
+  workload: 3000000
+  skill: "Mana Stone"
+  skill_lvl: 65
 
 "Ginseng":
   fixed_price: 100
@@ -11384,6 +12124,16 @@
   skill: "Medicine"
   skill_lvl: 68
 
+"Healing Potion [VI]":
+  ingredients:
+    "Healing Potion [V]": 100
+    "Root of Life": 10
+    "Mysterious Vial: Valor": 1
+  batch_size: 100
+  workload: 1800000
+  skill: "Medicine"
+  skill_lvl: 87
+
 "Mana Potion [I]":
   fixed_price: 1500
   ingredients:
@@ -11434,6 +12184,16 @@
   workload: 720000
   skill: "Medicine"
   skill_lvl: 71
+
+"Mana Potion [VI]":
+  ingredients:
+    "Mana Potion [V]": 100
+    "Monster Egg": 150
+    "Mysterious Vial: Wisdom": 1
+  batch_size: 100
+  workload: 2000000
+  skill: "Medicine"
+  skill_lvl: 89
 
 "Elixir [I]":
   ingredients:
@@ -11486,6 +12246,17 @@
   skill: "Medicine"
   skill_lvl: 74
 
+"Elixir [VI]":
+  ingredients:
+    "Healing Potion [VI]": 100
+    "Mana Potion [VI]": 100
+    "Flame Element": 10
+    "Fusing Agent": 50
+  batch_size: 100
+  workload: 3000000
+  skill: "Medicine"
+  skill_lvl: 91
+
 "Antidote [I]":
   fixed_price: 1500
   ingredients:
@@ -11535,6 +12306,17 @@
   workload: 600000
   skill: "Medicine"
   skill_lvl: 65
+
+"Antidote [VI]":
+  ingredients:
+    "Antidote [V]": 100
+    "Root of Life": 5
+    "Sea Element": 5
+    "Evil Soul Extract": 5
+  batch_size: 100
+  workload: 1500000
+  skill: "Medicine"
+  skill_lvl: 85
 
 "Stimulant [I]":
   ingredients:
@@ -11590,6 +12372,17 @@
   workload: 1050000
   skill: "Medicine"
   skill_lvl: 83
+
+"Stimulant [VI]":
+  ingredients:
+    "Antidote [VI]": 10
+    "Life Potion [VI]": 10
+    "Elixir [VI]": 10
+    "Flame Element": 3
+  batch_size: 10
+  workload: 2000000
+  skill: "Medicine"
+  skill_lvl: 97
 
 "Life Potion [I]":
   fixed_price: 1500
@@ -11647,6 +12440,17 @@
   skill: "Medicine"
   skill_lvl: 77
 
+"Life Potion [VI]":
+  ingredients:
+    "Life Potion [V]": 200
+    "Root of Life": 10
+    "Oriental Mushroom": 10
+    "Mysterious Vial: Death": 2
+  batch_size: 200
+  workload: 5000000
+  skill: "Medicine"
+  skill_lvl: 93
+
 "Growth Vial [II]":
   fixed_price: 30000
 
@@ -11682,6 +12486,17 @@
   workload: 16000000
   skill: "Medicine"
   skill_lvl: 80
+
+"Growth Vial [VI]":
+  ingredients:
+    "Growth Vial [V]": 10
+    "Sorcerer's Mask": 4
+    "Root of Life": 20
+    "Heavenly Crystal": 1
+  batch_size: 10
+  workload: 20000000
+  skill: "Medicine"
+  skill_lvl: 95
 
 "Secret Vial of Potential [I]":
   market_price: 0
@@ -11782,6 +12597,14 @@
   skill: "Tool"
   skill_lvl: 32
 
+"Enhanced Titanium Ingot":
+  ingredients:
+    "Titanium Ingot": 100
+    "Blue Sapphire": 20
+  workload: 2000000
+  skill: "Tool"
+  skill_lvl: 47
+
 "Gold Ingot":
   fixed_price: 2000
 
@@ -11875,6 +12698,19 @@
   workload: 136800
   skill: "Tool"
   skill_lvl: 37
+
+"Fused Devil Stone":
+  ingredients:
+    "Evil Imprint": 1
+    "Dragon God's Wishstone": 1
+    "Depraved Seed": 1
+    "Phoenix's Feather": 1
+    "Imitation Oriharukon": 1
+    "Alchemist's Stone": 1
+    "Enriched Adamantium Ingot": 1
+  workload: 15000000
+  skill: "Tool"
+  skill_lvl: 55
 
 "Weak Gunpowder":
   fixed_price: 100
@@ -11973,7 +12809,7 @@
   fixed_price: 200000
 
 "Rare Mint":
-  market_price: 0
+  fixed_price: 500000
 
 "Precious Mint":
   market_price: 0
@@ -11985,7 +12821,7 @@
   fixed_price: 200000
 
 "Rare Magnetite":
-  market_price: 0
+  fixed_price: 500000
 
 "Precious Magnetite":
   market_price: 0
@@ -11997,7 +12833,7 @@
   fixed_price: 200000
 
 "Rare Ginkgo Wood":
-  market_price: 0
+  fixed_price: 500000
 
 "Precious Ginkgo Wood":
   market_price: 0
@@ -12009,7 +12845,7 @@
   fixed_price: 200000
 
 "Rare Brown Rice":
-  market_price: 0
+  fixed_price: 500000
 
 "Precious Brown Rice":
   market_price: 0
@@ -12021,6 +12857,9 @@
   fixed_price: 300000
 
 "Expert's Soul":
+  fixed_price: 3000000
+
+"Oriharukon":
   market_price: 0
 
 "Evil Imprint":
@@ -12030,6 +12869,15 @@
   fixed_price: 350000
 
 "Mystic Gem":
+  market_price: 0
+
+"Root of Life":
+  market_price: 0
+
+"Sorcerer's Mask":
+  market_price: 0
+
+"Pegasus Tear":
   market_price: 0
 
 "Shimmering Opal Necklace":
@@ -12351,6 +13199,21 @@
   workload: 30000000
   skill: "Orb"
   skill_lvl: 103
+
+"Pegasus Orb":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 50000000
+  skill: "Orb"
+  skill_lvl: 110
 
 "Spirit Leggings":
   fixed_price: 500
@@ -12864,6 +13727,36 @@
   skill: "Pants"
   skill_lvl: 106
 
+"Pegasus Greaves":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 135000000
+  skill: "Pants"
+  skill_lvl: 118
+
+"Pegasus Leggings":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 135000000
+  skill: "Pants"
+  skill_lvl: 116
+
 "Spirit Power Saw":
   fixed_price: 900
   ingredients:
@@ -13128,6 +14021,21 @@
   workload: 160000000
   skill: "Power Saw"
   skill_lvl: 110
+
+"Pegasus Power Saw":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Power Saw"
+  skill_lvl: 121
 
 "Ring of Dull Swords":
   ingredients:
@@ -13547,6 +14455,17 @@
   skill: "Scroll"
   skill_lvl: 40
 
+"Scroll of Purification [VI]":
+  ingredients:
+    "Scroll of Purification [V]": 30
+    "Antidote [V]": 20
+    "Gorgeous Colorful Fabric": 3
+    "Flame Element": 5
+  batch_size: 30
+  workload: 2800000
+  skill: "Scroll"
+  skill_lvl: 55
+
 "Scroll of Dispel [III]":
   ingredients:
     "Papyrus": 10
@@ -13587,6 +14506,17 @@
   skill: "Scroll"
   skill_lvl: 35
 
+"Scroll of Dispel [VI]":
+  ingredients:
+    "Scroll of Dispel [V]": 30
+    "Antidote [V]": 20
+    "Gorgeous Colorful Fabric": 3
+    "Flame Element": 5
+  batch_size: 30
+  workload: 2500000
+  skill: "Scroll"
+  skill_lvl: 50
+
 "Awakening Scroll [III]":
   ingredients:
     "Papyrus": 10
@@ -13626,6 +14556,17 @@
   workload: 1800000
   skill: "Scroll"
   skill_lvl: 45
+
+"Awakening Scroll [VI]":
+  ingredients:
+    "Awakening Scroll [V]": 30
+    "Antidote [V]": 20
+    "Gorgeous Colorful Fabric": 3
+    "Flame Element": 5
+  batch_size: 30
+  workload: 3000000
+  skill: "Scroll"
+  skill_lvl: 60
 
 "Spirit Shield":
   fixed_price: 900
@@ -13889,6 +14830,21 @@
   workload: 40000000
   skill: "Shield"
   skill_lvl: 103
+
+"Pegasus Shield":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 60000000
+  skill: "Shield"
+  skill_lvl: 110
 
 "Spirit Shoes":
   fixed_price: 300
@@ -14647,6 +15603,51 @@
   skill: "Shoes"
   skill_lvl: 112
 
+"Pegasus Boots":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 90000000
+  skill: "Shoes"
+  skill_lvl: 120
+
+"Pegasus Chain Boots":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 90000000
+  skill: "Shoes"
+  skill_lvl: 119
+
+"Pegasus Shoes":
+  ingredients:
+    "Oriharukon": 15
+    "Pegasus Tear": 10
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 90000000
+  skill: "Shoes"
+  skill_lvl: 118
+
 "Spirit Spear":
   fixed_price: 900
   ingredients:
@@ -14912,6 +15913,21 @@
   skill: "Spear"
   skill_lvl: 110
 
+"Pegasus Lance":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Spear"
+  skill_lvl: 121
+
 "Spirit Staff":
   fixed_price: 900
   ingredients:
@@ -15176,6 +16192,21 @@
   workload: 160000000
   skill: "Staff"
   skill_lvl: 110
+
+"Pegasus Staff":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Staff"
+  skill_lvl: 121
 
 "Blue Quill":
   fixed_price: 3000
@@ -15724,6 +16755,21 @@
   workload: 160000000
   skill: "Sword"
   skill_lvl: 110
+
+"Pegasus Sword":
+  ingredients:
+    "Oriharukon": 20
+    "Pegasus Tear": 13
+    "Fused Devil Stone": 1
+    "Atlantis Silver Coin": 20
+    "Storm Element": 300
+    "Expert's Soul": 20
+    "Enhanced Titanium Ingot": 1
+    "Sorcerer's Mask": 50
+    "Root of Life": 200
+  workload: 240000000
+  skill: "Sword"
+  skill_lvl: 121
 
 "Hammer [I]":
   fixed_price: 100
