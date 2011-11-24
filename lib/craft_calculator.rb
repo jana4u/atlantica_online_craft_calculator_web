@@ -522,6 +522,32 @@ module AtlanticaOnline
     end
 
     class Crafter
+      if RUBY_VERSION >= "1.9"
+        require 'csv'
+        FasterCSV = CSV
+      else
+        require 'rubygems'
+        require 'fastercsv'
+      end
+
+      def self.load_data_from_csv(data_file = File.join(File.dirname(__FILE__), 'experience.csv'))
+        csv_data = FasterCSV.read(data_file, :headers => true)
+
+        self.levels = csv_data
+      end
+
+      def self.levels=(array)
+        @@levels = []
+
+        array.each do |item|
+          @@levels << { :lvl => item["lvl"].to_i, :xp => item["xp"].to_i }
+        end
+      end
+
+      def self.levels
+        @@levels || {}
+      end
+
       def initialize(auto_craft_lvl)
         @auto_craft_lvl = auto_craft_lvl
       end

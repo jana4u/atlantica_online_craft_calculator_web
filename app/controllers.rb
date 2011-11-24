@@ -26,6 +26,11 @@ CraftCalculator.controllers  do
     render 'index'
   end
 
+  get :'experience-table' do
+    AtlanticaOnline::CraftCalculator::Crafter.load_data_from_csv
+    render 'experience_table'
+  end
+
   get :'custom-prices' do
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
     begin

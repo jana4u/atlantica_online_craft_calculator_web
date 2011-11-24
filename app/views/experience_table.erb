@@ -1,0 +1,14 @@
+<h1>Experience table</h1>
+
+<table>
+  <tr>
+    <th>Level</th>
+    <th>Skill experience</th>
+  </tr>
+  <% AtlanticaOnline::CraftCalculator::Crafter.levels.each do |level| %>
+    <tr>
+      <td><%= level[:lvl] %></td>
+      <td><%= number_with_delimiter(level[:xp]) %></td>
+    </tr>
+  <% end %>
+</table>
