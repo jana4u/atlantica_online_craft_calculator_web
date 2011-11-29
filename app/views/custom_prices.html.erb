@@ -20,10 +20,10 @@
     <table>
       <tr>
         <th class="label">Item</th>
-        <th>Your Price</th>
+        <th class="label">Your Price</th>
       </tr>
       <% @custom_prices.each do |item_name, price| %>
-        <tr<% if price.zero? %> class="zero"<% end %>>
+        <tr class="<% if price.zero? %>zero<% else %><%= cycle_table_row_colors %><% end %>">
           <td class="label"><%= item_name %></td>
           <td><%= text_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => number_with_delimiter(price)) %></td>
         </tr>
@@ -64,10 +64,10 @@
       <th class="label">Item</th>
       <th>Fixed Price</th>
       <th>Market Price</th>
-      <th>Your Price</th>
+      <th class="label">Your Price</th>
     </tr>
     <% @items.each do |item| %>
-      <tr<% if zero_price?(item, @custom_prices[item.name]) %> class="zero"<% end %>>
+      <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>zero<% else %><%= cycle_table_row_colors %><% end %>">
         <td class="label"><%= item.name %></td>
         <td><%= number_with_delimiter(item.fixed_price) %></td>
         <td><%= number_with_delimiter(item.market_price) %></td>

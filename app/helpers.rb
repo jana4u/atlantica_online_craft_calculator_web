@@ -3,6 +3,12 @@
 # Helper methods defined here can be accessed in any controller or view in the application
 
 CraftCalculator.helpers do
+  include CycleHelper
+
+  def cycle_table_row_colors
+    cycle("light", "dark")
+  end
+
   def link_to_url(url, *args, &block)
     link_to(url, url, args, &block)
   end

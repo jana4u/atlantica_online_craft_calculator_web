@@ -1,4 +1,4 @@
-<tr<% if item.unit_price.zero? %> class="zero"<% end %>>
+<tr class="<% if item.unit_price.zero? %>zero<% else %><%= cycle_table_row_colors %><% end %>">
   <td class="label"><%= "&nbsp;" * 4 * level %><%= item.name %></td>
   <td><%= item.count %></td>
   <td><%= item.crafted_count %></td>

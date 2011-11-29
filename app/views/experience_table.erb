@@ -6,7 +6,7 @@
     <th>Skill experience</th>
   </tr>
   <% AtlanticaOnline::CraftCalculator::Crafter.levels.each do |level| %>
-    <tr>
+    <tr class="<%= cycle_table_row_colors %>">
       <td><%= level[:lvl] %></td>
       <td><%= number_with_delimiter(level[:xp]) %></td>
     </tr>

@@ -23,46 +23,52 @@
   <% end %>
 </table>
 
-<h2>Batch</h2>
-
-<table>
-  <tr>
-    <td class="label">Craft price</td>
-    <td><%= number_with_delimiter(@item.batch_craft_price) %></td>
-  </tr>
-  <tr>
-    <td class="label">Workload</td>
-    <td><%= number_with_delimiter(@item.workload) %></td>
-  </tr>
-  <tr>
-    <td class="label">Size</td>
-    <td><%= @item.batch_size %></td>
-  </tr>
-  <tr>
-    <td class="label">Required skill</td>
-    <td><%= @item.skill %> <%= @item.skill_lvl %></td>
-  </tr>
-  <tr>
-    <td class="label">Time needed (auto-craft lvl 1)</td>
-    <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@item.workload)) %></td>
-  </tr>
-  <tr>
-    <td class="label">Time needed (auto-craft lvl 120)</td>
-    <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@item.workload)) %></td>
-  </tr>
-  <tr>
-    <td class="label">Craft XP</td>
-    <td><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
-  </tr>
-</table>
-
-<h3>Ingredients</h3>
-
-<table>
-  <% @item.ingredients.each do |ingredient_name, ingredient_count| %>
+<div class="tables">
+  <table>
+    <caption>Batch</caption>
     <tr>
-      <td class="label"><%= ingredient_name %></td>
-      <td><%= ingredient_count %></td>
+      <td class="label">Craft price</td>
+      <td><%= number_with_delimiter(@item.batch_craft_price) %></td>
     </tr>
-  <% end %>
-</table>
+    <tr>
+      <td class="label">Workload</td>
+      <td><%= number_with_delimiter(@item.workload) %></td>
+    </tr>
+    <tr>
+      <td class="label">Size</td>
+      <td><%= @item.batch_size %></td>
+    </tr>
+    <tr>
+      <td class="label">Required skill</td>
+      <td><%= @item.skill %> <%= @item.skill_lvl %></td>
+    </tr>
+    <tr>
+      <td class="label">Time needed (auto-craft lvl 1)</td>
+      <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@item.workload)) %></td>
+    </tr>
+    <tr>
+      <td class="label">Time needed (auto-craft lvl 120)</td>
+      <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@item.workload)) %></td>
+    </tr>
+    <tr>
+      <td class="label">Craft XP</td>
+      <td><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>Batch ingredients</caption>
+    <tr>
+      <th class="label">Item</th>
+      <th>Quantity</th>
+    </tr>
+    <% @item.ingredients.each do |ingredient_name, ingredient_count| %>
+      <tr class="<%= cycle_table_row_colors %>">
+        <td class="label"><%= ingredient_name %></td>
+        <td><%= ingredient_count %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div class="clear"></div>
+</div>
