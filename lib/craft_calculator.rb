@@ -129,15 +129,17 @@ module AtlanticaOnline
       end
 
       def ingredient_list
-        list = IngredientList::ItemArray.new
+        return @ingredient_list if defined?(@ingredient_list)
+
+        @ingredient_list = IngredientList::ItemArray.new
 
         if craftable?
           ingredients.each do |ingredient_name, ingredient_quantity|
-            list << IngredientList::Item.new(self.class.find(ingredient_name), ingredient_quantity)
+            @ingredient_list << IngredientList::Item.new(self.class.find(ingredient_name), ingredient_quantity)
           end
         end
 
-        return list
+        return @ingredient_list
       end
 
       def ordered_ingredient_items
@@ -274,12 +276,30 @@ module AtlanticaOnline
         @batches ||= (requested_quantity / item.batch_size.to_f).ceil.to_i
       end
 
+      def price
+        item.unit_price * quantity
+      end
+
       def workload
         @workload ||= batches * @item.workload
       end
 
       def craft_xp_gained
         @craft_xp_gained ||= workload / CRAFT_XP_TO_WORKLOAD_RATIO
+      end
+
+      def ingredient_list
+        return @ingredient_list if defined?(@ingredient_list)
+
+        @ingredient_list = IngredientList::ItemArray.new
+
+        if item.craftable?
+          item.ingredient_list.each do |ingredient|
+            @ingredient_list << IngredientList::Item.new(ingredient.item, ingredient.quantity * batches)
+          end
+        end
+
+        return @ingredient_list
       end
 
       def item_with_raw_craft_tree
