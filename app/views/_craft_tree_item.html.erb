@@ -1,8 +1,8 @@
 <tr class="<% if item.unit_price.zero? %>zero<% else %><%= cycle_table_row_colors %><% end %>">
   <td class="label"><%= "&nbsp;" * 4 * level %><%= item.name %></td>
-  <td><%= item.count %></td>
-  <td><%= item.crafted_count %></td>
-  <td><% unless item.leftover_count.zero? %><%= item.leftover_count %><% end %></td>
+  <td><%= item.requested_quantity %></td>
+  <td><%= item.quantity %></td>
+  <td><% unless item.leftover_quantity.zero? %><%= item.leftover_quantity %><% end %></td>
   <td><%= number_with_delimiter(item.unit_price) %></td>
   <td><%= number_with_delimiter(item.total_price) %></td>
   <td><%= price_type_to_human(item) %></td>

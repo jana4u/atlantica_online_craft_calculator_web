@@ -3,31 +3,31 @@
     <caption>My batches</caption>
     <tr>
       <td class="label">Requested quantity</td>
-      <td><%= @count %></td>
+      <td><%= @item_craft.requested_quantity %></td>
     </tr>
     <tr>
       <td class="label">Crafted quantity</td>
-      <td><%= @item.crafted_count(@count) %></td>
+      <td><%= @item_craft.quantity %></td>
     </tr>
     <tr>
       <td class="label">Batches</td>
-      <td><%= @item.batches_count(@count) %></td>
+      <td><%= @item_craft.batches %></td>
     </tr>
     <tr>
       <td class="label">Total price</td>
-      <td><%= number_with_delimiter(@shopping_list.total_price) %></td>
+      <td><%= number_with_delimiter(@item_craft.total_price) %></td>
     </tr>
     <tr>
       <td class="label">Total workload</td>
-      <td><%= number_with_delimiter(@craft_list.total_workload) %></td>
+      <td><%= number_with_delimiter(@item_craft.total_workload) %></td>
     </tr>
     <tr>
       <td class="label">Time needed (auto-craft lvl 1)</td>
-      <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@craft_list.total_workload)) %></td>
+      <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@item_craft.total_workload)) %></td>
     </tr>
     <tr>
       <td class="label">Time needed (auto-craft lvl 120)</td>
-      <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@craft_list.total_workload)) %></td>
+      <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@item_craft.total_workload)) %></td>
     </tr>
   </table>
 
@@ -39,7 +39,7 @@
       <th class="label">Skill</th>
       <th>Craft XP</th>
     </tr>
-    <% @craft_list.total_craft_xp_gained_per_skill.each do |skill, xp| %>
+    <% @item_craft.total_craft_xp_gained_per_skill.each do |skill, xp| %>
       <tr class="<%= cycle_table_row_colors %>">
         <td class="label"><%= skill %></td>
         <td><%= number_with_delimiter(xp) %></td>
@@ -61,10 +61,10 @@
     <th>Total price</th>
     <th>Price type</th>
   </tr>
-  <% @shopping_list.each do |shopping_list_item| %>
+  <% @item_craft.shopping_list.each do |shopping_list_item| %>
     <tr class="<% if shopping_list_item.unit_price.zero? %>zero<% else %><%= cycle_table_row_colors %><% end %>">
       <td class="label"><%= shopping_list_item.name %></td>
-      <td><%= shopping_list_item.count %></td>
+      <td><%= shopping_list_item.quantity %></td>
       <td><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
       <td><%= number_with_delimiter(shopping_list_item.total_price) %></td>
       <td><%= price_type_to_human(shopping_list_item) %></td>
@@ -85,10 +85,10 @@
     <th>Craft XP</th>
     <th class="label">Required skill</th>
   </tr>
-  <% @craft_list.each do |craft_list_item| %>
+  <% @item_craft.craft_list.each do |craft_list_item| %>
     <tr class="<%= cycle_table_row_colors %>">
       <td class="label"><%= craft_list_item.name %></td>
-      <td><%= craft_list_item.count %></td>
+      <td><%= craft_list_item.quantity %></td>
       <td><%= number_with_delimiter(craft_list_item.unit_price) %></td>
       <td><%= number_with_delimiter(craft_list_item.total_price) %></td>
       <td><%= number_with_delimiter(craft_list_item.total_workload) %></td>
@@ -98,7 +98,7 @@
   <% end %>
 </table>
 
-<% if @leftovers.any? %>
+<% if @item_craft.leftovers.any? %>
   <% reset_cycle %>
 
   <table>
@@ -107,10 +107,10 @@
       <th class="label">Item</th>
       <th>Quantity</th>
     </tr>
-    <% @leftovers.each do |leftover| %>
+    <% @item_craft.leftovers.each do |leftover| %>
       <tr class="<%= cycle_table_row_colors %>">
         <td class="label"><%= leftover.name %></td>
-        <td><%= leftover.count %></td>
+        <td><%= leftover.quantity %></td>
       </tr>
     <% end %>
   </table>
@@ -129,10 +129,10 @@
     <th>Total price</th>
     <th>Price type</th>
   </tr>
-  <%= partial('craft_tree_item', :locals => { :item => @item_with_raw_craft_tree, :level => 0 }) %>
+  <%= partial('craft_tree_item', :locals => { :item => @item_craft.item_with_raw_craft_tree, :level => 0 }) %>
 </table>
 
-<% if @craft_tree_leftovers.any? %>
+<% if @item_craft.craft_tree_leftovers.any? %>
   <% reset_cycle %>
 
   <table>
@@ -142,11 +142,11 @@
       <th>Quantity</th>
       <th>Batches</th>
     </tr>
-    <% @craft_tree_leftovers.each do |leftover| %>
+    <% @item_craft.craft_tree_leftovers.each do |leftover| %>
       <tr class="<%= cycle_table_row_colors %>">
         <td class="label"><%= leftover.name %></td>
-        <td><%= leftover.count %></td>
-        <td><% unless leftover.complete_batches_count.zero? %><%= leftover.complete_batches_count %><% end %></td>
+        <td><%= leftover.quantity %></td>
+        <td><% unless leftover.whole_batches.zero? %><%= leftover.whole_batches %><% end %></td>
       </tr>
     <% end %>
   </table>

@@ -81,37 +81,6 @@ module AtlanticaOnline
         item_skills.sort
       end
 
-      def self.remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
-        leftovers.each do |leftover|
-          if leftover.more_than_batch? && (cl_item = craft_list.detect { |i| i.name == leftover.name })
-            leftover.ingredient_list.each do |li|
-              existing_leftover = leftovers.detect { |l| l.item == li.item }
-              leftover_count = li.count * leftover.complete_batches_count
-              if existing_leftover
-                existing_leftover.count += leftover_count
-              else
-                leftovers << LeftoverList::Item.new(li.item, leftover_count)
-              end
-            end
-
-            do_not_craft_count = leftover.complete_batches_count * leftover.batch_size
-            cl_item.count -= do_not_craft_count
-            leftover.count -= do_not_craft_count
-          elsif sl_item = shopping_list.detect { |i| i.name == leftover.name }
-            sl_item.count -= leftover.count
-            leftover.count = 0
-          end
-        end
-
-        leftovers = leftovers.reject { |l| l.count.zero? }
-
-        while leftovers.detect { |l| l.more_than_batch? } do
-          craft_list, shopping_list, leftovers = remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
-        end
-
-        return craft_list, shopping_list, leftovers
-      end
-
       def initialize(hash)
         @data = hash
       end
@@ -131,7 +100,7 @@ module AtlanticaOnline
       end
 
       def name_for_sort
-        name.gsub("[I]", "1").gsub("[II]", "2").gsub("[III]", "3").gsub("[IV]", "4").gsub("[V]", "5")
+        name.gsub("[I]", "1").gsub("[II]", "2").gsub("[III]", "3").gsub("[IV]", "4").gsub("[V]", "5").gsub("[VI]", "6")
       end
 
       def skill_lvl_and_name_for_sort
@@ -163,8 +132,8 @@ module AtlanticaOnline
         list = IngredientList::ItemArray.new
 
         if craftable?
-          ingredients.each do |ingredient_name, ingredient_count|
-            list << IngredientList::Item.new(self.class.find(ingredient_name), ingredient_count)
+          ingredients.each do |ingredient_name, ingredient_quantity|
+            list << IngredientList::Item.new(self.class.find(ingredient_name), ingredient_quantity)
           end
         end
 
@@ -184,24 +153,6 @@ module AtlanticaOnline
         end
 
         return list.uniq
-      end
-
-      def item_with_raw_craft_tree(count)
-        batches_count = batches_count(count)
-
-        list = CraftTree::ItemArray.new
-
-        if crafting_is_cheaper?
-          ingredient_list.each do |ingredient|
-            list << ingredient.item_with_raw_craft_tree(ingredient.count * batches_count)
-          end
-          item_count = crafted_count(count)
-        else
-          item_count = count
-        end
-
-
-        return CraftTree::Item.new(self, count, item_count, list)
       end
 
       def direct_price
@@ -248,35 +199,6 @@ module AtlanticaOnline
         return send(price_type)
       end
 
-      def crafted_count(count)
-        batches_count(count) * batch_size
-      end
-
-      def batches_count(count)
-        (count / batch_size.to_f).ceil.to_i
-      end
-
-      def craft(count)
-        craft_list, shopping_list, leftovers =
-          self.class.remove_leftovers_from_lists(
-          raw_craft_list(count),
-          raw_shopping_list(count),
-          raw_leftovers(count)
-        )
-      end
-
-      def raw_craft_list(count)
-        item_with_raw_craft_tree(count).ordered_craft_list
-      end
-
-      def raw_shopping_list(count)
-        item_with_raw_craft_tree(count).shopping_list
-      end
-
-      def raw_leftovers(count)
-        item_with_raw_craft_tree(count).leftovers.reverse
-      end
-
       def craft_xp_gained_per_batch
         workload / CRAFT_XP_TO_WORKLOAD_RATIO
       end
@@ -286,17 +208,150 @@ module AtlanticaOnline
       end
     end
 
+    class ItemCraft
+      def self.remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
+        leftovers.each do |leftover|
+          if leftover.more_than_batch? && (cl_item = craft_list.detect { |i| i.name == leftover.name })
+            leftover.ingredient_list.each do |li|
+              existing_leftover = leftovers.detect { |l| l.item == li.item }
+              leftover_quantity = li.quantity * leftover.whole_batches
+              if existing_leftover
+                existing_leftover.quantity += leftover_quantity
+              else
+                leftovers << LeftoverList::Item.new(li.item, leftover_quantity)
+              end
+            end
+
+            do_not_craft_quantity = leftover.whole_batches * leftover.batch_size
+            cl_item.quantity -= do_not_craft_quantity
+            leftover.quantity -= do_not_craft_quantity
+          elsif sl_item = shopping_list.detect { |i| i.name == leftover.name }
+            sl_item.quantity -= leftover.quantity
+            leftover.quantity = 0
+          end
+        end
+
+        leftovers = leftovers.reject { |l| l.quantity.zero? }
+
+        while leftovers.detect { |l| l.more_than_batch? } do
+          craft_list, shopping_list, leftovers = remove_leftovers_from_lists(craft_list, shopping_list, leftovers)
+        end
+
+        return craft_list, shopping_list, leftovers
+      end
+
+      attr_reader :item, :requested_quantity
+
+      def initialize(item, requested_quantity = nil)
+        @item = item
+        @requested_quantity = requested_quantity || item.batch_size
+      end
+
+      [
+        :total_workload,
+        :total_workload_per_skill,
+        :total_craft_xp_gained,
+        :total_craft_xp_gained_per_skill,
+      ].each do |method_name|
+        define_method method_name do
+          craft_list.send(method_name)
+        end
+      end
+
+      [
+        :total_price,
+      ].each do |method_name|
+        define_method method_name do
+          shopping_list.send(method_name)
+        end
+      end
+
+      def quantity
+        @quantity ||= batches * item.batch_size
+      end
+
+      def batches
+        @batches ||= (requested_quantity / item.batch_size.to_f).ceil.to_i
+      end
+
+      def workload
+        @workload ||= batches * @item.workload
+      end
+
+      def craft_xp_gained
+        @craft_xp_gained ||= workload / CRAFT_XP_TO_WORKLOAD_RATIO
+      end
+
+      def item_with_raw_craft_tree
+        return @item_with_raw_craft_tree if defined?(@item_with_raw_craft_tree)
+
+        list = CraftTree::ItemArray.new
+
+        if item.crafting_is_cheaper?
+          item.ingredient_list.each do |ingredient|
+            list << self.class.new(ingredient.item, ingredient.quantity * batches).item_with_raw_craft_tree
+          end
+          item_quantity = quantity
+        else
+          item_quantity = requested_quantity
+        end
+
+        @item_with_raw_craft_tree = CraftTree::Item.new(item, requested_quantity, item_quantity, list)
+
+        return @item_with_raw_craft_tree
+      end
+
+      def craft_list
+        @craft_list || create_lists[0]
+      end
+
+      def shopping_list
+        @shopping_list || create_lists[1]
+      end
+
+      def leftovers
+        @leftovers || create_lists[2]
+      end
+
+      def raw_craft_list
+        item_with_raw_craft_tree.ordered_craft_list
+      end
+
+      def raw_shopping_list
+        item_with_raw_craft_tree.shopping_list
+      end
+
+      def raw_leftovers
+        item_with_raw_craft_tree.leftovers.reverse
+      end
+
+      def craft_tree_leftovers
+        @craft_tree_leftovers ||= item_with_raw_craft_tree.leftovers
+      end
+
+      private
+
+      def create_lists
+        @craft_list, @shopping_list, @leftovers =
+          self.class.remove_leftovers_from_lists(
+          raw_craft_list,
+          raw_shopping_list,
+          raw_leftovers
+        )
+      end
+    end
+
     module ListItem
       def self.included(base)
-        base.send(:attr_accessor, :count)
+        base.send(:attr_accessor, :quantity)
         base.send(:attr_reader, :item)
         base.extend(ClassMethods)
         base.send(:delegated_methods, :name)
       end
 
-      def initialize(item, count)
+      def initialize(item, quantity)
         @item = item
-        @count = count
+        @quantity = quantity
       end
 
       module ClassMethods
@@ -316,7 +371,7 @@ module AtlanticaOnline
         delegated_methods :unit_price, :price_type
 
         def total_price
-          count * unit_price
+          quantity * unit_price
         end
       end
 
@@ -336,10 +391,6 @@ module AtlanticaOnline
     module IngredientList
       class Item < ShoppingList::Item
         delegated_methods :ingredient_items
-
-        def item_with_raw_craft_tree(count)
-          item.item_with_raw_craft_tree(count)
-        end
       end
 
       class ItemArray < ShoppingList::ItemArray
@@ -351,16 +402,16 @@ module AtlanticaOnline
         include ListItem
         delegated_methods :unit_price, :ingredients, :batch_size, :workload, :skill, :skill_lvl
 
-        def batches_count
-          count / batch_size
+        def batches
+          quantity / batch_size
         end
 
         def total_price
-          unit_price * count
+          unit_price * quantity
         end
 
         def total_workload
-          batches_count * workload
+          batches * workload
         end
 
         def total_craft_xp_gained
@@ -410,12 +461,12 @@ module AtlanticaOnline
         include ListItem
         delegated_methods :ingredients, :batch_size, :ingredient_list
 
-        def complete_batches_count
-          (count / batch_size.to_f).floor.to_i
+        def whole_batches
+          (quantity / batch_size.to_f).floor.to_i
         end
 
         def more_than_batch?
-          complete_batches_count > 0
+          whole_batches > 0
         end
       end
 
@@ -427,12 +478,12 @@ module AtlanticaOnline
       class Item
         include ListItem
         delegated_methods :unit_price, :price_type
-        attr_reader :crafted_count, :ingredients_craft_tree
+        attr_reader :requested_quantity, :ingredients_craft_tree
 
-        def initialize(item, count, crafted_count, ingredients_craft_tree)
+        def initialize(item, requested_quantity, quantity, ingredients_craft_tree)
           @item = item
-          @count = count
-          @crafted_count = crafted_count
+          @requested_quantity = requested_quantity
+          @quantity = quantity
           @ingredients_craft_tree = ingredients_craft_tree
         end
 
@@ -441,11 +492,11 @@ module AtlanticaOnline
         end
 
         def total_price
-          unit_price * crafted_count
+          unit_price * quantity
         end
 
-        def leftover_count
-          crafted_count - count
+        def leftover_quantity
+          quantity - requested_quantity
         end
 
         def leftovers
@@ -455,17 +506,17 @@ module AtlanticaOnline
             list << LeftoverList::Item.new(cl_item.item, 0)
           end
 
-          if leftover_count > 0
-            list.detect { |l| l.name == name }.count += leftover_count
+          if leftover_quantity > 0
+            list.detect { |l| l.name == name }.quantity += leftover_quantity
           end
 
           ingredients_craft_tree.each do |i|
             i.leftovers.each do |leftover|
-              list.detect { |l| l.name == leftover.name }.count += leftover.count
+              list.detect { |l| l.name == leftover.name }.quantity += leftover.quantity
             end
           end
 
-          return list.reject { |i| i.count.zero? }
+          return list.reject { |i| i.quantity.zero? }
         end
 
         def shopping_list
@@ -475,14 +526,14 @@ module AtlanticaOnline
             ingredients_craft_tree.each do |ingredient|
               ingredient.shopping_list.each do |isl_item|
                 if existing_sl_item = list.detect { |l| l.name == isl_item.name }
-                  existing_sl_item.count += isl_item.count
+                  existing_sl_item.quantity += isl_item.quantity
                 else
                   list << isl_item
                 end
               end
             end
           else
-            list << ShoppingList::Item.new(item, count)
+            list << ShoppingList::Item.new(item, requested_quantity)
           end
 
           return list
@@ -492,12 +543,12 @@ module AtlanticaOnline
           list = CraftList::ItemArray.new
 
           if crafted?
-            list << CraftList::Item.new(item, crafted_count)
+            list << CraftList::Item.new(item, quantity)
 
             ingredients_craft_tree.each do |ingredient|
               ingredient.craft_list.each do |icl_item|
                 if existing_cl_item = list.detect { |l| l.name == icl_item.name }
-                  icl_item.count += existing_cl_item.count
+                  icl_item.quantity += existing_cl_item.quantity
                   list.delete(existing_cl_item)
                 end
 
@@ -556,12 +607,12 @@ module AtlanticaOnline
         100 + (@auto_craft_lvl - 1) * 20
       end
 
-      def tick_count_for_workload(workload)
+      def ticks_for_workload(workload)
         (workload / tick_workload.to_f).ceil
       end
 
       def seconds_duration_for_workload(workload)
-        (tick_count_for_workload(workload) * 5.35).ceil
+        (ticks_for_workload(workload) * 5.35).ceil
       end
 
       def batches_per_hour(workload, hours = 1)

@@ -1,11 +1,6 @@
 <% if @item %>
   $('#general').html('<%= js_escape_html(partial('general')) %>');
-
-  <% if @count %>
-    $('#my').html('<%= js_escape_html(partial('my')) %>');
-  <% else %>
-    $('#my').html('');
-  <% end %>
+  $('#my').html('<%= js_escape_html(partial('my')) %>');
 <% else %>
   $('#item_name').replaceWith('<%= js_escape_html(items_select_tag) %>');
   $("#item_name").change(function() {

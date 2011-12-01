@@ -15,13 +15,11 @@ CraftCalculator.controllers  do
       @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
       @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
       if params[:count].blank?
-        @count = @item.batch_size
+        count = @item.batch_size
       else
-        @count = non_negative_integer_from_string(params[:count])
+        count = non_negative_integer_from_string(params[:count])
       end
-      @craft_list, @shopping_list, @leftovers = @item.craft(@count)
-      @item_with_raw_craft_tree = @item.item_with_raw_craft_tree(@count)
-      @craft_tree_leftovers = @item_with_raw_craft_tree.leftovers
+      @item_craft = AtlanticaOnline::CraftCalculator::ItemCraft.new(@item, count)
     end
     render 'index'
   end
