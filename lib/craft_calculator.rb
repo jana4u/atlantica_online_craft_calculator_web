@@ -254,6 +254,7 @@ module AtlanticaOnline
         :total_workload_per_skill,
         :total_craft_xp_gained,
         :total_craft_xp_gained_per_skill,
+        :skills,
       ].each do |method_name|
         define_method method_name do
           craft_list.send(method_name)
@@ -440,24 +441,21 @@ module AtlanticaOnline
       end
 
       class ItemArray < Array
-        def total_workload_per_skill
-          result = Hash.new(0)
+        def skills
+          result = SkillList::ItemArray.new
 
           self.each do |i|
-            result[i.skill] += i.total_workload
+            if skill = result.find(i.skill)
+              skill.workload += i.total_workload
+              if i.skill_lvl > skill.lvl
+                skill.lvl = i.skill_lvl
+              end
+            else
+              result << SkillList::Item.new(i.skill, i.skill_lvl, i.total_workload)
+            end
           end
 
-          return result
-        end
-
-        def total_craft_xp_gained_per_skill
-          result = {}
-
-          total_workload_per_skill.each do |skill, skill_workload|
-            result[skill] = skill_workload / CRAFT_XP_TO_WORKLOAD_RATIO
-          end
-
-          return result
+          return result.sort_by { |s| s.name }
         end
 
         def total_workload
@@ -586,6 +584,29 @@ module AtlanticaOnline
       end
 
       class ItemArray < Array
+      end
+    end
+
+    module SkillList
+      class Item
+        attr_reader :name
+        attr_accessor :lvl, :workload
+
+        def initialize(name, lvl, workload)
+          @name = name
+          @lvl = lvl
+          @workload = workload
+        end
+
+        def craft_xp_gained
+          workload / CRAFT_XP_TO_WORKLOAD_RATIO
+        end
+      end
+
+      class ItemArray < Array
+        def find(skill_name)
+          detect { |s| s.name == skill_name }
+        end
       end
     end
 

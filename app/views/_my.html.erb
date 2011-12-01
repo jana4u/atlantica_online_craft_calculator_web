@@ -87,12 +87,16 @@
     <caption>My complete craft skills</caption>
     <tr>
       <th class="label">Skill</th>
+      <th>Workload</th>
       <th>Craft XP</th>
+      <th>Req. level</th>
     </tr>
-    <% @item_craft.total_craft_xp_gained_per_skill.each do |skill, xp| %>
+    <% @item_craft.skills.each do |skill| %>
       <tr class="<%= cycle_table_row_colors %>">
-        <td class="label"><%= skill %></td>
-        <td><%= number_with_delimiter(xp) %></td>
+        <td class="label"><%= skill.name %></td>
+        <td><%= number_with_delimiter(skill.workload) %></td>
+        <td><%= number_with_delimiter(skill.craft_xp_gained) %></td>
+        <td><%= number_with_delimiter(skill.lvl) %></td>
       </tr>
     <% end %>
   </table>
