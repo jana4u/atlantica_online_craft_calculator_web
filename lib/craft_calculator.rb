@@ -640,6 +640,8 @@ module AtlanticaOnline
         @@levels || {}
       end
 
+      attr_reader :auto_craft_lvl
+
       def initialize(auto_craft_lvl)
         @auto_craft_lvl = auto_craft_lvl
       end

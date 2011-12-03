@@ -1,0 +1,16 @@
+<h1>Your skills</h1>
+
+<p>You can set your own skills here.</p>
+
+<p>Leave field blank if you want to remove any of your current skills.</p>
+
+<% form_tag(url(:"custom-skills")) do %>
+  <table>
+    <tr>
+      <td class="label"><%= label_tag(:auto_craft, :caption => "Auto-Craft") %></td>
+      <td><%= text_field_tag(:auto_craft, :value => session[:auto_craft], :id => :auto_craft) %></td>
+    </tr>
+  </table>
+
+  <%= submit_tag "Save" %>
+<% end %>

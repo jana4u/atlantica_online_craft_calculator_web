@@ -8,6 +8,13 @@
   <%= link_to("Review or change your prices for this craft", item_custom_prices_url) %>.
 </p>
 
+<% unless session[:auto_craft] %>
+  <p>
+    Warning: You have not set your auto-craft level. Level 1 will be used.
+    <%= link_to("Set your auto-craft level", url(:"custom-skills")) %>.
+  </p>
+<% end %>
+
 <h1><%= @item.name %></h1>
 
 <table>
@@ -43,12 +50,8 @@
       <td><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
     </tr>
     <tr>
-      <td class="label">Time needed (auto-craft lvl 1)</td>
-      <td><%= seconds_to_human(@crafter_ac_1.seconds_duration_for_workload(@item.workload)) %></td>
-    </tr>
-    <tr>
-      <td class="label">Time needed (auto-craft lvl 120)</td>
-      <td><%= seconds_to_human(@crafter_ac_120.seconds_duration_for_workload(@item.workload)) %></td>
+      <td class="label">Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
+      <td><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item.workload)) %></td>
     </tr>
     <tr>
       <td class="label">Required skill</td>

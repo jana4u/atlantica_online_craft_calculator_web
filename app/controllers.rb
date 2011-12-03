@@ -12,8 +12,7 @@ CraftCalculator.controllers  do
     AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
     unless params[:item_name].blank?
       @item = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name])
-      @crafter_ac_1 = AtlanticaOnline::CraftCalculator::Crafter.new(1)
-      @crafter_ac_120 = AtlanticaOnline::CraftCalculator::Crafter.new(120)
+      @crafter = AtlanticaOnline::CraftCalculator::Crafter.new(session[:auto_craft] || 1)
       if params[:count].blank?
         count = @item.batch_size
       else
@@ -56,6 +55,20 @@ CraftCalculator.controllers  do
     session[:custom_prices] = {}
 
     redirect item_custom_prices_url
+  end
+
+  get :'custom-skills' do
+    render 'custom_skills'
+  end
+
+  post :'custom-skills' do
+    if params[:auto_craft].blank?
+      session[:auto_craft] = nil
+    else
+      session[:auto_craft] = [ [ non_negative_integer_from_string(params[:auto_craft]), 1].max, 120 ].min
+    end
+
+    redirect url(:"custom-skills")
   end
 
   [:about].each do |page|
