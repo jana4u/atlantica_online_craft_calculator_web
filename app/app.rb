@@ -2,7 +2,10 @@ class CraftCalculator < Padrino::Application
   register Padrino::Rendering
   register Padrino::Helpers
 
-  enable :sessions
+  use Rack::Session::Cookie,
+    :key => 'craft_calculator',
+    :expire_after => 31_557_600,
+    :secret => '84f54694bb020d61e07e175832ac82962cf1e618439862acbcfdf9a072a9fbbd'
 
   ##
   # Caching support
