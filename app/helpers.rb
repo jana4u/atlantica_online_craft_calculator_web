@@ -30,15 +30,15 @@ CraftCalculator.helpers do
   end
 
   def skill_names
-    AtlanticaOnline::CraftCalculator::Item.ordered_item_skills
+    AtlanticaOnlineCraftCalculator::Item.ordered_item_skills
   end
 
   def item_names
-    AtlanticaOnline::CraftCalculator::Item.ordered_craftable_items.map{ |i| i.name }
+    AtlanticaOnlineCraftCalculator::Item.ordered_craftable_items.map{ |i| i.name }
   end
 
   def item_names_for_skill(skill)
-    AtlanticaOnline::CraftCalculator::Item.craftable_items_for_skill_ordered_by_skill_lvl(skill).map{ |i| [ "#{i.name} – #{i.skill_lvl}", i.name ] }
+    AtlanticaOnlineCraftCalculator::Item.craftable_items_for_skill_ordered_by_skill_lvl(skill).map{ |i| [ "#{i.name} – #{i.skill_lvl}", i.name ] }
   end
 
   def item_names_for_skill_or_all(skill)

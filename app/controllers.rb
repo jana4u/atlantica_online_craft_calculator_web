@@ -3,37 +3,37 @@ CraftCalculator.controllers  do
 
   get :index, :provides => [:html, :js] do
     @custom_prices = session[:custom_prices] || {}
-    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
+    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml(@custom_prices)
     render 'index'
   end
 
   post :index, :provides => [:html, :js] do
     @custom_prices = session[:custom_prices] || {}
-    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml(@custom_prices)
+    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml(@custom_prices)
     unless params[:item_name].blank?
-      @item = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name])
-      @crafter = AtlanticaOnline::CraftCalculator::Crafter.new(session[:auto_craft] || 1)
+      @item = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name])
+      @crafter = AtlanticaOnlineCraftCalculator::Crafter.new(session[:auto_craft] || 1)
       if params[:count].blank?
         count = @item.batch_size
       else
         count = non_negative_integer_from_string(params[:count])
       end
-      @item_craft = AtlanticaOnline::CraftCalculator::ItemCraft.new(@item, count)
+      @item_craft = AtlanticaOnlineCraftCalculator::ItemCraft.new(@item, count)
     end
     render 'index'
   end
 
   get :'experience-table' do
-    AtlanticaOnline::CraftCalculator::Crafter.load_data_from_csv
+    AtlanticaOnlineCraftCalculator::Crafter.load_data_from_csv
     render 'experience_table'
   end
 
   get :'custom-prices' do
-    AtlanticaOnline::CraftCalculator::Item.load_data_from_yaml
+    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml
     begin
-      @items = AtlanticaOnline::CraftCalculator::Item.find(params[:item_name]).ordered_ingredient_items
-    rescue AtlanticaOnline::CraftCalculator::InvalidItem
-      @items = AtlanticaOnline::CraftCalculator::Item.ordered_ingredient_items
+      @items = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name]).ordered_ingredient_items
+    rescue AtlanticaOnlineCraftCalculator::InvalidItem
+      @items = AtlanticaOnlineCraftCalculator::Item.ordered_ingredient_items
     end
     @custom_prices = session[:custom_prices] || {}
     render 'custom_prices'

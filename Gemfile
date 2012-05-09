@@ -21,7 +21,9 @@ gem 'erubis', "~> 2.7.0"
 
 # Or Individual Gems
 %w(core helpers).each do |g|
- gem 'padrino-' + g, '0.10.5'
+ gem 'padrino-' + g, '0.10.6'
 end
 
 gem 'fastercsv'
+
+gem 'atlantica_online_craft_calculator', :git => 'https://github.com/jana4u/atlantica_online_craft_calculator'
