@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # extracted from: actionpack-3.1.3/lib/action_view/helpers/text_helper.rb
 
 module CycleHelper
