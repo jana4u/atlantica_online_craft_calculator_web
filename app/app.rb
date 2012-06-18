@@ -1,5 +1,9 @@
 # -*- encoding : utf-8 -*-
 class CraftCalculator < Padrino::Application
+  # FIXME remove when https://github.com/ainame/padrino-framework/commit/95d5bb66d84a91c7dbc6e5afe723d47f5b9921a3
+  # is released in gem
+  require 'active_support/time_with_zone'
+
   register Padrino::Rendering
   register Padrino::Helpers
 

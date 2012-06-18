@@ -25,7 +25,7 @@ CraftCalculator.controllers  do
   end
 
   get :'experience-table' do
-    AtlanticaOnlineCraftCalculator::Crafter.load_data_from_csv
+    AtlanticaOnlineCraftCalculator::CraftExperience.load_levels_from_csv
     render 'experience_table'
   end
 
