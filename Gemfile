@@ -7,6 +7,7 @@ gem 'thin'
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
 # Component requirements
 gem 'erubis', "~> 2.7.0"

@@ -3,6 +3,29 @@ class CraftCalculator < Padrino::Application
   register Padrino::Rendering
   register Padrino::Helpers
 
+  register Sinatra::AssetPack
+
+  assets {
+    serve '/js', from: '../public/javascripts'
+    serve '/css', from: '../public/stylesheets'
+    serve '/images', from: '../public/images'
+
+    js :app, '/js/app.js', [
+      '/js/jquery.js',
+      '/js/jquery-ujs.js',
+      '/js/application.js',
+    ]
+
+    css :app, '/css/app.css', [
+      '/css/application.css',
+    ]
+
+    js_compression :jsmin
+    css_compression :simple
+
+    prebuild true
+  }
+
   use Rack::Session::Cookie,
     :key => 'craft_calculator',
     :expire_after => 31_557_600,
