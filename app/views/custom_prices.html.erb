@@ -13,24 +13,24 @@
   <h2>Your current prices</h2>
 
   <% form_tag(item_custom_prices_url, :method => :delete) do %>
-    <%= submit_tag "Remove All" %>
+    <%= submit_tag "Remove All", class: 'btn btn-danger' %>
   <% end %>
 
   <% form_tag(item_custom_prices_url) do %>
-    <table>
+    <table class="table table-striped table-bordered table-hover table-condensed">
       <tr>
-        <th class="label">Item</th>
-        <th class="label">Your Price</th>
+        <th>Item</th>
+        <th>Your Price</th>
       </tr>
       <% @custom_prices.each do |item_name, price| %>
-        <tr class="<% if price.zero? %>zero<% else %><%= cycle_table_row_colors %><% end %>">
-          <td class="label"><%= item_name %></td>
+        <tr class="<% if price.zero? %>warning<% end %>">
+          <td class="td-text"><%= item_name %></td>
           <td><%= text_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => number_with_delimiter(price)) %></td>
         </tr>
       <% end %>
     </table>
 
-    <%= submit_tag "Update" %>
+    <%= submit_tag "Update", class: 'btn btn-primary' %>
   <% end %>
 <% end %>
 
@@ -42,13 +42,13 @@
     <%= items_select_tag %>
 
     <noscript>
-    <%= submit_tag "Filter" %>
+    <%= submit_tag "Filter", class: 'btn' %>
     </noscript>
   <% end %>
 
   <% unless params[:item_name].blank? %>
     <% form_tag(url(:index, :item_name => params[:item_name])) do %>
-      <%= submit_tag "Use in calculator" %>
+      <%= submit_tag "Use in calculator", class: 'btn' %>
     <% end %>
   <% end %>
 </p>
@@ -59,16 +59,16 @@
     <%= hidden_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => price) %>
   <% end %>
 
-  <table>
+  <table class="table table-striped table-bordered table-hover table-condensed">
     <tr>
-      <th class="label">Item</th>
+      <th>Item</th>
       <th>Fixed Price</th>
       <th>Market Price</th>
-      <th class="label">Your Price</th>
+      <th>Your Price</th>
     </tr>
     <% @items.each do |item| %>
-      <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>zero<% else %><%= cycle_table_row_colors %><% end %>">
-        <td class="label"><%= item.name %></td>
+      <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>warning<% end %>">
+        <td class="td-text"><%= item.name %></td>
         <td><%= number_with_delimiter(item.fixed_price) %></td>
         <td><%= number_with_delimiter(item.market_price) %></td>
         <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => number_with_delimiter(@custom_prices[item.name])) %></td>
@@ -76,5 +76,5 @@
     <% end %>
   </table>
 
-  <%= submit_tag "Save" %>
+  <%= submit_tag "Save", class: 'btn btn-primary' %>
 <% end %>

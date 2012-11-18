@@ -4,13 +4,15 @@
 
 <p>Leave field blank if you want to remove any of your current skills.</p>
 
-<% form_tag(url(:"custom-skills")) do %>
-  <table>
-    <tr>
-      <td class="label"><%= label_tag(:auto_craft, :caption => "Auto-Craft") %></td>
-      <td><%= text_field_tag(:auto_craft, :value => session[:auto_craft], :id => :auto_craft) %></td>
-    </tr>
-  </table>
+<% form_tag(url(:"custom-skills"), class: 'form-horizontal' ) do %>
+  <div class="control-group">
+    <%= label_tag(:auto_craft, caption: "Auto-Craft", class: 'control-label') %>
+    <div class="controls">
+      <%= text_field_tag(:auto_craft, :value => session[:auto_craft], :id => :auto_craft) %>
+    </div>
+  </div>
 
-  <%= submit_tag "Save" %>
+  <div class="form-actions">
+    <%= submit_tag "Save", class: 'btn btn-primary' %>
+  </div>
 <% end %>

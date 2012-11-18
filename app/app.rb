@@ -5,9 +5,11 @@ class CraftCalculator < Padrino::Application
 
   register Sinatra::AssetPack
 
+  Less.paths <<  "#{root}/assets/stylesheets"
+
   assets {
-    serve '/js', from: '../public/javascripts'
-    serve '/css', from: '../public/stylesheets'
+    serve '/js', from: 'assets/javascripts'
+    serve '/css', from: 'assets/stylesheets'
     serve '/images', from: '../public/images'
 
     js :app, '/js/app.js', [

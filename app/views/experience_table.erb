@@ -1,12 +1,12 @@
 <h1>Experience table</h1>
 
-<table>
+<table class="table table-striped table-bordered table-hover table-condensed">
   <tr>
     <th>Level</th>
     <th>Skill experience</th>
   </tr>
   <% AtlanticaOnlineCraftCalculator::CraftExperience.levels.each do |level| %>
-    <tr class="<%= cycle_table_row_colors %>">
+    <tr>
       <td><%= level.lvl %></td>
       <td><%= number_with_delimiter(level.xp) %></td>
     </tr>

@@ -1,22 +1,22 @@
-<% form_tag("/", :method => :get, :remote => true) do %>
+<% form_tag("/", :method => :get, remote: true, class: 'form-inline') do %>
   <%= label_tag(:skill, :caption => "Skill:") %>
   <%= select_tag(:skill, :options => skill_names, :selected => params[:skill], :include_blank => "", :id => :skill) %>
 
   <noscript>
-  <%= submit_tag "Filter" %>
+  <%= submit_tag "Filter", class: 'btn' %>
   </noscript>
 <% end %>
 
-<% form_tag("/", :remote => true) do %>
+<% form_tag("/", remote: true, class: 'form-inline') do %>
   <%= hidden_field_tag(:skill, :value => params[:skill]) %>
 
   <%= label_tag(:item_name, :caption => "Item:") %>
   <%= items_select_tag %>
 
   <%= label_tag(:count, :caption => "Quantity:") %>
-  <%= text_field_tag(:count, :value => params[:count], :size => 5, :id => :count) %>
+  <%= text_field_tag(:count, :value => params[:count], :size => 5, :id => :count, :class => "input-small") %>
 
-  <%= submit_tag "Calculate" %>
+  <%= submit_tag "Calculate", class: 'btn btn-primary' %>
 
   <%= img '/images/ajax-loader.gif', id: 'ajax-loader', alt: '' %>
   <span id="error"></span>

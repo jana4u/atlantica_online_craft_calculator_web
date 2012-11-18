@@ -8,6 +8,8 @@ gem 'thin'
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+gem 'less'
+gem 'therubyracer'
 
 # Component requirements
 gem 'erubis', "~> 2.7.0"
