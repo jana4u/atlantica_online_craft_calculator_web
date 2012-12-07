@@ -1,4 +1,4 @@
-<% form_tag("/", :method => :get, remote: true, class: 'form-inline') do %>
+<% form_tag("/", method: :get, remote: true, class: 'form-inline') do %>
   <%= label_tag(:skill, :caption => "Skill:") %>
   <%= select_tag(:skill, :options => skill_names, :selected => params[:skill], :include_blank => "", :id => :skill) %>
 
@@ -8,9 +8,7 @@
   <%= submit_tag "Filter items", class: 'btn' %>
 <% end %>
 
-<% form_tag("/", remote: true, class: 'form-inline') do %>
-  <%= hidden_field_tag(:skill, :value => params[:skill]) %>
-
+<% form_tag("/", method: :get, remote: true, class: 'form-inline') do %>
   <%= label_tag(:item_name, :caption => "Item:") %>
   <%= items_select_tag %>
 

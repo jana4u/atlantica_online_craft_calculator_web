@@ -5,12 +5,6 @@ CraftCalculator.controllers  do
   get :index, :provides => [:html, :js] do
     @custom_prices = session[:custom_prices] || {}
     AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml(@custom_prices)
-    render 'index'
-  end
-
-  post :index, :provides => [:html, :js] do
-    @custom_prices = session[:custom_prices] || {}
-    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml(@custom_prices)
     unless params[:item_name].blank?
       @item = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name])
       @crafter = AtlanticaOnlineCraftCalculator::Crafter.new(session[:auto_craft] || 1)

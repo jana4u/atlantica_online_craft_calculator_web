@@ -47,7 +47,7 @@
   <% end %>
 
   <% unless params[:item_name].blank? %>
-    <% form_tag(url(:index, :item_name => params[:item_name])) do %>
+    <% form_tag(url(:index, :item_name => params[:item_name]), :method => :get) do %>
       <%= submit_tag "Use in calculator", class: 'btn' %>
     <% end %>
   <% end %>
