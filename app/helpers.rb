@@ -27,24 +27,31 @@ CraftCalculator.helpers do
     AtlanticaOnlineCraftCalculator::Item.ordered_item_skills
   end
 
-  def item_names
-    AtlanticaOnlineCraftCalculator::Item.ordered_craftable_items.map{ |i| i.name }
+  def filter_items_by_query(items, query)
+    return items if query.blank?
+    items.select { |item| item.name.match(Regexp.new(query, true)) }
   end
 
-  def item_names_for_skill(skill)
-    AtlanticaOnlineCraftCalculator::Item.craftable_items_for_skill_ordered_by_skill_lvl(skill).map{ |i| [ "#{i.name} – #{i.skill_lvl}", i.name ] }
+  def item_names(query)
+    items = AtlanticaOnlineCraftCalculator::Item.ordered_craftable_items
+    return filter_items_by_query(items, query).map{ |i| i.name }
   end
 
-  def item_names_for_skill_or_all(skill)
+  def item_names_for_skill(skill, query)
+    items = AtlanticaOnlineCraftCalculator::Item.craftable_items_for_skill_ordered_by_skill_lvl(skill)
+    return filter_items_by_query(items, query).map{ |i| [ "#{i.name} – #{i.skill_lvl}", i.name ] }
+  end
+
+  def item_names_for_skill_or_all(skill, query)
     if skill.blank?
-      item_names
+      item_names(query)
     else
-      item_names_for_skill(skill)
+      item_names_for_skill(skill, query)
     end
   end
 
   def items_select_tag
-    select_tag(:item_name, :options => item_names_for_skill_or_all(params[:skill]), :selected => params[:item_name], :include_blank => "", :id => :item_name)
+    select_tag(:item_name, :options => item_names_for_skill_or_all(params[:skill], params[:query]), :selected => params[:item_name], :include_blank => "", :id => :item_name)
   end
 
   def item_custom_prices_url

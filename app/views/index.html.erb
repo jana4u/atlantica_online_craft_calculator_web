@@ -2,9 +2,10 @@
   <%= label_tag(:skill, :caption => "Skill:") %>
   <%= select_tag(:skill, :options => skill_names, :selected => params[:skill], :include_blank => "", :id => :skill) %>
 
-  <noscript>
-  <%= submit_tag "Filter", class: 'btn' %>
-  </noscript>
+  <%= label_tag(:query, :caption => "Search:") %>
+  <%= text_field_tag(:query, :value => params[:query], :id => :query) %>
+
+  <%= submit_tag "Filter items", class: 'btn' %>
 <% end %>
 
 <% form_tag("/", remote: true, class: 'form-inline') do %>
