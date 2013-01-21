@@ -4,7 +4,7 @@
 <% else %>
   $('#item_name').replaceWith('<%= js_escape_html(items_select_tag) %>');
   $("#item_name").change(function() {
-  if ($(this).attr("selectedIndex") > 0) {
+  if ($(this).prop("selectedIndex") > 0) {
   $(this).closest("form").submit();
   }
   });
