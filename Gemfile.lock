@@ -5,7 +5,7 @@ GIT
     atlantica_online_craft_calculator (0.0.1)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activesupport (3.2.11)
       i18n (~> 0.6)
