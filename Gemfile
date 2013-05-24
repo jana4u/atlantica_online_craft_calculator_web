@@ -24,7 +24,7 @@ gem 'erubis', "~> 2.7.0"
 
 # Or Individual Gems
 %w(core helpers).each do |g|
- gem 'padrino-' + g, '0.10.7'
+ gem 'padrino-' + g, '0.11.2'
 end
 
 gem 'fastercsv'

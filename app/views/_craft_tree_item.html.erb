@@ -1,5 +1,5 @@
 <tr class="<% if item.unit_price.zero? %>warning<% end %>">
-  <td class="td-text"><%= "&nbsp;" * 4 * level %><%= item.name %></td>
+  <td class="td-text"><%= ('&nbsp;' * 4 * level).html_safe %><%= item.name %></td>
   <td><%= item.requested_quantity %></td>
   <td><%= item.quantity %></td>
   <td><% unless item.leftover_quantity.zero? %><%= item.leftover_quantity %><% end %></td>

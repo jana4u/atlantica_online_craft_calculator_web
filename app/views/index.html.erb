@@ -17,7 +17,7 @@
 
   <%= submit_tag "Calculate", class: 'btn btn-primary' %>
 
-  <%= img '/images/ajax-loader.gif', id: 'ajax-loader', alt: '' %>
+  <%= img('/images/ajax-loader.gif', id: 'ajax-loader', alt: '').html_safe %>
   <span id="error"></span>
 <% end %>
 
