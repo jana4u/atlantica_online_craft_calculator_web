@@ -3,6 +3,26 @@ class CraftCalculator < Padrino::Application
   register Padrino::Rendering
   register Padrino::Helpers
 
+  register Padrino::Mailer
+  set :delivery_method, :smtp => {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => ENV['EMAIL_ADDRESS'],
+    :password             => ENV['EMAIL_PASSWORD'],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
+
+  register Padrino::Contrib::ExceptionNotifier
+  set :exceptions_from, ENV['EMAIL_ADDRESS']
+  set :exceptions_to, 'jana4u@seznam.cz'
+  set :exceptions_subject, '[CraftCalculator Error]'
+  set :exceptions_page, :errors # => views/errors.haml/erb
+  # Uncomment this for test in development
+  # disable :raise_errors
+  # disable :show_exceptions
+
   register Sinatra::AssetPack
 
   Less.paths <<  "#{root}/assets/stylesheets"

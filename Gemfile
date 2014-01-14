@@ -12,7 +12,7 @@ gem 'less'
 gem 'therubyracer'
 
 # Component requirements
-gem 'erubis', "~> 2.7.0"
+gem 'erubis', '~> 2.7.0'
 
 # Test requirements
 
@@ -23,9 +23,11 @@ gem 'erubis', "~> 2.7.0"
 # gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
 
 # Or Individual Gems
-%w(core helpers).each do |g|
- gem 'padrino-' + g, '0.11.2'
-end
+gem 'padrino-core', '0.11.2'
+gem 'padrino-helpers', '0.11.2'
+gem 'padrino-mailer', '0.11.2'
+
+gem 'padrino-contrib'
 
 gem 'fastercsv'
 
