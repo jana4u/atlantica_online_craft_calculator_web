@@ -4,7 +4,9 @@ CraftCalculator.controllers  do
 
   get :index, :provides => [:html, :js] do
     @custom_prices = session[:custom_prices] || {}
-    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml(@custom_prices)
+    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml
+    AtlanticaOnlineCraftCalculator::Item.configure_custom_prices(@custom_prices)
+    AtlanticaOnlineCraftCalculator::Item.configure_items_with_crafting_disabled(session[:crafting_disabled] || [])
     unless params[:item_name].blank?
       @item = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name])
       @crafter = AtlanticaOnlineCraftCalculator::Crafter.new(session[:auto_craft] || 1)
@@ -31,6 +33,10 @@ CraftCalculator.controllers  do
       @items = AtlanticaOnlineCraftCalculator::Item.ordered_ingredient_items
     end
     @custom_prices = session[:custom_prices] || {}
+    @crafting_disabled = session[:crafting_disabled] || []
+    @customized_items = (@custom_prices.keys + @crafting_disabled).uniq.
+      map { |name| begin AtlanticaOnlineCraftCalculator::Item.find(name) rescue nil end }.
+      compact.sort {|x,y| x.name_for_sort <=> y.name_for_sort }
     render 'custom_prices'
   end
 
@@ -42,6 +48,8 @@ CraftCalculator.controllers  do
         session[:custom_prices][CGI::unescape(item_name)] = non_negative_integer_from_string(price)
       end
     end
+
+    session[:crafting_disabled] = params[:crafting_disabled]
 
     redirect item_custom_prices_url
   end

@@ -21,11 +21,13 @@
       <tr>
         <th>Item</th>
         <th>Your Price</th>
+        <th>Crafting Disabled</th>
       </tr>
-      <% @custom_prices.each do |item_name, price| %>
-        <tr class="<% if price.zero? %>warning<% end %>">
-          <td class="td-text"><%= item_name %></td>
-          <td><%= text_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => number_with_delimiter(price)) %></td>
+      <% @customized_items.each do |item| %>
+        <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>warning<% end %>">
+          <td class="td-text"><%= item.name %></td>
+          <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => number_with_delimiter(@custom_prices[item.name])) %></td>
+          <td class="td-text"><%= check_box_tag('crafting_disabled[]', :value => item.name, :checked => @crafting_disabled.include?(item.name)) if item.craftable? %></td>
         </tr>
       <% end %>
     </table>
@@ -65,6 +67,7 @@
       <th>Fixed Price</th>
       <th>Market Price</th>
       <th>Your Price</th>
+      <th>Crafting Disabled</th>
     </tr>
     <% @items.each do |item| %>
       <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>warning<% end %>">
@@ -72,6 +75,7 @@
         <td><%= number_with_delimiter(item.fixed_price) %></td>
         <td><%= number_with_delimiter(item.market_price) %></td>
         <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", :value => number_with_delimiter(@custom_prices[item.name])) %></td>
+        <td class="td-text"><%= check_box_tag('crafting_disabled[]', :value => item.name, :checked => @crafting_disabled.include?(item.name)) if item.craftable? %></td>
       </tr>
     <% end %>
   </table>
