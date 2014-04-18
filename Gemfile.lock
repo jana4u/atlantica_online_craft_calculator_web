@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jana4u/atlantica_online_craft_calculator
-  revision: 9b7428c1efaf8f5071ca51af139e23ab53bc1204
+  revision: d587cd80578f8177375f89cba5108ee7a50eb8ad
   specs:
     atlantica_online_craft_calculator (0.0.1)
 
