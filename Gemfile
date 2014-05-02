@@ -7,7 +7,7 @@ gem 'thin'
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
-gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+gem 'sinatra-assetpack', '0.2.2', :require => 'sinatra/assetpack'
 gem 'less'
 gem 'therubyracer'
 
