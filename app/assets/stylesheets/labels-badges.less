@@ -27,20 +27,10 @@
   .border-radius(9px);
 }
 
-// Empty labels/badges collapse
-.label,
-.badge {
-  &:empty {
-    display: none;
-  }
-}
-
-// Hover/focus state, but only for links
+// Hover state, but only for links
 a {
   &.label:hover,
-  &.label:focus,
-  &.badge:hover,
-  &.badge:focus {
+  &.badge:hover {
     color: @white;
     text-decoration: none;
     cursor: pointer;
