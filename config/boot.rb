@@ -8,7 +8,7 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
 
-require 'padrino-contrib/exception_notifier'
+#require 'padrino-contrib/exception_notifier'
 
 ##
 # Enable devel logging
