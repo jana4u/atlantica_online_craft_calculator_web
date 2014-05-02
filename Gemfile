@@ -8,7 +8,7 @@ gem 'thin'
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'sinatra-assetpack', '0.2.2', :require => 'sinatra/assetpack'
-gem 'less'
+gem 'less', '< 2.4'
 gem 'therubyracer'
 
 # Component requirements
@@ -23,9 +23,9 @@ gem 'erubis', '~> 2.7.0'
 # gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
 
 # Or Individual Gems
-gem 'padrino-core', '0.12.1'
-gem 'padrino-helpers', '0.12.1'
-gem 'padrino-mailer', '0.12.1'
+gem 'padrino-core', '0.11.4'
+gem 'padrino-helpers', '0.11.4'
+gem 'padrino-mailer', '0.11.4'
 
 gem 'padrino-contrib'
 
