@@ -13,7 +13,7 @@ class CraftCalculator < Padrino::Application
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }
-=begin
+
   register Padrino::Contrib::ExceptionNotifier
   set :exceptions_from, ENV['EMAIL_ADDRESS']
   set :exceptions_to, 'jana4u@seznam.cz'
@@ -22,7 +22,7 @@ class CraftCalculator < Padrino::Application
   # Uncomment this for test in development
   # disable :raise_errors
   # disable :show_exceptions
-=end
+
   register Sinatra::AssetPack
 
   Less.paths <<  "#{root}/assets/stylesheets"
