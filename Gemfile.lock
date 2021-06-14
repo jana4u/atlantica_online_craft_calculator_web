@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/jana4u/atlantica_online_craft_calculator.git
+  revision: ad58615ee638a1977ddf998addfc40089b46c05d
+  specs:
+    atlantica_online_craft_calculator (0.0.1)
+
+GIT
+  remote: https://github.com/jana4u/atlantica_online_craft_calculator_engine.git
+  revision: ddf5bbc1dfb516c3a43fbb5206e6af60f999fdfd
+  specs:
+    atlantica_online_craft_calculator_engine (0.0.1)
+      atlantica_online_craft_calculator
+      rails (> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -153,6 +167,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  atlantica_online_craft_calculator!
+  atlantica_online_craft_calculator_engine!
   byebug
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3, >= 6.1.3.2)
