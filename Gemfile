@@ -23,6 +23,9 @@ gem 'twitter-bootstrap-rails', '< 3'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Delivering exception notifications by email
+gem 'exception_notification'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

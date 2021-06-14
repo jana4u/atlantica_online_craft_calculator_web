@@ -97,4 +97,29 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # Action Mailer host setting
+  config.action_mailer.default_url_options = {
+    host: 'craftcalculator.herokuapp.com'
+  }
+
+  # Action Mailer Configuration
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV['SMTP_ADDRESS'],
+    port: ENV['SMTP_PORT'],
+    domain: ENV['SMTP_DOMAIN'],
+    user_name: ENV['SMTP_USER_NAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
+  # ExceptionNotifier
+  config.middleware.use ExceptionNotification::Rack,
+    email: {
+      email_prefix: '[CraftCalculator Error] ',
+      sender_address: %{"ExceptionNotifier" <#{ENV['EMAIL_SENDER']}>},
+      exception_recipients: ENV['EMAIL_RECIPIENT']
+    }
 end

@@ -81,6 +81,9 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
+    exception_notification (4.4.3)
+      actionmailer (>= 4.0, < 7)
+      activesupport (>= 4.0, < 7)
     execjs (2.8.1)
     ffi (1.15.1)
     globalid (0.4.2)
@@ -200,6 +203,7 @@ DEPENDENCIES
   atlantica_online_craft_calculator!
   atlantica_online_craft_calculator_engine!
   byebug
+  exception_notification
   jquery-rails
   less-rails
   rack-mini-profiler (~> 2.0)
