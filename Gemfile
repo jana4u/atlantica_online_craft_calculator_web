@@ -10,6 +10,9 @@ gem 'sass-rails', '>= 6'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Unicorn as the app server
+gem "unicorn-rails"
+
 # Use LESS for stylesheets
 gem 'less-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
