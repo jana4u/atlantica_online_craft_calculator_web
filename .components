@@ -1,7 +1,0 @@
---- 
-:stylesheet: none
-:renderer: erb
-:script: jquery
-:orm: none
-:mock: none
-:test: none
