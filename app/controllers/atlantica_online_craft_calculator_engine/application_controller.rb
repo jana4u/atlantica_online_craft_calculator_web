@@ -1,0 +1,3 @@
+class AtlanticaOnlineCraftCalculatorEngine::ApplicationController < ApplicationController
+  include AtlanticaOnlineCraftCalculatorEngine::BaseController
+end
