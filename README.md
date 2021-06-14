@@ -2,7 +2,8 @@ Atlantica Online Craft Calculator
 =================================
 
 Web frontend for Atlantica Online Craft Calculator
-made in Padrino ( http://www.padrinorb.com/ ).
+remade in [Ruby on Rails](https://rubyonrails.org/)
+from original [Padrino](https://padrinorb.com/) application.
 
 
 Source code: https://github.com/jana4u/atlantica_online_craft_calculator_web
