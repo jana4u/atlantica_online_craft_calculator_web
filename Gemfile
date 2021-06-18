@@ -13,12 +13,8 @@ gem 'sass-rails', '>= 6'
 # Use Unicorn as the app server
 gem "unicorn-rails"
 
-# Use LESS for stylesheets
-gem 'less-rails'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
 # Twitter Bootstrap 2.x
-gem 'twitter-bootstrap-rails', '< 3'
+gem 'bootstrap-sass', '< 3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,14 +1,14 @@
-@import "twitter/bootstrap/bootstrap";
+$navbarHeight: 30px;
+$sansFontFamily: "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+$baseFontSize: 11px;
+$baseLineHeight: 16px;
+$formActionsBackground: transparent;
 
-@navbarHeight: 30px;
-@sansFontFamily: "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-@baseFontSize: 11px;
-@baseLineHeight: 16px;
-@formActionsBackground: @bodyBackground;
+@import "bootstrap";
 
 body {
-  padding-top: @navbarHeight + 10;
-  padding-left: @gridGutterWidth;
+  padding-top: $navbarHeight + 10;
+  padding-left: $gridGutterWidth;
 }
 
 h1 {
@@ -74,5 +74,5 @@ a {
 }
 
 span.warning {
-  background-color: @warningBackground;
+  background-color: $warningBackground;
 }
