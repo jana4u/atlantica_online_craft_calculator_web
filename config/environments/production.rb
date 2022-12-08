@@ -100,7 +100,7 @@ Rails.application.configure do
 
   # Action Mailer host setting
   config.action_mailer.default_url_options = {
-    host: 'craftcalculator.herokuapp.com'
+    host: 'craftcalculator.jana4u.net'
   }
 
   # Action Mailer Configuration
