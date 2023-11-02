@@ -38,6 +38,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+group :development do
+  gem "standard", require: false
+end
+
 # Atlantica Online Craft Calculator
 gem 'atlantica_online_craft_calculator_engine', github: 'jana4u/atlantica_online_craft_calculator_engine'
 gem 'atlantica_online_craft_calculator', github: 'jana4u/atlantica_online_craft_calculator'
