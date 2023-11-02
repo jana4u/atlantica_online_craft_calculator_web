@@ -1,0 +1,8 @@
+require:
+  - standard/cop/block_single_line_braces
+
+inherit_gem:
+  standard: config/base.yml
+
+AllCops:
+  TargetRubyVersion: 3.2
