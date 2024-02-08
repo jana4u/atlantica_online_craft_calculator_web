@@ -23,10 +23,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # Use WEBrick as the app server
+  gem "webrick"
 end
-
-# Use Unicorn as the app server
-gem "unicorn-rails"
 
 # Twitter Bootstrap 2.x
 gem "bootstrap-sass", "< 3"
