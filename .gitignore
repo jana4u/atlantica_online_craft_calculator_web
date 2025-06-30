@@ -27,3 +27,6 @@
 
 # RubyMine configuration
 .idea
+
+# Test coverage
+coverage

@@ -95,6 +95,7 @@ GEM
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    docile (1.4.1)
     drb (2.2.3)
     erb (5.0.1)
     erubi (1.13.1)
@@ -243,6 +244,12 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.13.1)
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
@@ -298,6 +305,7 @@ DEPENDENCIES
   rails (~> 7.2.2, >= 7.2.2.1)
   sass-rails (>= 6)
   sassc-rails
+  simplecov
   sprockets-rails
   standard
   tzinfo-data

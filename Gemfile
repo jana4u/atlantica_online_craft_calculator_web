@@ -45,5 +45,9 @@ group :development do
   gem "standard", require: false
 end
 
+group :test do
+  gem "simplecov", require: false
+end
+
 # Atlantica Online Craft Calculator
 gem "atlantica_online_craft_calculator", github: "jana4u/atlantica_online_craft_calculator"
