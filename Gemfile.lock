@@ -223,10 +223,20 @@ GEM
     rubocop-ast (1.45.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
+    rubocop-minitest (0.38.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.38.0, < 2.0)
     rubocop-performance (1.25.0)
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
+    rubocop-rails (2.32.0)
+      activesupport (>= 4.2.0)
+      lint_roller (~> 1.1)
+      rack (>= 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
     ruby-progressbar (1.13.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -303,6 +313,8 @@ DEPENDENCIES
   importmap-rails
   jquery-rails
   rails (~> 7.2.2, >= 7.2.2.1)
+  rubocop-minitest
+  rubocop-rails
   sass-rails (>= 6)
   sassc-rails
   simplecov
