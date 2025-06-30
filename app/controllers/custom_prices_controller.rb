@@ -10,7 +10,7 @@ class CustomPricesController < ApplicationController
     @crafting_disabled = crafting_disabled_store.all
     @customized_items = (@custom_prices.keys + @crafting_disabled).uniq.map do |name|
       AtlanticaOnlineCraftCalculator::Item.find(name)
-    rescue
+    rescue AtlanticaOnlineCraftCalculator::InvalidItem
     end.compact.sort { |x, y| x.name_for_sort <=> y.name_for_sort }
   end
 
