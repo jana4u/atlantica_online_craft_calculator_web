@@ -20,7 +20,7 @@ class CustomPricesSessionStoreTest < ActiveSupport::TestCase
     hash = {}
     custom_prices_store = CustomPricesSessionStore.new(hash)
 
-    assert_equal({}, custom_prices_store.all)
+    assert_empty custom_prices_store.all
 
     custom_prices_store.update_all({"item" => "1"})
 

@@ -20,7 +20,7 @@ class CraftingDisabledSessionStoreTest < ActiveSupport::TestCase
     hash = {}
     crafting_disabled_store = CraftingDisabledSessionStore.new(hash)
 
-    assert_equal [], crafting_disabled_store.all
+    assert_empty crafting_disabled_store.all
 
     crafting_disabled_store.update_all(["item"])
 
