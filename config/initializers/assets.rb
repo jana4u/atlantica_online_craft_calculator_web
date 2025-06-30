@@ -10,8 +10,8 @@ Rails.application.config.assets.version = "1.0"
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 Rails.application.config.assets.precompile += [
-  "atlantica_online_craft_calculator_engine/ajax-loader.gif",
-  "atlantica_online_craft_calculator_engine/application.js",
+  "ajax-loader.gif",
+  "craft_calculator.js",
   "jquery.min.js",
   "jquery_ujs.js"
 ]
