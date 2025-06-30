@@ -14,10 +14,10 @@
     <h2>Your current prices</h2>
 
     <p>
-      <%= link_to 'Remove All', item_custom_prices_url, method: :delete, confirm: 'Are you sure you want to remove all your prices?', class: 'btn btn-danger' %>
+      <%= link_to "Remove All", item_custom_prices_url, method: :delete, confirm: "Are you sure you want to remove all your prices?", class: "btn btn-danger" %>
     </p>
 
-    <%= form_tag(item_custom_prices_url, :method => :put) do %>
+    <%= form_tag(item_custom_prices_url, method: :put) do %>
       <table class="table table-striped table-bordered table-hover table-condensed">
         <tr>
           <th>Item</th>
@@ -27,40 +27,40 @@
         <% @customized_items.each do |item| %>
           <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>warning<% end %>">
             <td class="td-text"><%= item.name %></td>
-            <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", number_with_delimiter(@custom_prices[item.name])) %></td>
-            <td class="td-text"><%= check_box_tag('crafting_disabled[]', item.name, @crafting_disabled.include?(item.name)) if item.craftable? %></td>
+            <td><%= text_field_tag("custom_prices[#{CGI.escape(item.name)}]", number_with_delimiter(@custom_prices[item.name])) %></td>
+            <td class="td-text"><%= check_box_tag("crafting_disabled[]", item.name, @crafting_disabled.include?(item.name)) if item.craftable? %></td>
           </tr>
         <% end %>
       </table>
 
-      <%= submit_tag "Update", class: 'btn btn-primary' %>
+      <%= submit_tag "Update", class: "btn btn-primary" %>
     <% end %>
   <% end %>
 
   <h2>Set or change your prices</h2>
 
   <p>
-    <%= form_tag(item_custom_prices_url, :method => :get) do %>
+    <%= form_tag(item_custom_prices_url, method: :get) do %>
       <%= label_tag(:item_name, "Crafted item:") %>
       <%= items_select_tag %>
 
       <noscript>
-      <%= submit_tag "Filter", class: 'btn' %>
+      <%= submit_tag "Filter", class: "btn" %>
       </noscript>
     <% end %>
 
     <% unless params[:item_name].blank? %>
-      <%= form_tag(root_path, :method => :get) do %>
+      <%= form_tag(root_path, method: :get) do %>
         <%= hidden_field_tag :item_name, params[:item_name] %>
-        <%= submit_tag "Use in calculator", class: 'btn' %>
+        <%= submit_tag "Use in calculator", class: "btn" %>
       <% end %>
     <% end %>
   </p>
 
-  <%= form_tag(item_custom_prices_url, :method => :put) do %>
+  <%= form_tag(item_custom_prices_url, method: :put) do %>
 
     <% @custom_prices.each do |item_name, price| %>
-      <%= hidden_field_tag("custom_prices[#{CGI::escape(item_name)}]", :value => price) %>
+      <%= hidden_field_tag("custom_prices[#{CGI.escape(item_name)}]", value: price) %>
     <% end %>
 
     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -76,12 +76,12 @@
           <td class="td-text"><%= item.name %></td>
           <td><%= number_with_delimiter(item.fixed_price) %></td>
           <td><%= number_with_delimiter(item.market_price) %></td>
-          <td><%= text_field_tag("custom_prices[#{CGI::escape(item.name)}]", number_with_delimiter(@custom_prices[item.name])) %></td>
-          <td class="td-text"><%= check_box_tag('crafting_disabled[]', item.name, @crafting_disabled.include?(item.name)) if item.craftable? %></td>
+          <td><%= text_field_tag("custom_prices[#{CGI.escape(item.name)}]", number_with_delimiter(@custom_prices[item.name])) %></td>
+          <td class="td-text"><%= check_box_tag("crafting_disabled[]", item.name, @crafting_disabled.include?(item.name)) if item.craftable? %></td>
         </tr>
       <% end %>
     </table>
 
-    <%= submit_tag "Save", class: 'btn btn-primary' %>
+    <%= submit_tag "Save", class: "btn btn-primary" %>
   <% end %>
 </div>

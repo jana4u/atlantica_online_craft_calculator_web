@@ -163,7 +163,7 @@
     <th>Total price</th>
     <th>Price type</th>
   </tr>
-  <%= render partial: 'craft_tree_item', :locals => { :item => @item_craft.item_with_raw_craft_tree, :level => 0 } %>
+  <%= render partial: "craft_tree_item", locals: {item: @item_craft.item_with_raw_craft_tree, level: 0} %>
 </table>
 
 <% if @item_craft.craft_tree_leftovers.any? %>

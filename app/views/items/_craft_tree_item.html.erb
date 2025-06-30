@@ -8,5 +8,5 @@
   <td><%= price_type_to_human(item) %></td>
 </tr>
 <% item.ingredients_craft_tree.each do |ingredient| %>
-  <%= render partial: 'craft_tree_item', :locals => { :item => ingredient, :level => level + 1 } %>
+  <%= render partial: "craft_tree_item", locals: {item: ingredient, level: level + 1} %>
 <% end %>
