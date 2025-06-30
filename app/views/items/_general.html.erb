@@ -1,3 +1,4 @@
+<%# locals: () %>
 <p>
   <% if @item_craft.shopping_list.detect { |item| item.unit_price.zero? } %>
     <span class="label label-warning">Warning</span> <span class="warning">Highlighted prices are set to zero.</span> All results here are affected by that.
