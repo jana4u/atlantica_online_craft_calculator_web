@@ -45,6 +45,7 @@ group :development do
   gem "standard", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-minitest", require: false
+  gem "erb_lint", require: false
 end
 
 group :test do
