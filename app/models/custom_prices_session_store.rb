@@ -29,5 +29,4 @@ class CustomPricesSessionStore
   def storage
     hash[key]
   end
-
 end

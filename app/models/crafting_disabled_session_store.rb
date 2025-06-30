@@ -23,5 +23,4 @@ class CraftingDisabledSessionStore
   def storage
     hash[key]
   end
-
 end

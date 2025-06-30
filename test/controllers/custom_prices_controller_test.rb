@@ -15,7 +15,7 @@ class CustomPricesControllerTest < ActionDispatch::IntegrationTest
 
   test "update" do
     put custom_prices_path(
-      custom_prices: {CGI::escape(craftable_item_name) => "1000"},
+      custom_prices: {CGI.escape(craftable_item_name) => "1000"},
       crafting_disabled: [craftable_item_name]
     )
 

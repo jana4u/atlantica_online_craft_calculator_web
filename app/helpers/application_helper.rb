@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module ApplicationHelper
   def link_to_url(url, *args, &block)
     link_to(url, url, *args, &block)
@@ -14,7 +13,7 @@ module ApplicationHelper
 
   def price_type_to_human(item)
     if @custom_prices[item.name]
-      'Your price'
+      "Your price"
     else
       item.price_type.to_s.humanize
     end
@@ -31,12 +30,12 @@ module ApplicationHelper
 
   def item_names(query)
     items = AtlanticaOnlineCraftCalculator::Item.ordered_craftable_items
-    return filter_items_by_query(items, query).map { |i| i.name }
+    filter_items_by_query(items, query).map { |i| i.name }
   end
 
   def item_names_for_skill(skill, query)
     items = AtlanticaOnlineCraftCalculator::Item.craftable_items_for_skill_ordered_by_skill_lvl(skill)
-    return filter_items_by_query(items, query).map { |i| ["#{i.name} – #{i.skill_lvl}", i.name] }
+    filter_items_by_query(items, query).map { |i| ["#{i.name} – #{i.skill_lvl}", i.name] }
   end
 
   def item_names_for_skill_or_all(skill, query)
@@ -48,16 +47,16 @@ module ApplicationHelper
   end
 
   def items_select_tag
-    select_tag(:item_name, options_for_select(item_names_for_skill_or_all(params[:skill], params[:query]), params[:item_name]), :include_blank => true, :id => :item_name)
+    select_tag(:item_name, options_for_select(item_names_for_skill_or_all(params[:skill], params[:query]), params[:item_name]), include_blank: true, id: :item_name)
   end
 
   def zero_price?(item, custom_price)
     if custom_price
       return true if custom_price.zero?
-    else
-      return true if item.unit_price.zero?
+    elsif item.unit_price.zero?
+      return true
     end
 
-    return false
+    false
   end
 end

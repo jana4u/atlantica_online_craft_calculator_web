@@ -9,20 +9,16 @@ class CustomPricesController < ApplicationController
     @custom_prices = custom_prices_store.all
     @crafting_disabled = crafting_disabled_store.all
     @customized_items = (@custom_prices.keys + @crafting_disabled).uniq.map do |name|
-      begin
-        AtlanticaOnlineCraftCalculator::Item.find(name)
-      rescue nil
-      end
+      AtlanticaOnlineCraftCalculator::Item.find(name)
+    rescue
     end.compact.sort { |x, y| x.name_for_sort <=> y.name_for_sort }
   end
 
   def update
     custom_prices_hash = {}
 
-    if params[:custom_prices]
-      params[:custom_prices].each do |key, value|
-        custom_prices_hash[CGI::unescape(key)] = value
-      end
+    params[:custom_prices]&.each do |key, value|
+      custom_prices_hash[CGI.unescape(key)] = value
     end
 
     custom_prices_store.update_all(custom_prices_hash)

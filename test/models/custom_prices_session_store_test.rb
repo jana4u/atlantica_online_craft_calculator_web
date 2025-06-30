@@ -2,7 +2,7 @@ require "test_helper"
 
 class CustomPricesSessionStoreTest < ActiveSupport::TestCase
   test "store with items and deleting store contents" do
-    hash = {:custom_prices => {"item" => 1}}
+    hash = {custom_prices: {"item" => 1}}
     custom_prices_store = CustomPricesSessionStore.new(hash)
 
     result1 = {"item" => 1}
@@ -20,7 +20,7 @@ class CustomPricesSessionStoreTest < ActiveSupport::TestCase
     hash = {}
     custom_prices_store = CustomPricesSessionStore.new(hash)
 
-    assert_equal Hash.new, custom_prices_store.all
+    assert_equal({}, custom_prices_store.all)
 
     custom_prices_store.update_all({"item" => "1"})
 

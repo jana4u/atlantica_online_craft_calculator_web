@@ -2,7 +2,7 @@ require "test_helper"
 
 class CustomSkillsSessionStoreTest < ActiveSupport::TestCase
   test "store with auto craft and removing it" do
-    hash = {:auto_craft => 60}
+    hash = {auto_craft: 60}
     custom_skills_store = CustomSkillsSessionStore.new(hash)
 
     assert_equal 60, custom_skills_store.auto_craft

@@ -2,7 +2,7 @@ require "test_helper"
 
 class CraftingDisabledSessionStoreTest < ActiveSupport::TestCase
   test "store with items and deleting store contents" do
-    hash = {:crafting_disabled => ["item"]}
+    hash = {crafting_disabled: ["item"]}
     crafting_disabled_store = CraftingDisabledSessionStore.new(hash)
 
     result1 = ["item"]

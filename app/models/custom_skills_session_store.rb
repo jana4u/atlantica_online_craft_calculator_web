@@ -11,10 +11,10 @@ class CustomSkillsSessionStore
   end
 
   def auto_craft=(value)
-    if value.blank?
-      hash[auto_craft_key] = nil
+    hash[auto_craft_key] = if value.blank?
+      nil
     else
-      hash[auto_craft_key] = AutoCraftIntegerExtractor.non_negative_integer_from_string(value)
+      AutoCraftIntegerExtractor.non_negative_integer_from_string(value)
     end
   end
 end

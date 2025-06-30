@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :item_custom_prices_url, :custom_skills_store
 
   def item_custom_prices_url
-    custom_prices_path(:item_name => params[:item_name])
+    custom_prices_path(item_name: params[:item_name])
   end
 
   def custom_prices_store

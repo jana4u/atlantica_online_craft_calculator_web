@@ -33,7 +33,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "index with item and custom prices" do
     put custom_prices_path(
-      custom_prices: {CGI::escape(ingredient_item_name) => "1000"}
+      custom_prices: {CGI.escape(ingredient_item_name) => "1000"}
     )
 
     assert_redirected_to custom_prices_path
