@@ -15,13 +15,13 @@
         <div class="container">
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to("Atlantica Online Craft Calculator", main_app.atlantica_online_craft_calculator_engine_path, class: 'brand') %></li>
-              <li><%= link_to("Your prices", atlantica_online_craft_calculator_engine.custom_prices_path) %></li>
-              <li><%= link_to("Your skills", atlantica_online_craft_calculator_engine.custom_skills_path) %></li>
-              <li><%= link_to("Experience table", atlantica_online_craft_calculator_engine.experience_table_path) %></li>
+              <li><%= link_to("Atlantica Online Craft Calculator", root_path, class: 'brand') %></li>
+              <li><%= link_to("Your prices", custom_prices_path) %></li>
+              <li><%= link_to("Your skills", custom_skills_path) %></li>
+              <li><%= link_to("Experience table", experience_table_path) %></li>
             </ul>
             <ul class="nav pull-right">
-              <li><%= link_to("About", atlantica_online_craft_calculator_engine.about_path) %></li>
+              <li><%= link_to("About", about_path) %></li>
             </ul>
           </div>
         </div>

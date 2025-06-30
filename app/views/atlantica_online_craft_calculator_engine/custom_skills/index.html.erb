@@ -1,0 +1,20 @@
+<div class="craft-calculator">
+  <h1>Your skills</h1>
+
+  <p>You can set your own skills here.</p>
+
+  <p>Leave field blank if you want to remove any of your current skills.</p>
+
+  <%= form_tag(custom_skills_path, method: :put, class: 'form-horizontal' ) do %>
+    <div class="control-group">
+      <%= label_tag(:auto_craft, "Auto-Craft", class: 'control-label') %>
+      <div class="controls">
+        <%= text_field_tag(:auto_craft, custom_skills_store.auto_craft, :id => :auto_craft) %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= submit_tag "Save", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

@@ -7,4 +7,11 @@ class ActiveSupport::TestCase
   parallelize(workers: :number_of_processors)
 
   # Add more helper methods to be used by all tests here...
+  def craftable_item_name
+    "Action: Auto-Craft [IV]"
+  end
+
+  def ingredient_item_name
+    "Ashen Jewel"
+  end
 end

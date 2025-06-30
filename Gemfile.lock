@@ -5,14 +5,6 @@ GIT
     atlantica_online_craft_calculator (0.0.1)
       csv
 
-GIT
-  remote: https://github.com/jana4u/atlantica_online_craft_calculator_engine.git
-  revision: 9770e6d2c2977a77575dbea53e714c14353352ae
-  specs:
-    atlantica_online_craft_calculator_engine (0.0.1)
-      atlantica_online_craft_calculator
-      rails (> 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -298,7 +290,6 @@ PLATFORMS
 
 DEPENDENCIES
   atlantica_online_craft_calculator!
-  atlantica_online_craft_calculator_engine!
   bootstrap-sass (< 3)
   debug
   exception_notification

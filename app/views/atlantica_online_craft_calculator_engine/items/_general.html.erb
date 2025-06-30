@@ -1,0 +1,77 @@
+<p>
+  <% if @item_craft.shopping_list.detect { |item| item.unit_price.zero? } %>
+    <span class="label label-warning">Warning</span> <span class="warning">Highlighted prices are set to zero.</span> All results here are affected by that.
+  <% elsif !@custom_prices.empty? && @item_craft.shopping_list.detect { |item| item.price_type == :market_price } %>
+    <span class="label label-warning">Warning</span> You have set some prices yourself. All results here are affected by that.
+  <% end %>
+
+  <%= link_to("Review or change your prices for this craft", item_custom_prices_url) %>.
+</p>
+
+<% unless custom_skills_store.auto_craft %>
+  <p>
+    Warning: You have not set your auto-craft level. Level 1 will be used.
+    <%= link_to("Set your auto-craft level", custom_skills_path) %>.
+  </p>
+<% end %>
+
+<h1><%= @item.name %></h1>
+
+<table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td class="td-text">Craft price</td>
+    <td><%= number_with_delimiter(@item.craft_price) %></td>
+  </tr>
+  <% if @item.fixed_price %>
+    <tr>
+      <td class="td-text">Fixed price</td>
+      <td><%= number_with_delimiter(@item.fixed_price) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="tables">
+  <table class="table table-bordered table-hover table-condensed">
+    <caption>Batch</caption>
+    <tr>
+      <td class="td-text">Craft price</td>
+      <td><%= number_with_delimiter(@item.batch_craft_price) %></td>
+    </tr>
+    <tr>
+      <td class="td-text">Size</td>
+      <td><%= number_with_delimiter(@item.batch_size) %></td>
+    </tr>
+    <tr>
+      <td class="td-text">Workload</td>
+      <td><%= number_with_delimiter(@item.workload) %></td>
+    </tr>
+    <tr>
+      <td class="td-text">Craft XP</td>
+      <td><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
+    </tr>
+    <tr>
+      <td class="td-text">Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
+      <td><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item.workload)) %></td>
+    </tr>
+    <tr>
+      <td class="td-text">Required skill</td>
+      <td><%= @item.skill %> <%= @item.skill_lvl %></td>
+    </tr>
+  </table>
+
+  <table class="table table-striped table-bordered table-hover table-condensed">
+    <caption>Batch ingredients</caption>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+    </tr>
+    <% @item.ingredient_list.each do |ingredient| %>
+      <tr>
+        <td class="td-text"><%= ingredient.name %></td>
+        <td><%= number_with_delimiter(ingredient.quantity) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div class="clearfix"></div>
+</div>

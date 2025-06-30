@@ -46,5 +46,4 @@ group :development do
 end
 
 # Atlantica Online Craft Calculator
-gem "atlantica_online_craft_calculator_engine", github: "jana4u/atlantica_online_craft_calculator_engine"
 gem "atlantica_online_craft_calculator", github: "jana4u/atlantica_online_craft_calculator"

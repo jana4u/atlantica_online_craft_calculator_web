@@ -1,0 +1,32 @@
+<div class="craft-calculator">
+  <%= form_tag(root_path, method: :get, remote: true, class: 'form-inline') do %>
+    <%= label_tag(:skill, "Skill:") %>
+    <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), :include_blank => true, :id => :skill) %>
+
+    <%= label_tag(:query, "Search:") %>
+    <%= text_field_tag(:query, params[:query], :id => :query) %>
+
+    <%= submit_tag "Filter items", class: 'btn' %>
+  <% end %>
+
+  <%= form_tag(root_path, method: :get, remote: true, class: 'form-inline') do %>
+    <%= label_tag(:item_name, "Item:") %>
+    <%= items_select_tag %>
+
+    <%= label_tag(:count, "Quantity:") %>
+    <%= text_field_tag(:count, params[:count], :size => 5, :id => :count, :class => "input-small") %>
+
+    <%= submit_tag "Calculate", class: 'btn btn-primary' %>
+
+    <%= image_tag 'atlantica_online_craft_calculator_engine/ajax-loader.gif', id: 'ajax-loader', alt: '', style: 'display: none' %>
+    <span id="error"></span>
+  <% end %>
+
+  <div id="general">
+    <%= render partial: 'general' if @item %>
+  </div>
+
+  <div id="my">
+    <%= render partial: 'my' if @item_craft %>
+  </div>
+</div>
