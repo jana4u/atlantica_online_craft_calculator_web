@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Atlantica Online Craft Calculator</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <%= favicon_link_tag "/favicon.ico" %>
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= csrf_meta_tags %>
-    <%= javascript_importmap_tags %>
-  </head>
+<head>
+  <title>Atlantica Online Craft Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= favicon_link_tag "/favicon.ico" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= csrf_meta_tags %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to("Atlantica Online Craft Calculator", root_path, class: "brand") %></li>
-              <li><%= link_to("Your prices", custom_prices_path) %></li>
-              <li><%= link_to("Your skills", custom_skills_path) %></li>
-              <li><%= link_to("Experience table", experience_table_path) %></li>
-            </ul>
-            <ul class="nav pull-right">
-              <li><%= link_to("About", about_path) %></li>
-            </ul>
-          </div>
-        </div>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+  <div class="container">
+    <%= link_to("Atlantica Online Craft Calculator", root_path, class: "navbar-brand") %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#calculatorNavbar" aria-controls="calculatorNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="calculatorNavbar">
+      <div class="navbar-nav">
+        <%= navbar_link_to("Your prices", custom_prices_path) %>
+        <%= navbar_link_to("Your skills", custom_skills_path) %>
+        <%= navbar_link_to("Experience table", experience_table_path) %>
+        <%= navbar_link_to("About", about_path) %>
       </div>
     </div>
+  </div>
+</nav>
 
-    <div class="container">
-      <div class="content">
-        <%= yield %>
-      </div>
-    </div>
+<main>
+  <div class="container">
+    <%= yield %>
+  </div>
+</main>
 
-    <footer>
-      <div class="container">
-        &copy; <%= link_to("Jana Dvořáková (Jana4U)", "http://www.jana4u.net/") %><br />
-        Design greatly inspired by <%= link_to("Atlantica-db", "http://www.atlantica-db.com/") %><br />
-        All game information presented here is from the MMORPG
-        <%= link_to("Atlantica Online", "http://at.valofe.com/") %>.<br />
-        Data last updated on: <%= AtlanticaOnlineCraftCalculator::Data.updated_on %>
-        (game version: <%= AtlanticaOnlineCraftCalculator::Data.game_version %>)
-      </div>
-    </footer>
-  </body>
+<footer>
+  <div class="container">
+    &copy; <%= link_to("Jana Dvořáková (Jana4U)", "http://www.jana4u.net/") %><br/>
+    Design greatly inspired by <%= link_to("Atlantica-db", "http://www.atlantica-db.com/") %><br />
+    All game information presented here is from the MMORPG
+    <%= link_to("Atlantica Online", "http://at.valofe.com/") %>.<br/>
+    Data last updated on: <%= AtlanticaOnlineCraftCalculator::Data.updated_on %>
+    (game version: <%= AtlanticaOnlineCraftCalculator::Data.game_version %>)
+  </div>
+</footer>
+</body>
 </html>
