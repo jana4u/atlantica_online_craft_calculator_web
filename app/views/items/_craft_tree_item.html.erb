@@ -1,12 +1,12 @@
 <%# locals: (item:, level:) %>
 <tr class="<%= table_warning_class(item.unit_price.zero?) %>">
-  <td class="td-text"><%= raw "&nbsp;" * 4 * level %><%= item.name %></td>
-  <td><%= item.requested_quantity %></td>
-  <td><%= item.quantity %></td>
-  <td><% unless item.leftover_quantity.zero? %><%= item.leftover_quantity %><% end %></td>
-  <td><%= number_with_delimiter(item.unit_price) %></td>
-  <td><%= number_with_delimiter(item.total_price) %></td>
-  <td><%= price_type_to_human(item) %></td>
+  <td><%= raw "&nbsp;" * 4 * level %><%= item.name %></td>
+  <td class="text-end"><%= item.requested_quantity %></td>
+  <td class="text-end"><%= item.quantity %></td>
+  <td class="text-end"><% unless item.leftover_quantity.zero? %><%= item.leftover_quantity %><% end %></td>
+  <td class="text-end"><%= number_with_delimiter(item.unit_price) %></td>
+  <td class="text-end"><%= number_with_delimiter(item.total_price) %></td>
+  <td class="text-end"><%= price_type_to_human(item) %></td>
 </tr>
 <% item.ingredients_craft_tree.each do |ingredient| %>
   <%= render partial: "craft_tree_item", locals: {item: ingredient, level: level + 1} %>

@@ -20,13 +20,13 @@
 
 <table class="table table-bordered table-hover table-sm">
   <tr>
-    <td class="td-text">Craft price</td>
-    <td><%= number_with_delimiter(@item.craft_price) %></td>
+    <td>Craft price</td>
+    <td class="text-end"><%= number_with_delimiter(@item.craft_price) %></td>
   </tr>
   <% if @item.fixed_price %>
     <tr>
-      <td class="td-text">Fixed price</td>
-      <td><%= number_with_delimiter(@item.fixed_price) %></td>
+      <td>Fixed price</td>
+      <td class="text-end"><%= number_with_delimiter(@item.fixed_price) %></td>
     </tr>
   <% end %>
 </table>
@@ -36,28 +36,28 @@
     <table class="table table-bordered table-hover table-sm caption-top">
       <caption class="h2">Batch</caption>
       <tr>
-        <td class="td-text">Craft price</td>
-        <td><%= number_with_delimiter(@item.batch_craft_price) %></td>
+        <td>Craft price</td>
+        <td class="text-end"><%= number_with_delimiter(@item.batch_craft_price) %></td>
       </tr>
       <tr>
-        <td class="td-text">Size</td>
-        <td><%= number_with_delimiter(@item.batch_size) %></td>
+        <td>Size</td>
+        <td class="text-end"><%= number_with_delimiter(@item.batch_size) %></td>
       </tr>
       <tr>
-        <td class="td-text">Workload</td>
-        <td><%= number_with_delimiter(@item.workload) %></td>
+        <td>Workload</td>
+        <td class="text-end"><%= number_with_delimiter(@item.workload) %></td>
       </tr>
       <tr>
-        <td class="td-text">Craft XP</td>
-        <td><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
+        <td>Craft XP</td>
+        <td class="text-end"><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
       </tr>
       <tr>
-        <td class="td-text">Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
-        <td><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item.workload)) %></td>
+        <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
+        <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item.workload)) %></td>
       </tr>
       <tr>
-        <td class="td-text">Required skill</td>
-        <td><%= @item.skill %> <%= @item.skill_lvl %></td>
+        <td>Required skill</td>
+        <td class="text-end"><%= @item.skill %> <%= @item.skill_lvl %></td>
       </tr>
     </table>
   </div>
@@ -71,8 +71,8 @@
       </tr>
       <% @item.ingredient_list.each do |ingredient| %>
         <tr>
-          <td class="td-text"><%= ingredient.name %></td>
-          <td><%= number_with_delimiter(ingredient.quantity) %></td>
+          <td><%= ingredient.name %></td>
+          <td class="text-end"><%= number_with_delimiter(ingredient.quantity) %></td>
         </tr>
       <% end %>
     </table>

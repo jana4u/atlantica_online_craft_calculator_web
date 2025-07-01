@@ -8,8 +8,8 @@
     </tr>
     <% AtlanticaOnlineCraftCalculator::CraftExperience.levels.each do |level| %>
       <tr>
-        <td><%= level.lvl %></td>
-        <td><%= number_with_delimiter(level.xp) %></td>
+        <td class="text-end"><%= level.lvl %></td>
+        <td class="text-end"><%= number_with_delimiter(level.xp) %></td>
       </tr>
     <% end %>
   </table>
