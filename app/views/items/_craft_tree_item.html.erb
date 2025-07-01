@@ -1,5 +1,5 @@
 <%# locals: (item:, level:) %>
-<tr class="<% if item.unit_price.zero? %>warning<% end %>">
+<tr class="<%= table_warning_class(item.unit_price.zero?) %>">
   <td class="td-text"><%= raw "&nbsp;" * 4 * level %><%= item.name %></td>
   <td><%= item.requested_quantity %></td>
   <td><%= item.quantity %></td>

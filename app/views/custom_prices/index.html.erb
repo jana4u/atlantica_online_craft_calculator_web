@@ -25,7 +25,7 @@
           <th>Crafting Disabled</th>
         </tr>
         <% @customized_items.each do |item| %>
-          <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>warning<% end %>">
+          <tr class="<%= table_warning_class(zero_price?(item, @custom_prices[item.name])) %>">
             <td class="td-text"><%= item.name %></td>
             <td><%= text_field_tag("custom_prices[#{CGI.escape(item.name)}]", number_with_delimiter(@custom_prices[item.name]), class: "form-control") %></td>
             <td class="td-text"><%= check_box_tag("crafting_disabled[]", item.name, @crafting_disabled.include?(item.name), class: "form-check-input") if item.craftable? %></td>
@@ -74,7 +74,7 @@
         <th>Crafting Disabled</th>
       </tr>
       <% @items.each do |item| %>
-        <tr class="<% if zero_price?(item, @custom_prices[item.name]) %>warning<% end %>">
+        <tr class="<%= table_warning_class(zero_price?(item, @custom_prices[item.name])) %>">
           <td class="td-text"><%= item.name %></td>
           <td><%= number_with_delimiter(item.fixed_price) %></td>
           <td><%= number_with_delimiter(item.market_price) %></td>

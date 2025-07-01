@@ -10,4 +10,10 @@ module BootstrapHelper
 
     link_to(name, options, html_options, &block)
   end
+
+  def table_warning_class(condition)
+    if condition
+      "table-warning"
+    end
+  end
 end

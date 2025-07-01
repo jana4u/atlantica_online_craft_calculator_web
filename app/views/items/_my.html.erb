@@ -103,7 +103,7 @@
     <th>Price type</th>
   </tr>
   <% @item_craft.shopping_list.each do |shopping_list_item| %>
-    <tr class="<% if shopping_list_item.unit_price.zero? %>warning<% end %>">
+    <tr class="<%= table_warning_class(shopping_list_item.unit_price.zero?) %>">
       <td class="td-text"><%= shopping_list_item.name %></td>
       <td><%= number_with_delimiter(shopping_list_item.quantity) %></td>
       <td><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
