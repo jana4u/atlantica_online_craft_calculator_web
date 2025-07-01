@@ -1,9 +1,9 @@
 <%# locals: () %>
 <p>
   <% if @item_craft.shopping_list.detect { |item| item.unit_price.zero? } %>
-    <span class="label label-warning">Warning</span> <span class="warning">Highlighted prices are set to zero.</span> All results here are affected by that.
+    <span class="badge text-bg-warning">Warning</span> <span class="bg-warning-subtle">Highlighted prices are set to zero.</span> All results here are affected by that.
   <% elsif !@custom_prices.empty? && @item_craft.shopping_list.detect { |item| item.price_type == :market_price } %>
-    <span class="label label-warning">Warning</span> You have set some prices yourself. All results here are affected by that.
+    <span class="badge text-bg-warning">Warning</span> You have set some prices yourself. All results here are affected by that.
   <% end %>
 
   <%= link_to("Review or change your prices for this craft", item_custom_prices_url) %>.
