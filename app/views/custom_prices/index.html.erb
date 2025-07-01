@@ -18,7 +18,7 @@
     </p>
 
     <%= form_tag(item_custom_prices_url, method: :put) do %>
-      <table class="table table-striped table-bordered table-hover table-condensed">
+      <table class="table table-striped table-bordered table-hover table-sm">
         <tr>
           <th>Item</th>
           <th>Your Price</th>
@@ -65,7 +65,7 @@
       <%= hidden_field_tag("custom_prices[#{CGI.escape(item_name)}]", value: price) %>
     <% end %>
 
-    <table class="table table-striped table-bordered table-hover table-condensed">
+    <table class="table table-striped table-bordered table-hover table-sm">
       <tr>
         <th>Item</th>
         <th>Fixed Price</th>
