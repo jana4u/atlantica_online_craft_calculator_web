@@ -15,7 +15,7 @@
     </div>
   <% end %>
 
-  <%= form_tag(root_path, method: :get, remote: true, class: "row mt-3 align-items-end") do %>
+  <%= form_tag(root_path, method: :get, remote: true, class: "row my-3 align-items-end") do %>
     <%= label_tag(:item_name, "Item:", class: "col-md-1 col-form-label") %>
     <div class="col-md-4">
       <%= items_select_tag %>
@@ -23,7 +23,7 @@
 
     <%= label_tag(:count, "Quantity:", class: "col-md-1 col-form-label") %>
     <div class="col-md-2">
-      <%= text_field_tag(:count, params[:count], size: 5, placeholder: "1", id: :count, class: "form-control") %>
+      <%= text_field_tag(:count, params[:count], size: 5, id: :count, class: "form-control") %>
     </div>
 
     <div class="col-md-2">
