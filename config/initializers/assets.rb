@@ -11,6 +11,8 @@ Rails.application.config.assets.version = "1.0"
 # folder are already added.
 Rails.application.config.assets.precompile += [
   "ajax-loader.gif",
+  "popper.js",
+  "bootstrap.min.js",
   "craft_calculator.js",
   "jquery.min.js",
   "jquery_ujs.js"

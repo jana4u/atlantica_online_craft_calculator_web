@@ -30,10 +30,8 @@ group :development do
   gem "webrick"
 end
 
-# Twitter Bootstrap 2.x
-gem "bootstrap-sass", "< 3"
-# Required for using of bootstrap-sass 2.x in Rails.
-gem "sass-rails", ">= 6"
+# Bootstrap 5 ruby gem for Ruby on Rails.
+gem "bootstrap", "~> 5.3.5"
 
 # Use jquery as the JavaScript library
 gem "jquery-rails"
