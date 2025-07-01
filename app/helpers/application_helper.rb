@@ -47,7 +47,7 @@ module ApplicationHelper
   end
 
   def items_select_tag
-    select_tag(:item_name, options_for_select(item_names_for_skill_or_all(params[:skill], params[:query]), params[:item_name]), include_blank: true, id: :item_name)
+    select_tag(:item_name, options_for_select(item_names_for_skill_or_all(params[:skill], params[:query]), params[:item_name]), include_blank: true, id: :item_name, class: "form-select")
   end
 
   def zero_price?(item, custom_price)

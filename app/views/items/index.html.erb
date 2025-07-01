@@ -1,25 +1,39 @@
 <div class="craft-calculator">
-  <%= form_tag(root_path, method: :get, remote: true, class: "form-inline") do %>
-    <%= label_tag(:skill, "Skill:") %>
-    <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), include_blank: true, id: :skill) %>
+  <%= form_tag(root_path, method: :get, remote: true, class: "row mt-3 align-items-end") do %>
+    <%= label_tag(:skill, "Skill:", class: "col-md-1 col-form-label") %>
+    <div class="col-md-4">
+      <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), include_blank: true, id: :skill, class: "form-select") %>
+    </div>
 
-    <%= label_tag(:query, "Search:") %>
-    <%= text_field_tag(:query, params[:query], id: :query) %>
+    <%= label_tag(:query, "Search:", class: "col-md-1 col-form-label") %>
+    <div class="col-md-4">
+      <%= text_field_tag(:query, params[:query], id: :query, class: "form-control") %>
+    </div>
 
-    <%= submit_tag "Filter items", class: "btn" %>
+    <div class="col-md-2">
+      <%= submit_tag "Filter items", class: "btn btn-secondary" %>
+    </div>
   <% end %>
 
-  <%= form_tag(root_path, method: :get, remote: true, class: "form-inline") do %>
-    <%= label_tag(:item_name, "Item:") %>
-    <%= items_select_tag %>
+  <%= form_tag(root_path, method: :get, remote: true, class: "row mt-3 align-items-end") do %>
+    <%= label_tag(:item_name, "Item:", class: "col-md-1 col-form-label") %>
+    <div class="col-md-4">
+      <%= items_select_tag %>
+    </div>
 
-    <%= label_tag(:count, "Quantity:") %>
-    <%= text_field_tag(:count, params[:count], size: 5, id: :count, class: "input-small") %>
+    <%= label_tag(:count, "Quantity:", class: "col-md-1 col-form-label") %>
+    <div class="col-md-2">
+      <%= text_field_tag(:count, params[:count], size: 5, placeholder: "1", id: :count, class: "form-control") %>
+    </div>
 
-    <%= submit_tag "Calculate", class: "btn btn-primary" %>
+    <div class="col-md-2">
+      <%= submit_tag "Calculate", class: "btn btn-primary" %>
+    </div>
 
-    <%= image_tag "ajax-loader.gif", id: "ajax-loader", alt: "", style: "display: none" %>
-    <span id="error"></span>
+    <div class="col-md-2">
+      <%= image_tag "ajax-loader.gif", id: "ajax-loader", alt: "", style: "display: none" %>
+      <span id="error"></span>
+    </div>
   <% end %>
 
   <div id="general">
