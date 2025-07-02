@@ -35,9 +35,6 @@ end
 # Bootstrap 5 ruby gem for Ruby on Rails.
 gem "bootstrap", "~> 5.3.5"
 
-# Use jquery as the JavaScript library
-gem "jquery-rails"
-
 # Delivering exception notifications by email
 gem "exception_notification"
 

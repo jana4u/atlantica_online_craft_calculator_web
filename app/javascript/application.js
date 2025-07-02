@@ -2,6 +2,3 @@
 import "@hotwired/turbo-rails"
 import "popper"
 import "bootstrap"
-import "jquery"
-import "jquery_ujs"
-import "craft_calculator"
