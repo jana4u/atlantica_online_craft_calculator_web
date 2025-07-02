@@ -2,12 +2,12 @@
   <%= form_tag(root_path, method: :get, class: "row g-3 my-3 align-items-end") do %>
     <%= label_tag(:skill, "Skill:", class: "col-md-1 col-form-label") %>
     <div class="col-md-4">
-      <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), include_blank: true, id: :skill, onchange: "this.form.submit()", class: "form-select") %>
+      <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), include_blank: true, onchange: "this.form.submit()", class: "form-select") %>
     </div>
 
     <%= label_tag(:query, "Search:", class: "col-md-1 col-form-label") %>
     <div class="col-md-4">
-      <%= text_field_tag(:query, params[:query], id: :query, class: "form-control") %>
+      <%= text_field_tag(:query, params[:query], class: "form-control") %>
     </div>
 
     <div class="col-md-2">
@@ -21,7 +21,7 @@
 
     <%= label_tag(:count, "Quantity:", class: "col-md-1 col-form-label") %>
     <div class="col-md-2">
-      <%= number_field_tag(:count, params[:count], size: 5, id: :count, class: "form-control") %>
+      <%= number_field_tag(:count, params[:count], size: 5, class: "form-control") %>
     </div>
 
     <div class="col-md-4">
