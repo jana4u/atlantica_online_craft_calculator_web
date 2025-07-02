@@ -18,18 +18,22 @@
 
 <h1><%= @item.name %></h1>
 
-<table class="table table-bordered table-hover table-sm">
-  <tr>
-    <td>Craft price</td>
-    <td class="text-end"><%= number_with_delimiter(@item.craft_price) %></td>
-  </tr>
-  <% if @item.fixed_price %>
-    <tr>
-      <td>Fixed price</td>
-      <td class="text-end"><%= number_with_delimiter(@item.fixed_price) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-bordered table-hover table-sm">
+      <tr>
+        <td>Craft price</td>
+        <td class="text-end"><%= number_with_delimiter(@item.craft_price) %></td>
+      </tr>
+      <% if @item.fixed_price %>
+        <tr>
+          <td>Fixed price</td>
+          <td class="text-end"><%= number_with_delimiter(@item.fixed_price) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-6">
