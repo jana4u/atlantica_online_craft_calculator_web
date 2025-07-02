@@ -14,7 +14,7 @@
     <h2>Your current prices</h2>
 
     <p>
-      <%= link_to "Remove All", item_custom_prices_url, method: :delete, confirm: "Are you sure you want to remove all your prices?", class: "btn btn-danger" %>
+      <%= button_to "Remove All", item_custom_prices_url, method: :delete, data: {"turbo-confirm": "Are you sure you want to remove all your prices?"}, class: "btn btn-danger" %>
     </p>
 
     <%= form_tag(item_custom_prices_url, method: :put) do %>
