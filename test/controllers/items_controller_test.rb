@@ -8,25 +8,25 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "index with skill" do
-    get root_path(skill: "Action"), xhr: true
+    get root_path(skill: "Action")
 
     assert_response :success
   end
 
   test "index with search" do
-    get root_path(query: "craft"), xhr: true
+    get root_path(query: "craft")
 
     assert_response :success
   end
 
   test "index with item and no count" do
-    get root_path(item_name: craftable_item_name), xhr: true
+    get root_path(item_name: craftable_item_name)
 
     assert_response :success
   end
 
   test "index with item and count" do
-    get root_path(item_name: craftable_item_name, count: "10"), xhr: true
+    get root_path(item_name: craftable_item_name, count: "10")
 
     assert_response :success
   end
@@ -38,7 +38,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to custom_prices_path
 
-    get root_path(item_name: craftable_item_name), xhr: true
+    get root_path(item_name: craftable_item_name)
 
     assert_response :success
   end
