@@ -21,7 +21,7 @@
 
     <%= label_tag(:count, "Quantity:", class: "col-md-1 col-form-label") %>
     <div class="col-md-2">
-      <%= text_field_tag(:count, params[:count], size: 5, id: :count, class: "form-control") %>
+      <%= number_field_tag(:count, params[:count], size: 5, id: :count, class: "form-control") %>
     </div>
 
     <div class="col-md-4">

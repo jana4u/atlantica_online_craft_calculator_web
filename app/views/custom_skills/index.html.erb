@@ -8,7 +8,7 @@
   <%= form_tag(custom_skills_path, method: :put, class: "row") do %>
     <%= label_tag(:auto_craft, "Auto-Craft", class: "col-md-2 col-form-label") %>
     <div class="col-md-4">
-      <%= text_field_tag(:auto_craft, custom_skills_store.auto_craft, id: :auto_craft, class: "form-control") %>
+      <%= number_field_tag(:auto_craft, custom_skills_store.auto_craft, id: :auto_craft, class: "form-control") %>
     </div>
 
     <div class="col-md-12">
