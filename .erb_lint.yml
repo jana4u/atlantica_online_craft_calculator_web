@@ -16,6 +16,3 @@ linters:
         Enabled: false
       Lint/UselessAssignment:
         Enabled: false
-  SelfClosingTag:
-    enabled: true
-    enforced_style: "always"
