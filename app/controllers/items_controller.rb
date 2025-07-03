@@ -6,14 +6,17 @@ class ItemsController < ApplicationController
     AtlanticaOnlineCraftCalculator::Item.configure_custom_prices(@custom_prices)
     AtlanticaOnlineCraftCalculator::Item.configure_items_with_crafting_disabled(@crafting_disabled)
     if params[:item_name].present?
-      @item = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name])
-      @crafter = AtlanticaOnlineCraftCalculator::Crafter.new(custom_skills_store.auto_craft || 1)
-      count = if params[:count].blank?
-        @item.batch_size
-      else
-        IntegerExtractor.non_negative_integer_from_string(params[:count])
+      begin
+        @item = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name])
+        @crafter = AtlanticaOnlineCraftCalculator::Crafter.new(custom_skills_store.auto_craft || 1)
+        count = if params[:count].blank?
+          @item.batch_size
+        else
+          IntegerExtractor.non_negative_integer_from_string(params[:count])
+        end
+        @item_craft = AtlanticaOnlineCraftCalculator::ItemCraft.new(@item, count)
+      rescue AtlanticaOnlineCraftCalculator::InvalidItem
       end
-      @item_craft = AtlanticaOnlineCraftCalculator::ItemCraft.new(@item, count)
     end
   end
 end

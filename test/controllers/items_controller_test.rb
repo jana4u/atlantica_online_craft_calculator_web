@@ -49,6 +49,13 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_item_craft
   end
 
+  test "index with invalid item" do
+    get root_path(item_name: "No longer existing")
+
+    assert_response :success
+    assert_no_item_craft
+  end
+
   private
 
   def assert_item_craft
