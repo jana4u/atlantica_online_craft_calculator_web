@@ -15,8 +15,15 @@ class CustomPricesControllerTest < ActionDispatch::IntegrationTest
 
   test "update" do
     put custom_prices_path(
-      custom_prices: {CGI.escape(craftable_item_name) => "1000"},
-      crafting_disabled: [craftable_item_name]
+      custom_prices: {
+        CGI.escape("No longer existing 1") => "0",
+        CGI.escape(ingredient_item_name) => "10",
+        CGI.escape(craftable_item_name) => "1000"
+      },
+      crafting_disabled: [
+        "No longer existing 2",
+        craftable_item_name
+      ]
     )
 
     assert_redirected_to custom_prices_path
