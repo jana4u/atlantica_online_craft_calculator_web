@@ -33,5 +33,10 @@ class CustomPricesSessionStoreTest < ActiveSupport::TestCase
     result2 = {"thing" => 2}
     assert_equal result2, custom_prices_store.all
     assert_equal result2, hash[:custom_prices]
+
+    custom_prices_store.update_all({"empty" => ""})
+
+    assert_empty custom_prices_store.all
+    assert_empty hash[:custom_prices]
   end
 end
