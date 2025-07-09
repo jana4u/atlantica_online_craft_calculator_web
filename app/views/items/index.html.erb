@@ -1,8 +1,8 @@
 <div class="craft-calculator">
-  <%= form_tag(root_path, method: :get, class: "row g-3 my-3 align-items-end") do %>
+  <%= form_tag(root_path, method: :get, class: "row g-3 my-3 align-items-end", data: {turbo_stream: true}) do %>
     <%= label_tag(:skill, "Skill:", class: "col-md-1 col-form-label") %>
     <div class="col-md-4">
-      <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), include_blank: true, onchange: "this.form.submit()", class: "form-select") %>
+      <%= select_tag(:skill, options_for_select(skill_names, params[:skill]), include_blank: true, onchange: "this.form.requestSubmit()", class: "form-select") %>
     </div>
 
     <%= label_tag(:query, "Search:", class: "col-md-1 col-form-label") %>
@@ -29,7 +29,5 @@
     </div>
   <% end %>
 
-  <div id="general">
-    <%= render partial: "item" if @item %>
-  </div>
+  <%= render partial: "item" %>
 </div>

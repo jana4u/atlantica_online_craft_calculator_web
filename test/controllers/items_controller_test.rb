@@ -13,10 +13,20 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_no_item_craft
+
+    get root_path(skill: "Action", format: :turbo_stream)
+
+    assert_response :success
+    assert_no_item_craft
   end
 
   test "index with search" do
     get root_path(query: "craft")
+
+    assert_response :success
+    assert_no_item_craft
+
+    get root_path(query: "craft", format: :turbo_stream)
 
     assert_response :success
     assert_no_item_craft
@@ -27,10 +37,20 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_item_craft
+
+    get root_path(item_name: craftable_item_name, format: :turbo_stream)
+
+    assert_response :success
+    assert_item_craft
   end
 
   test "index with item and count" do
     get root_path(item_name: craftable_item_name, count: "10")
+
+    assert_response :success
+    assert_item_craft
+
+    get root_path(item_name: craftable_item_name, count: "10", format: :turbo_stream)
 
     assert_response :success
     assert_item_craft
@@ -47,10 +67,20 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_item_craft
+
+    get root_path(item_name: craftable_item_name, format: :turbo_stream)
+
+    assert_response :success
+    assert_item_craft
   end
 
   test "index with invalid item" do
     get root_path(item_name: "No longer existing")
+
+    assert_response :success
+    assert_no_item_craft
+
+    get root_path(item_name: "No longer existing", format: :turbo_stream)
 
     assert_response :success
     assert_no_item_craft

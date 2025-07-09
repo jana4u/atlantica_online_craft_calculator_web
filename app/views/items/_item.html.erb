@@ -1,274 +1,278 @@
 <%# locals: () %>
-<p>
-  <% if @item_craft.shopping_list.detect { |item| item.unit_price.zero? } %>
-    <span class="badge text-bg-warning">Warning</span> <span class="bg-warning-subtle">Highlighted prices are set to zero.</span> All results here are affected by that.
-  <% elsif !@custom_prices.empty? && @item_craft.shopping_list.detect { |item| item.price_type == :market_price } %>
-    <span class="badge text-bg-warning">Warning</span> You have set some prices yourself. All results here are affected by that.
-  <% end %>
-
-  <%= link_to("Review or change your prices for this craft", item_custom_prices_url) %>.
-</p>
-
-<% unless custom_skills_store.auto_craft %>
-  <p>
-    Warning: You have not set your auto-craft level. Level 1 will be used.
-    <%= link_to("Set your auto-craft level", custom_skills_path) %>.
-  </p>
-<% end %>
-
-<h1><%= @item.name %></h1>
-
-<div class="row">
-  <div class="col-md-6">
-    <table class="table table-bordered table-hover table-sm">
-      <tr>
-        <td>Craft price</td>
-        <td class="text-end"><%= number_with_delimiter(@item.craft_price) %></td>
-      </tr>
-      <% if @item.fixed_price %>
-        <tr>
-          <td>Fixed price</td>
-          <td class="text-end"><%= number_with_delimiter(@item.fixed_price) %></td>
-        </tr>
+<%= turbo_frame_tag "item", target: "_top" do %>
+  <% if @item %>
+    <p>
+      <% if @item_craft.shopping_list.detect { |item| item.unit_price.zero? } %>
+        <span class="badge text-bg-warning">Warning</span> <span class="bg-warning-subtle">Highlighted prices are set to zero.</span> All results here are affected by that.
+      <% elsif !@custom_prices.empty? && @item_craft.shopping_list.detect { |item| item.price_type == :market_price } %>
+        <span class="badge text-bg-warning">Warning</span> You have set some prices yourself. All results here are affected by that.
       <% end %>
-    </table>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-6">
-    <table class="table table-bordered table-hover table-sm caption-top">
-      <caption class="h2">Batch</caption>
-      <tr>
-        <td>Craft price</td>
-        <td class="text-end"><%= number_with_delimiter(@item.batch_craft_price) %></td>
-      </tr>
-      <tr>
-        <td>Size</td>
-        <td class="text-end"><%= number_with_delimiter(@item.batch_size) %></td>
-      </tr>
-      <tr>
-        <td>Workload</td>
-        <td class="text-end"><%= number_with_delimiter(@item.workload) %></td>
-      </tr>
-      <tr>
-        <td>Craft XP</td>
-        <td class="text-end"><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
-      </tr>
-      <tr>
-        <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
-        <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item.workload)) %></td>
-      </tr>
-      <tr>
-        <td>Required skill</td>
-        <td class="text-end"><%= @item.skill %> <%= @item.skill_lvl %></td>
-      </tr>
-    </table>
-  </div>
+      <%= link_to("Review or change your prices for this craft", item_custom_prices_url) %>.
+    </p>
 
-  <div class="col-md-6">
+    <% unless custom_skills_store.auto_craft %>
+      <p>
+        Warning: You have not set your auto-craft level. Level 1 will be used.
+        <%= link_to("Set your auto-craft level", custom_skills_path) %>.
+      </p>
+    <% end %>
+
+    <h1><%= @item.name %></h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered table-hover table-sm">
+          <tr>
+            <td>Craft price</td>
+            <td class="text-end"><%= number_with_delimiter(@item.craft_price) %></td>
+          </tr>
+          <% if @item.fixed_price %>
+            <tr>
+              <td>Fixed price</td>
+              <td class="text-end"><%= number_with_delimiter(@item.fixed_price) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered table-hover table-sm caption-top">
+          <caption class="h2">Batch</caption>
+          <tr>
+            <td>Craft price</td>
+            <td class="text-end"><%= number_with_delimiter(@item.batch_craft_price) %></td>
+          </tr>
+          <tr>
+            <td>Size</td>
+            <td class="text-end"><%= number_with_delimiter(@item.batch_size) %></td>
+          </tr>
+          <tr>
+            <td>Workload</td>
+            <td class="text-end"><%= number_with_delimiter(@item.workload) %></td>
+          </tr>
+          <tr>
+            <td>Craft XP</td>
+            <td class="text-end"><%= number_with_delimiter(@item.craft_xp_gained_per_batch) %></td>
+          </tr>
+          <tr>
+            <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
+            <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item.workload)) %></td>
+          </tr>
+          <tr>
+            <td>Required skill</td>
+            <td class="text-end"><%= @item.skill %> <%= @item.skill_lvl %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <table class="table table-striped table-bordered table-hover table-sm caption-top">
+          <caption class="h2">Batch ingredients</caption>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+          </tr>
+          <% @item.ingredient_list.each do |ingredient| %>
+            <tr>
+              <td><%= ingredient.name %></td>
+              <td class="text-end"><%= number_with_delimiter(ingredient.quantity) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <% if @item_craft.requested_quantity != @item.batch_size %>
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table table-bordered table-hover table-sm caption-top">
+            <caption class="h2">My batches</caption>
+            <tr>
+              <td>Craft price for batches</td>
+              <td class="text-end"><%= number_with_delimiter(@item_craft.price) %></td>
+            </tr>
+            <tr>
+              <td>Quantity (requested quantity)</td>
+              <td class="text-end"><%= number_with_delimiter(@item_craft.quantity) %> (<%= number_with_delimiter(@item_craft.requested_quantity) %>)</td>
+            </tr>
+            <tr>
+              <td>Batches</td>
+              <td class="text-end"><%= number_with_delimiter(@item_craft.batches) %></td>
+            </tr>
+            <tr>
+              <td>Workload</td>
+              <td class="text-end"><%= number_with_delimiter(@item_craft.workload) %></td>
+            </tr>
+            <tr>
+              <td>Craft XP</td>
+              <td class="text-end"><%= number_with_delimiter(@item_craft.craft_xp_gained) %></td>
+            </tr>
+            <tr>
+              <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
+              <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item_craft.workload)) %></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-md-6">
+          <table class="table table-striped table-bordered table-hover table-sm caption-top">
+            <caption class="h2">My batches ingredients</caption>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+            </tr>
+            <% @item_craft.ingredient_list.each do |ingredient| %>
+              <tr>
+                <td><%= ingredient.name %></td>
+                <td class="text-end"><%= number_with_delimiter(ingredient.quantity) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered table-hover table-sm caption-top">
+          <caption class="h2">My complete craft</caption>
+          <tr>
+            <td>Total price (incl. leftovers)</td>
+            <td class="text-end"><%= number_with_delimiter(@item_craft.total_price) %></td>
+          </tr>
+          <tr>
+            <td>Quantity (requested quantity)</td>
+            <td class="text-end"><%= number_with_delimiter(@item_craft.quantity) %> (<%= number_with_delimiter(@item_craft.requested_quantity) %>)</td>
+          </tr>
+          <tr>
+            <td>Batches</td>
+            <td class="text-end"><%= number_with_delimiter(@item_craft.batches) %></td>
+          </tr>
+          <tr>
+            <td>Total workload</td>
+            <td class="text-end"><%= number_with_delimiter(@item_craft.total_workload) %></td>
+          </tr>
+          <tr>
+            <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
+            <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item_craft.total_workload)) %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <table class="table table-striped table-bordered table-hover table-sm caption-top">
+          <caption class="h2">My complete craft skills</caption>
+          <tr>
+            <th>Skill</th>
+            <th>Workload</th>
+            <th>Craft XP</th>
+            <th>Req. level</th>
+          </tr>
+          <% @item_craft.skills.each do |skill| %>
+            <tr>
+              <td><%= skill.name %></td>
+              <td class="text-end"><%= number_with_delimiter(skill.workload) %></td>
+              <td class="text-end"><%= number_with_delimiter(skill.craft_xp_gained) %></td>
+              <td class="text-end"><%= number_with_delimiter(skill.lvl) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
     <table class="table table-striped table-bordered table-hover table-sm caption-top">
-      <caption class="h2">Batch ingredients</caption>
+      <caption class="h2">Shopping list</caption>
       <tr>
         <th>Item</th>
         <th>Quantity</th>
+        <th>Unit price</th>
+        <th>Total price</th>
+        <th>Price type</th>
       </tr>
-      <% @item.ingredient_list.each do |ingredient| %>
-        <tr>
-          <td><%= ingredient.name %></td>
-          <td class="text-end"><%= number_with_delimiter(ingredient.quantity) %></td>
+      <% @item_craft.shopping_list.each do |shopping_list_item| %>
+        <tr class="<%= table_warning_class(shopping_list_item.unit_price.zero?) %>">
+          <td><%= shopping_list_item.name %></td>
+          <td class="text-end"><%= number_with_delimiter(shopping_list_item.quantity) %></td>
+          <td class="text-end"><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
+          <td class="text-end"><%= number_with_delimiter(shopping_list_item.total_price) %></td>
+          <td class="text-end"><%= price_type_to_human(shopping_list_item) %></td>
         </tr>
       <% end %>
     </table>
-  </div>
-</div>
 
-<% if @item_craft.requested_quantity != @item.batch_size %>
-  <div class="row">
-    <div class="col-md-6">
-      <table class="table table-bordered table-hover table-sm caption-top">
-        <caption class="h2">My batches</caption>
+    <table class="table table-striped table-bordered table-hover table-sm caption-top">
+      <caption class="h2">Craft schedule</caption>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Unit price</th>
+        <th>Total price</th>
+        <th>Workload</th>
+        <th>Craft XP</th>
+        <th>Required skill</th>
+      </tr>
+      <% @item_craft.craft_list.each do |craft_list_item| %>
         <tr>
-          <td>Craft price for batches</td>
-          <td class="text-end"><%= number_with_delimiter(@item_craft.price) %></td>
+          <td><%= craft_list_item.name %></td>
+          <td class="text-end"><%= number_with_delimiter(craft_list_item.quantity) %></td>
+          <td class="text-end"><%= number_with_delimiter(craft_list_item.unit_price) %></td>
+          <td class="text-end"><%= number_with_delimiter(craft_list_item.total_price) %></td>
+          <td class="text-end"><%= number_with_delimiter(craft_list_item.total_workload) %></td>
+          <td class="text-end"><%= number_with_delimiter(craft_list_item.total_craft_xp_gained) %></td>
+          <td><%= craft_list_item.skill %> <%= craft_list_item.skill_lvl %></td>
         </tr>
-        <tr>
-          <td>Quantity (requested quantity)</td>
-          <td class="text-end"><%= number_with_delimiter(@item_craft.quantity) %> (<%= number_with_delimiter(@item_craft.requested_quantity) %>)</td>
-        </tr>
-        <tr>
-          <td>Batches</td>
-          <td class="text-end"><%= number_with_delimiter(@item_craft.batches) %></td>
-        </tr>
-        <tr>
-          <td>Workload</td>
-          <td class="text-end"><%= number_with_delimiter(@item_craft.workload) %></td>
-        </tr>
-        <tr>
-          <td>Craft XP</td>
-          <td class="text-end"><%= number_with_delimiter(@item_craft.craft_xp_gained) %></td>
-        </tr>
-        <tr>
-          <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
-          <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item_craft.workload)) %></td>
-        </tr>
-      </table>
-    </div>
+      <% end %>
+    </table>
 
-    <div class="col-md-6">
+    <% if @item_craft.leftovers.any? %>
       <table class="table table-striped table-bordered table-hover table-sm caption-top">
-        <caption class="h2">My batches ingredients</caption>
+        <caption class="h2">Leftovers</caption>
         <tr>
           <th>Item</th>
           <th>Quantity</th>
         </tr>
-        <% @item_craft.ingredient_list.each do |ingredient| %>
+        <% @item_craft.leftovers.each do |leftover| %>
           <tr>
-            <td><%= ingredient.name %></td>
-            <td class="text-end"><%= number_with_delimiter(ingredient.quantity) %></td>
+            <td><%= leftover.name %></td>
+            <td class="text-end"><%= number_with_delimiter(leftover.quantity) %></td>
           </tr>
         <% end %>
       </table>
-    </div>
-  </div>
-<% end %>
+    <% end %>
 
-<div class="row">
-  <div class="col-md-6">
-    <table class="table table-bordered table-hover table-sm caption-top">
-      <caption class="h2">My complete craft</caption>
-      <tr>
-        <td>Total price (incl. leftovers)</td>
-        <td class="text-end"><%= number_with_delimiter(@item_craft.total_price) %></td>
-      </tr>
-      <tr>
-        <td>Quantity (requested quantity)</td>
-        <td class="text-end"><%= number_with_delimiter(@item_craft.quantity) %> (<%= number_with_delimiter(@item_craft.requested_quantity) %>)</td>
-      </tr>
-      <tr>
-        <td>Batches</td>
-        <td class="text-end"><%= number_with_delimiter(@item_craft.batches) %></td>
-      </tr>
-      <tr>
-        <td>Total workload</td>
-        <td class="text-end"><%= number_with_delimiter(@item_craft.total_workload) %></td>
-      </tr>
-      <tr>
-        <td>Time needed (auto-craft lvl <%= @crafter.auto_craft_lvl %>)</td>
-        <td class="text-end"><%= seconds_to_human(@crafter.seconds_duration_for_workload(@item_craft.total_workload)) %></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="col-md-6">
     <table class="table table-striped table-bordered table-hover table-sm caption-top">
-      <caption class="h2">My complete craft skills</caption>
+      <caption class="h2">Craft tree</caption>
       <tr>
-        <th>Skill</th>
-        <th>Workload</th>
-        <th>Craft XP</th>
-        <th>Req. level</th>
+        <th>Item</th>
+        <th>Requested q.</th>
+        <th>Crafted q.</th>
+        <th>Leftovers</th>
+        <th>Unit price</th>
+        <th>Total price</th>
+        <th>Price type</th>
       </tr>
-      <% @item_craft.skills.each do |skill| %>
-        <tr>
-          <td><%= skill.name %></td>
-          <td class="text-end"><%= number_with_delimiter(skill.workload) %></td>
-          <td class="text-end"><%= number_with_delimiter(skill.craft_xp_gained) %></td>
-          <td class="text-end"><%= number_with_delimiter(skill.lvl) %></td>
-        </tr>
-      <% end %>
+      <%= render partial: "craft_tree_item", locals: {item: @item_craft.item_with_raw_craft_tree, level: 0} %>
     </table>
-  </div>
-</div>
 
-<table class="table table-striped table-bordered table-hover table-sm caption-top">
-  <caption class="h2">Shopping list</caption>
-  <tr>
-    <th>Item</th>
-    <th>Quantity</th>
-    <th>Unit price</th>
-    <th>Total price</th>
-    <th>Price type</th>
-  </tr>
-  <% @item_craft.shopping_list.each do |shopping_list_item| %>
-    <tr class="<%= table_warning_class(shopping_list_item.unit_price.zero?) %>">
-      <td><%= shopping_list_item.name %></td>
-      <td class="text-end"><%= number_with_delimiter(shopping_list_item.quantity) %></td>
-      <td class="text-end"><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
-      <td class="text-end"><%= number_with_delimiter(shopping_list_item.total_price) %></td>
-      <td class="text-end"><%= price_type_to_human(shopping_list_item) %></td>
-    </tr>
-  <% end %>
-</table>
-
-<table class="table table-striped table-bordered table-hover table-sm caption-top">
-  <caption class="h2">Craft schedule</caption>
-  <tr>
-    <th>Item</th>
-    <th>Quantity</th>
-    <th>Unit price</th>
-    <th>Total price</th>
-    <th>Workload</th>
-    <th>Craft XP</th>
-    <th>Required skill</th>
-  </tr>
-  <% @item_craft.craft_list.each do |craft_list_item| %>
-    <tr>
-      <td><%= craft_list_item.name %></td>
-      <td class="text-end"><%= number_with_delimiter(craft_list_item.quantity) %></td>
-      <td class="text-end"><%= number_with_delimiter(craft_list_item.unit_price) %></td>
-      <td class="text-end"><%= number_with_delimiter(craft_list_item.total_price) %></td>
-      <td class="text-end"><%= number_with_delimiter(craft_list_item.total_workload) %></td>
-      <td class="text-end"><%= number_with_delimiter(craft_list_item.total_craft_xp_gained) %></td>
-      <td><%= craft_list_item.skill %> <%= craft_list_item.skill_lvl %></td>
-    </tr>
-  <% end %>
-</table>
-
-<% if @item_craft.leftovers.any? %>
-  <table class="table table-striped table-bordered table-hover table-sm caption-top">
-    <caption class="h2">Leftovers</caption>
-    <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-    </tr>
-    <% @item_craft.leftovers.each do |leftover| %>
-      <tr>
-        <td><%= leftover.name %></td>
-        <td class="text-end"><%= number_with_delimiter(leftover.quantity) %></td>
-      </tr>
+    <% if @item_craft.craft_tree_leftovers.any? %>
+      <table class="table table-striped table-bordered table-hover table-sm caption-top">
+        <caption class="h2">Craft tree leftovers</caption>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Batches</th>
+        </tr>
+        <% @item_craft.craft_tree_leftovers.each do |leftover| %>
+          <tr>
+            <td><%= leftover.name %></td>
+            <td class="text-end"><%= number_with_delimiter(leftover.quantity) %></td>
+            <td class="text-end"><% unless leftover.whole_batches.zero? %><%= number_with_delimiter(leftover.whole_batches) %><% end %></td>
+          </tr>
+        <% end %>
+      </table>
     <% end %>
-  </table>
-<% end %>
-
-<table class="table table-striped table-bordered table-hover table-sm caption-top">
-  <caption class="h2">Craft tree</caption>
-  <tr>
-    <th>Item</th>
-    <th>Requested q.</th>
-    <th>Crafted q.</th>
-    <th>Leftovers</th>
-    <th>Unit price</th>
-    <th>Total price</th>
-    <th>Price type</th>
-  </tr>
-  <%= render partial: "craft_tree_item", locals: {item: @item_craft.item_with_raw_craft_tree, level: 0} %>
-</table>
-
-<% if @item_craft.craft_tree_leftovers.any? %>
-  <table class="table table-striped table-bordered table-hover table-sm caption-top">
-    <caption class="h2">Craft tree leftovers</caption>
-    <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Batches</th>
-    </tr>
-    <% @item_craft.craft_tree_leftovers.each do |leftover| %>
-      <tr>
-        <td><%= leftover.name %></td>
-        <td class="text-end"><%= number_with_delimiter(leftover.quantity) %></td>
-        <td class="text-end"><% unless leftover.whole_batches.zero? %><%= number_with_delimiter(leftover.whole_batches) %><% end %></td>
-      </tr>
-    <% end %>
-  </table>
+  <% end %>
 <% end %>
