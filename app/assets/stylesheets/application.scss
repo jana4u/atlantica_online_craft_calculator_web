@@ -1,1 +1,9 @@
 @import "bootstrap";
+
+turbo-frame#loading {
+  display: none;
+}
+
+turbo-frame#loading[busy] {
+  display: inline-flex;
+}
