@@ -121,6 +121,8 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
+    imagen (0.2.0)
+      parser (>= 2.5, != 2.5.1.1)
     importmap-rails (2.2.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -246,6 +248,7 @@ GEM
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
     ruby-progressbar (1.13.0)
+    rugged (1.9.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -291,6 +294,14 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    undercover (0.7.4)
+      base64
+      bigdecimal
+      imagen (>= 0.2.0)
+      rainbow (>= 2.1, < 4.0)
+      rugged (>= 0.27, < 1.10)
+      simplecov
+      simplecov_json_formatter
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
@@ -327,6 +338,7 @@ DEPENDENCIES
   standard
   turbo-rails
   tzinfo-data
+  undercover
   web-console
   webrick
 
