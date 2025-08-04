@@ -9,6 +9,24 @@ SimpleCov.formatters = [
 SimpleCov.start "rails" do
   add_filter(/^\/test\//)
   enable_coverage :branch
+  enable_coverage_for_eval
+  add_group "Views", "app/views"
+end
+
+# Disabling warnings about coverage data exceeding number of lines in *.erb files.
+# Solution based on: https://github.com/simplecov-ruby/simplecov/issues/1057
+module SimpleCov
+  class SourceFile
+    private
+
+    alias_method :coverage_exceeding_source_warn_original, :coverage_exceeding_source_warn
+
+    def coverage_exceeding_source_warn
+      unless filename.end_with?(".erb")
+        coverage_exceeding_source_warn_original
+      end
+    end
+  end
 end
 
 ENV["RAILS_ENV"] ||= "test"
