@@ -117,6 +117,7 @@ GEM
       actionmailer (>= 7.1, < 9)
       activesupport (>= 7.1, < 9)
     ffi (1.17.2)
+    ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -160,6 +161,8 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.9)
       mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    nokogiri (1.18.9-x86_64-linux-gnu)
       racc (~> 1.4)
     parallel (1.27.0)
     parser (3.3.9.0)
@@ -321,6 +324,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux-gnu
 
 DEPENDENCIES
   atlantica_online_craft_calculator!
@@ -343,7 +347,7 @@ DEPENDENCIES
   webrick
 
 RUBY VERSION
-   ruby 3.3.9p170
+   ruby 3.4.5p51
 
 BUNDLED WITH
-   2.5.22
+   2.6.9

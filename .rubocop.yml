@@ -9,4 +9,4 @@ inherit_gem:
   rubocop-minitest: config/default.yml
 
 AllCops:
-  TargetRubyVersion: 3.2
+  TargetRubyVersion: 3.4
