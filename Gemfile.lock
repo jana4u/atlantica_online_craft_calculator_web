@@ -89,7 +89,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.3.0)
+    bigdecimal (3.3.1)
     bindex (0.8.1)
     bootstrap (5.3.5)
       popper_js (>= 2.11.8, < 3)
@@ -177,7 +177,7 @@ GEM
       date
       stringio
     racc (1.8.1)
-    rack (3.2.2)
+    rack (3.2.3)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
