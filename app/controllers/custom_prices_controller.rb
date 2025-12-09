@@ -1,6 +1,6 @@
 class CustomPricesController < ApplicationController
   def index
-    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml
+    AtlanticaOnlineCraftCalculator::Item.all = ItemData::CACHE
     begin
       @items = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name]).ordered_ingredient_items
     rescue AtlanticaOnlineCraftCalculator::InvalidItem

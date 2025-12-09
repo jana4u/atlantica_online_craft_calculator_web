@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   def index
     @custom_prices = custom_prices_store.all
     @crafting_disabled = crafting_disabled_store.all
-    AtlanticaOnlineCraftCalculator::Item.load_data_from_yaml
+    AtlanticaOnlineCraftCalculator::Item.all = ItemData::CACHE
     AtlanticaOnlineCraftCalculator::Item.configure_custom_prices(@custom_prices)
     AtlanticaOnlineCraftCalculator::Item.configure_items_with_crafting_disabled(@crafting_disabled)
     if params[:item_name].present?
