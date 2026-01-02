@@ -48,6 +48,8 @@ end
 group :test do
   gem "simplecov", require: false
   gem "undercover", require: false
+  # FIXME Remove once Rails 8.1.x adds compatibility with minitest 6.
+  gem "minitest", "< 6"
 end
 
 # Atlantica Online Craft Calculator
