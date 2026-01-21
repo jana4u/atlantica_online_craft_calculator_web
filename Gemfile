@@ -43,6 +43,7 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-minitest", require: false
   gem "erb_lint", require: false
+  gem "libyear-bundler", require: false
 end
 
 group :test do
