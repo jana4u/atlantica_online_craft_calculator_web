@@ -1,10 +1,17 @@
 require:
-  - standard/cop/block_single_line_braces
+  - standard
+
+plugins:
+  - standard-custom
+  - standard-performance
+  - rubocop-performance
   - rubocop-rails
   - rubocop-minitest
 
 inherit_gem:
   standard: config/base.yml
+  standard-custom: config/base.yml
+  standard-performance: config/base.yml
   rubocop-rails: config/default.yml
   rubocop-minitest: config/default.yml
 
