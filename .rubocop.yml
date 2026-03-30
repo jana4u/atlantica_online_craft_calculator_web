@@ -17,3 +17,4 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 4.0
+  NewCops: disable
