@@ -49,8 +49,6 @@ end
 group :test do
   gem "simplecov", require: false
   gem "undercover", require: false
-  # FIXME Remove once it is dependency of undercover
-  gem "benchmark", require: false
 end
 
 # Atlantica Online Craft Calculator
