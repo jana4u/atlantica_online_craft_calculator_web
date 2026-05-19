@@ -10,7 +10,7 @@ gem "rails", "~> 8.1.1"
 gem "sprockets-rails"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -22,7 +22,7 @@ gem "sassc-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
 end
 
 group :development do
