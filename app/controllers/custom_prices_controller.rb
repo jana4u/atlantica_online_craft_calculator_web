@@ -1,11 +1,13 @@
 class CustomPricesController < ApplicationController
   def index
     AtlanticaOnlineCraftCalculator::Item.all = ItemData::CACHE
-    begin
-      @items = AtlanticaOnlineCraftCalculator::Item.find(params.expect(:item_name)).ordered_ingredient_items
-    rescue AtlanticaOnlineCraftCalculator::InvalidItem
-      @items = AtlanticaOnlineCraftCalculator::Item.ordered_ingredient_items
+    if params[:item_name].present?
+      begin
+        @items = AtlanticaOnlineCraftCalculator::Item.find(params.expect(:item_name)).ordered_ingredient_items
+      rescue AtlanticaOnlineCraftCalculator::InvalidItem
+      end
     end
+    @items ||= AtlanticaOnlineCraftCalculator::Item.ordered_ingredient_items
     @custom_prices = custom_prices_store.all
     @crafting_disabled = crafting_disabled_store.all
     @customized_items = (@custom_prices.keys + @crafting_disabled).uniq.map do |name|
