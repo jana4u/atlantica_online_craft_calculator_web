@@ -2,7 +2,7 @@ class CustomPricesController < ApplicationController
   def index
     AtlanticaOnlineCraftCalculator::Item.all = ItemData::CACHE
     begin
-      @items = AtlanticaOnlineCraftCalculator::Item.find(params[:item_name]).ordered_ingredient_items
+      @items = AtlanticaOnlineCraftCalculator::Item.find(params.expect(:item_name)).ordered_ingredient_items
     rescue AtlanticaOnlineCraftCalculator::InvalidItem
       @items = AtlanticaOnlineCraftCalculator::Item.ordered_ingredient_items
     end
