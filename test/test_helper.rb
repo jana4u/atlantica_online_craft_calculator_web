@@ -7,7 +7,7 @@ SimpleCov.formatters = [
 ]
 
 SimpleCov.start "rails" do
-  enable_coverage :branch, :eval
+  enable_coverage :method, :branch, :eval
   group "Views", "app/views"
 end
 
