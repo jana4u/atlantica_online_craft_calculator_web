@@ -7,10 +7,8 @@ SimpleCov.formatters = [
 ]
 
 SimpleCov.start "rails" do
-  add_filter(/^\/test\//)
-  enable_coverage :branch
-  enable_coverage_for_eval
-  add_group "Views", "app/views"
+  enable_coverage :branch, :eval
+  group "Views", "app/views"
 end
 
 ENV["RAILS_ENV"] ||= "test"
