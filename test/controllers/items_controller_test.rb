@@ -56,12 +56,28 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_item_craft
   end
 
-  test "index with item and custom prices" do
+  test "index with item that has fixed price" do
+    get root_path(item_name: craftable_item_name_with_fixed_price)
+
+    assert_response :success
+    assert_item_craft(craftable_item_name_with_fixed_price)
+
+    get root_path(item_name: craftable_item_name_with_fixed_price, format: :turbo_stream)
+
+    assert_response :success
+    assert_item_craft(craftable_item_name_with_fixed_price)
+  end
+
+  test "index with item and custom prices and auto craft set" do
     put custom_prices_path(
       custom_prices: {CGI.escape(ingredient_item_name) => "1000"}
     )
 
     assert_redirected_to custom_prices_path
+
+    put custom_skills_path(auto_craft: "120")
+
+    assert_redirected_to custom_skills_path
 
     get root_path(item_name: craftable_item_name)
 
@@ -88,8 +104,8 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   private
 
-  def assert_item_craft
-    assert_dom "h1", count: 1, text: craftable_item_name
+  def assert_item_craft(item_name = craftable_item_name)
+    assert_dom "h1", count: 1, text: item_name
   end
 
   def assert_no_item_craft

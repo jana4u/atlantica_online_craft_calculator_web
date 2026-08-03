@@ -21,10 +21,14 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def craftable_item_name
-    "Action: Auto-Craft [IV]"
+    "Multi-Hued Jewel"
+  end
+
+  def craftable_item_name_with_fixed_price
+    "Enchant Stone [II]"
   end
 
   def ingredient_item_name
-    "Ashen Jewel"
+    "Mandragora"
   end
 end
