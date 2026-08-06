@@ -9,6 +9,7 @@ SimpleCov.formatters = [
 SimpleCov.start "rails" do
   enable_coverage :method, :branch, :eval
   group "Views", "app/views"
+  minimum_coverage method: 100
 end
 
 ENV["RAILS_ENV"] ||= "test"
