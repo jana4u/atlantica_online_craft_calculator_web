@@ -1,10 +1,4 @@
 require "simplecov"
-require "undercover/simplecov_formatter"
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::Undercover
-]
 
 SimpleCov.start "rails" do
   enable_coverage :method

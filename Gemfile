@@ -54,7 +54,6 @@ end
 
 group :test do
   gem "simplecov", require: false
-  gem "undercover", require: false
 end
 
 # Atlantica Online Craft Calculator
