@@ -11,8 +11,8 @@ module ApplicationHelper
     "#{hours}h#{mins}m#{secs}s"
   end
 
-  def price_type_to_human(item)
-    if @custom_prices[item.name]
+  def price_type_to_human(item, custom_prices)
+    if custom_prices[item.name]
       "Your price"
     else
       item.price_type.to_s.humanize

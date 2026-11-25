@@ -198,7 +198,7 @@
           <td class="text-end"><%= number_with_delimiter(shopping_list_item.quantity) %></td>
           <td class="text-end"><%= number_with_delimiter(shopping_list_item.unit_price) %></td>
           <td class="text-end"><%= number_with_delimiter(shopping_list_item.total_price) %></td>
-          <td class="text-end"><%= price_type_to_human(shopping_list_item) %></td>
+          <td class="text-end"><%= price_type_to_human(shopping_list_item, @custom_prices) %></td>
         </tr>
       <% end %>
     </table>
